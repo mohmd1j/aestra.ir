@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AESTRA | فروشگاه مد و آتلیه مینیمال آسترا</title>
+  <meta name="description" content="فروشگاه اینترنتی و آتلیه مد معاصر آسترا (AESTRA) با طراحی مینیمال، کالکشن‌های لینن و ابریشم ارگانیک، سبد خرید پویا و ثبت سفارش تلگرام." />
+  <meta property="og:title" content="AESTRA | فروشگاه مد و آتلیه مینیمال آسترا" />
+  <meta property="og:description" content="فروشگاه اینترنتی و آتلیه مد معاصر آسترا (AESTRA) با طراحی مینیمال و متریال پایدار" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN with EXACT Stitch Design Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary": "#ffffff",
+            "on-background": "#1c1b1c",
+            "surface-container-low": "#f6f3f3",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#d3c4ba",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dcd9d9",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#000000",
+            "inverse-on-surface": "#f3f0f0",
+            "on-surface": "#1c1b1c",
+            "surface-tint": "#5c5e64",
+            "surface-container": "#f1eded",
+            "primary": "#000102",
+            "surface-subtle": "#F4F4F4",
+            "secondary": "#4a5f85",
+            "on-tertiary-fixed-variant": "#4f453d",
+            "inverse-surface": "#313030",
+            "on-secondary-container": "#455a80",
+            "text-muted": "#6E7179",
+            "background": "#fcf8f8",
+            "secondary-fixed-dim": "#b1c7f3",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#44474c",
+            "terracotta-accent": "#C46243",
+            "on-surface-variant": "#45474b",
+            "surface-cream": "#FAF9F6",
+            "surface-bright": "#fcf8f8",
+            "primary-fixed-dim": "#c4c6cd",
+            "on-tertiary-fixed": "#221a14",
+            "surface": "#fcf8f8",
+            "outline-variant": "#c6c6cb",
+            "surface-container-high": "#ebe7e7",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#191c21",
+            "surface-container-highest": "#e5e2e2",
+            "on-secondary-fixed": "#011b3e",
+            "on-primary": "#ffffff",
+            "secondary-container": "#bcd2fe",
+            "border-hairline": "#E5E5E5",
+            "primary-container": "#191c21",
+            "warm-amber": "#DD9933",
+            "on-primary-container": "#82848a",
+            "primary-fixed": "#e1e2e9",
+            "inverse-primary": "#c4c6cd",
+            "secondary-fixed": "#d6e3ff",
+            "on-secondary-fixed-variant": "#32476c",
+            "surface-variant": "#e5e2e2",
+            "on-tertiary-container": "#8e8179",
+            "tertiary-container": "#221a14",
+            "tertiary-fixed": "#f0dfd5",
+            "outline": "#76777b",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "2rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "margin": "1rem",
+            "gutter": "1.25rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "display-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "display-lg-mobile": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-lg": ["32px", { lineHeight: "44px", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-md": ["12px", { lineHeight: "18px", fontWeight: "500" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "34px", fontWeight: "600" }],
+            "display-lg": ["48px", { lineHeight: "60px", fontWeight: "700" }],
+            "label-sm": ["10px", { lineHeight: "14px", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "28px", fontWeight: "400" }],
+            "display-lg-mobile": ["32px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <!-- Top Notification & Fixed Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <!-- Top Bar Notice -->
+    <div class="bg-primary text-on-primary py-space-xs px-4 md:px-margin-desktop">
+      <div class="max-w-7xl mx-auto flex items-center justify-between text-label-md font-label-md">
+        <span class="truncate">ارسال رایگان برای خریدهای بالای ۲,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
+        <div class="flex items-center gap-space-sm shrink-0">
+          <span class="material-symbols-outlined text-body-sm">call</span>
+          <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="h-20 max-w-7xl mx-auto px-4 md:px-margin-desktop flex items-center justify-between gap-space-lg">
+      <div class="flex items-center gap-space-md">
+        <!-- Hamburger Button (Mobile) -->
+        <button class="mobile-menu-trigger lg:hidden p-2 text-primary hover:bg-surface-cream rounded-lg" aria-label="منوی موبایل">
+          <span class="material-symbols-outlined text-[26px]">menu</span>
+        </button>
+
+        <!-- Brand Wordmark Logo -->
+        <a class="flex items-center gap-space-sm group" href="index.html">
+          <img alt="AESTRA Brand Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WoaVL2NJmcM_y6fgHbLQjG9YnDsBfrLzNtLlXtoNUXYzsZpKQ8tzjO-YACh_PCX_S_nYnsgTHm7SeHSJTKT8vkgP5fzXJo6-sN3RS5Fyexps0Neq2_eEK-P96_S8LW5KcsjUnNNMqfvnDDMgS4jHRfRwCw9fQJJZ3-AepJa8KkEGEX4uEr00BzdezKhBMOUaPY1WULbWoMyvhPS6oV4yq9RYqiUOi3VLk7w78Nb8PDcpvZT3gp4A9re8k" />
+          <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary font-bold">AESTRA</span>
+        </a>
+      </div>
+
+      <!-- Real-time Search Box -->
+      <div class="hidden sm:flex flex-1 max-w-xl mx-space-lg">
+        <div class="relative w-full flex items-center bg-surface-cream rounded-lg px-space-md py-space-xs">
+          <span class="material-symbols-outlined text-outline text-body-lg ml-space-sm">search</span>
+          <input class="w-full bg-transparent border-0 outline-none text-body-md text-on-surface placeholder:text-outline" placeholder="جستجوی محصولات، تیشرت، ست لباس..." type="text" />
+          <button class="text-label-sm font-label-sm bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded hover:bg-primary hover:text-on-primary transition-colors whitespace-nowrap" type="button">جستجو</button>
+        </div>
+      </div>
+
+      <!-- Action Icons / Cart / Wishlist -->
+      <div class="flex items-center gap-space-sm md:gap-space-md">
+        <!-- User Login link -->
+        <a class="hidden md:flex items-center gap-space-xs text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg hover:bg-surface-container" href="contact.html">
+          <span class="material-symbols-outlined text-body-lg">person</span>
+          <span>ورود / ثبت‌نام</span>
+        </a>
+
+        <div class="hidden md:block h-6 w-[1px] bg-outline-variant"></div>
+
+        <!-- Wishlist -->
+        <button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" onclick="showToast('لیست علاقه‌مندی‌های شما به‌روز شد')" title="علاقه‌مندی‌ها" type="button">
+          <span class="material-symbols-outlined text-headline-sm">favorite</span>
+          <span class="wishlist-count-badge absolute -top-1 -left-1 bg-terracotta-accent text-on-primary text-label-sm rounded-full w-5 h-5 flex items-center justify-center font-bold tabular-nums">۲</span>
+        </button>
+
+        <!-- Shopping Cart CTA -->
+        <a class="relative flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-xs rounded-lg transition-colors hover:bg-primary-container hover:text-on-primary-container shadow-sm" href="cart.html">
+          <span class="material-symbols-outlined text-body-lg">shopping_bag</span>
+          <span class="text-label-md font-label-md hidden sm:inline">سبد خرید</span>
+          <span class="cart-count-badge bg-surface-container-lowest text-primary text-label-sm rounded-full px-space-xs font-bold tabular-nums">۳</span>
+        </a>
+
+        <!-- Telegram Quick Order Button in Header -->
+        <button onclick="window.AestraTelegramOrder.openModal()" class="hidden lg:flex items-center gap-1 bg-surface-cream text-primary hover:bg-secondary hover:text-on-primary px-space-sm py-space-xs rounded-lg text-label-sm font-medium transition-colors" title="سفارش سریع در تلگرام">
+          <span class="material-symbols-outlined text-[16px]">send</span>
+          <span>سفارش تلگرام</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Sub-navigation Menu -->
+    <div class="bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] border-t border-border-hairline">
+      <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
+        <nav class="flex items-center gap-space-md py-space-xs overflow-x-auto text-label-md">
+          <a class="px-space-sm py-space-xs transition-all whitespace-nowrap text-primary font-bold bg-surface-container-low rounded-lg" href="index.html">صفحه اصلی</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap flex items-center gap-space-xs" href="products.html?cat=new">
+            <span>جدیدترین‌ها</span>
+            <span class="bg-warm-amber text-on-primary text-label-sm px-space-xs py-[2px] rounded-full">جدید</span>
+          </a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=t-shirts">تیشرت</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=shirts-and-blouses">شومیز و پیراهن</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=trousers">شلوار</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=coordinated-sets">ست لباس</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=accessories">اکسسوری</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap flex items-center gap-space-xs" href="products.html?cat=sale">
+            <span>تخفیف‌های ویژه</span>
+            <span class="bg-terracotta-accent text-on-primary text-label-sm px-space-xs py-[2px] rounded-full">فروش ویژه</span>
+          </a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="about.html">درباره ما</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="contact.html">تماس با ما</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main class="w-full pt-44 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- 1. Hero Slider Banner Section -->
+      <section class="relative w-full -mt-44 pt-44 overflow-hidden bg-surface-cream">
+        <div class="relative w-full min-h-[640px] lg:h-[82vh] max-h-[820px] flex items-center">
+          <!-- Background Image with Gradient Scrim -->
+          <div class="absolute inset-0 z-0">
+            <img alt="کالکشن جدید پاییز و زمستان آسترا" class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXYtQRLZ_xHpAhGyahtvQhReaFz1vpzS91i5_22grf6OV-SLQ85cYkrYcLjsDyFZzXLgMAZosrJwWZz266xP1sJvkrgVsTE3qcYe11br-OZiMXddpLlHmTlATtb0GIfy_sMcxixoZaBv_T45K6nzbhIIVKlmDpww1F6NShxh8xFvHarh0F-8JpzBAH1R9KOazw41v_aGBl9K6LMSzyBpTGCQvM2cCzHyCd7FGQ_OYmuvD5jv1U_vt" />
+            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-primary/85 via-primary/45 to-transparent"></div>
+            <div class="absolute inset-0 bg-primary/20 backdrop-brightness-95"></div>
+          </div>
+
+          <!-- Hero Content -->
+          <div class="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl flex flex-col justify-center items-start text-right">
+            <div class="max-w-2xl flex flex-col items-start gap-space-md">
+              <!-- Pill Tag -->
+              <div class="inline-flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-1.5 rounded-full shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-terracotta-accent animate-pulse"></span>
+                <span class="font-label-md text-label-md text-primary font-medium tracking-wide">کالکشن جدید پاییز و زمستان ۱۴۰۳</span>
+              </div>
+
+              <!-- Main Title & Typographic Hierarchy -->
+              <h1 class="font-display-lg text-display-lg text-on-primary font-bold leading-tight drop-shadow-sm">
+                استایل جدیدت رو <br class="hidden sm:inline" />از اینجا شروع کن
+              </h1>
+              <p class="font-body-lg text-body-lg text-surface-cream/90 max-w-lg leading-relaxed">
+                تلاقی طراحی مینیمال معاصر با ظرافت پارچه‌های ارگانیک؛ تجسم زیبایی پایدار و آزادی حرکت در کالبد فرم‌های مدرن ایرانی.
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+                <a class="inline-flex items-center gap-space-sm bg-surface-container-lowest text-primary px-space-xl py-3.5 rounded-lg font-label-lg shadow-md hover:bg-surface-subtle transition-all duration-300 transform hover:-translate-y-0.5 font-bold" href="products.html">
+                  <span>مشاهده محصولات</span>
+                  <span class="material-symbols-outlined text-[18px] rotate-180">arrow_right_alt</span>
+                </a>
+                <a class="inline-flex items-center bg-on-primary/10 hover:bg-on-primary/20 backdrop-blur-md text-on-primary px-space-lg py-3.5 rounded-lg font-label-lg transition-colors" href="products.html?cat=shirts-and-blouses">
+                  <span>کالکشن کژوال</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Bottom Indicators & Controls -->
+            <div class="absolute bottom-8 right-4 md:right-margin-desktop left-4 md:left-margin-desktop flex items-center justify-between text-on-primary/80 pointer-events-none">
+              <div class="flex items-center gap-space-xs pointer-events-auto">
+                <button aria-label="اسلاید ۱" class="w-8 h-1.5 rounded-full bg-on-primary transition-all duration-300"></button>
+                <button aria-label="اسلاید ۲" class="w-2.5 h-1.5 rounded-full bg-on-primary/40 hover:bg-on-primary/80 transition-all duration-300"></button>
+                <button aria-label="اسلاید ۳" class="w-2.5 h-1.5 rounded-full bg-on-primary/40 hover:bg-on-primary/80 transition-all duration-300"></button>
+              </div>
+              <div class="hidden md:flex items-center gap-space-sm font-label-sm text-label-sm tracking-widest text-on-primary/70">
+                <span>AESTRA / EDITORIAL 01</span>
+                <span class="w-12 h-px bg-on-primary/30"></span>
+                <span>تهران ۱۴۰۳</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Featured Category Tiles (دسته‌بندی‌های برگزیده) -->
+      <section class="w-full max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl" id="categories">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+          <div class="flex flex-col gap-space-xs text-right">
+            <span class="font-label-sm text-label-sm text-terracotta-accent uppercase tracking-widest font-semibold">دسته‌بندی‌ها</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary font-bold">دسته‌بندی‌های برگزیده</h2>
+          </div>
+          <p class="font-body-md text-body-md text-text-muted">انتخابی هوشمندانه از کمد کپسولی پاییز و زمستان</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+          <!-- Tile 1: شومیز و بلوز -->
+          <a class="group relative overflow-hidden rounded-xl bg-surface-subtle shadow-sm aspect-[3/4] flex flex-col justify-end p-space-md transition-all duration-500 hover:shadow-lg" href="products.html?cat=shirts-and-blouses">
+            <div class="absolute inset-0 z-0">
+              <img alt="شومیز و بلوز زنانه آسترا" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col gap-space-xs text-right text-on-primary">
+              <span class="inline-block self-start font-label-sm text-label-sm bg-surface-container-lowest/80 text-primary backdrop-blur-md px-space-sm py-0.5 rounded-full">
+                مشاهده بیش از ۴۵ مدل
+              </span>
+              <h3 class="font-headline-sm text-headline-sm font-semibold tracking-tight group-hover:translate-x-1 transition-transform">شومیز و بلوز</h3>
+              <span class="font-body-sm text-body-sm text-on-primary/80 flex items-center gap-1">
+                <span>ورود به گالری</span>
+                <span class="material-symbols-outlined text-[14px] rotate-180">arrow_right_alt</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tile 2: تیشرت و بیسیک -->
+          <a class="group relative overflow-hidden rounded-xl bg-surface-subtle shadow-sm aspect-[3/4] flex flex-col justify-end p-space-md transition-all duration-500 hover:shadow-lg" href="products.html?cat=t-shirts">
+            <div class="absolute inset-0 z-0">
+              <img alt="تیشرت و لباس‌های بیسیک آسترا" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col gap-space-xs text-right text-on-primary">
+              <span class="inline-block self-start font-label-sm text-label-sm bg-warm-amber/90 text-on-primary backdrop-blur-md px-space-sm py-0.5 rounded-full">
+                ۱۰۰٪ پنبه ارگانیک
+              </span>
+              <h3 class="font-headline-sm text-headline-sm font-semibold tracking-tight group-hover:translate-x-1 transition-transform">تیشرت و بیسیک</h3>
+              <span class="font-body-sm text-body-sm text-on-primary/80 flex items-center gap-1">
+                <span>ورود به گالری</span>
+                <span class="material-symbols-outlined text-[14px] rotate-180">arrow_right_alt</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tile 3: شلوار و دامن -->
+          <a class="group relative overflow-hidden rounded-xl bg-surface-subtle shadow-sm aspect-[3/4] flex flex-col justify-end p-space-md transition-all duration-500 hover:shadow-lg" href="products.html?cat=trousers">
+            <div class="absolute inset-0 z-0">
+              <img alt="شلوار واید لگ و راسته آسترا" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col gap-space-xs text-right text-on-primary">
+              <span class="inline-block self-start font-label-sm text-label-sm bg-surface-container-lowest/80 text-primary backdrop-blur-md px-space-sm py-0.5 rounded-full">
+                برش‌های اختصاصی
+              </span>
+              <h3 class="font-headline-sm text-headline-sm font-semibold tracking-tight group-hover:translate-x-1 transition-transform">شلوار و دامن</h3>
+              <span class="font-body-sm text-body-sm text-on-primary/80 flex items-center gap-1">
+                <span>ورود به گالری</span>
+                <span class="material-symbols-outlined text-[14px] rotate-180">arrow_right_alt</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tile 4: ست‌های روزمره و کت -->
+          <a class="group relative overflow-hidden rounded-xl bg-surface-subtle shadow-sm aspect-[3/4] flex flex-col justify-end p-space-md transition-all duration-500 hover:shadow-lg" href="products.html?cat=coordinated-sets">
+            <div class="absolute inset-0 z-0">
+              <img alt="ست کت و شلوار پاییزه آسترا" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBafY-7L91SDgTRZEKjAs3lKOJzQIng_pUB83JF02MenOpfOYaTARKPyXj_f9Wm7Cv65XhurrvsRYTMGZiqpQr4iq6ivOb2eolvMixxD24yykHn8IVHtm9YCksUv6mGxsqQb0Vr_7wVJe4CDP7X-_l5HvLlxVohPWtbml6IN2rVLmIIJed59E8-YtN_me2iJWb86_YC_oR4ScNJDiUVeElpPNBinsuJV8xv1dUTrrDU3iVbRZHeAQY7" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col gap-space-xs text-right text-on-primary">
+              <span class="inline-block self-start font-label-sm text-label-sm bg-terracotta-accent/90 text-on-primary backdrop-blur-md px-space-sm py-0.5 rounded-full">
+                جدیدترین طرح‌ها
+              </span>
+              <h3 class="font-headline-sm text-headline-sm font-semibold tracking-tight group-hover:translate-x-1 transition-transform">ست‌های روزمره و کت</h3>
+              <span class="font-body-sm text-body-sm text-on-primary/80 flex items-center gap-1">
+                <span>ورود به گالری</span>
+                <span class="material-symbols-outlined text-[14px] rotate-180">arrow_right_alt</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3. New Arrivals Showcase (جدیدترین محصولات) -->
+      <section class="w-full max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl" id="new-arrivals">
+        <div class="flex items-center justify-between mb-space-lg">
+          <div class="flex flex-col gap-space-xs text-right">
+            <span class="font-label-sm text-label-sm text-terracotta-accent font-semibold tracking-wider">کالکشن جدید آسترا</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary font-bold">جدیدترین محصولات</h2>
+          </div>
+          <a class="inline-flex items-center gap-space-xs text-label-lg font-label-lg text-primary hover:text-terracotta-accent transition-colors font-medium" href="products.html">
+            <span>مشاهده همه محصولات</span>
+            <span class="material-symbols-outlined text-[16px] rotate-180">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Product Grid: 4-Column on Desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+          <!-- Card 1: تیشرت اورسایز واش ذغالی -->
+          <div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+              <a href="product-detail.html?id=AES-TS-9018" class="block w-full h-full">
+                <img alt="تیشرت اورسایز واش ذغالی آسترا" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c" />
+              </a>
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm">جدید</span>
+              </div>
+              <button onclick="window.AestraWishlist.toggle('AES-TS-9018', this)" aria-label="افزودن به علاقه‌مندی" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center hover:text-terracotta-accent transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-[20px]">favorite</span>
+              </button>
+              <div class="absolute inset-x-3 bottom-3 z-10 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <button onclick="window.AestraCart.addItem({productId: 'AES-TS-9018', title: 'تیشرت اورسایز واش ذغالی', price: 890000, color: 'خاکستری ذغالی تیره', size: 'فری‌سایز', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c'})" class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-md flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span>افزودن سریع به سبد</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-space-md flex flex-col gap-space-xs text-right">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="w-3 h-3 rounded-full bg-stone-700 shadow-inner"></span>
+                <span class="w-3 h-3 rounded-full bg-stone-200 shadow-inner"></span>
+                <span class="w-3 h-3 rounded-full bg-stone-500 shadow-inner"></span>
+              </div>
+              <span class="font-body-sm text-body-sm text-text-muted">کالکشن کژوال بیسیک</span>
+              <h3 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1">
+                <a href="product-detail.html?id=AES-TS-9018" class="hover:text-secondary">تیشرت اورسایز واش ذغالی</a>
+              </h3>
+              <div class="flex items-center justify-between pt-space-xs">
+                <div class="font-label-lg text-label-lg text-primary font-bold">
+                  <span class="tabular-nums">۸۹۰,۰۰۰</span>
+                  <span class="text-body-sm font-normal text-text-muted mr-1">تومان</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-text-muted">۱۰۰٪ پنبه سنگ‌شور</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: شومیز پلیسه ابریشم لنین کرم -->
+          <div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+              <a href="product-detail.html?id=AES-SH-2024-08" class="block w-full h-full">
+                <img alt="شومیز پلیسه ابریشم لنین کرم" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d" />
+              </a>
+              <div class="absolute top-3 right-3 z-10 flex flex-col gap-1">
+                <span class="bg-terracotta-accent text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm font-bold">۱۵٪ تخفیف</span>
+              </div>
+              <button onclick="window.AestraWishlist.toggle('AES-SH-2024-08', this)" aria-label="افزودن به علاقه‌مندی" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center hover:text-terracotta-accent transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-[20px] fill text-terracotta-accent">favorite</span>
+              </button>
+              <div class="absolute inset-x-3 bottom-3 z-10 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <button onclick="window.AestraCart.addItem({productId: 'AES-SH-2024-08', title: 'شومیز پلیسه ابریشم لنین کرم', price: 1650000, color: 'کرم شنی', size: '۳۸ (M)', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d'})" class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-md flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span>افزودن سریع به سبد</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-space-md flex flex-col gap-space-xs text-right">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="w-3 h-3 rounded-full bg-[#E8DEC8] shadow-inner"></span>
+                <span class="w-3 h-3 rounded-full bg-[#D7C4B7] shadow-inner"></span>
+              </div>
+              <span class="font-body-sm text-body-sm text-text-muted">بلوز و شومیز مجلسی</span>
+              <h3 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1">
+                <a href="product-detail.html?id=AES-SH-2024-08" class="hover:text-secondary">شومیز پلیسه ابریشم لنین کرم</a>
+              </h3>
+              <div class="flex items-center justify-between pt-space-xs">
+                <div class="flex items-baseline gap-space-xs">
+                  <span class="font-label-lg text-label-lg text-terracotta-accent font-bold tabular-nums">۱,۶۵۰,۰۰۰</span>
+                  <span class="text-body-sm font-normal text-text-muted mr-1">تومان</span>
+                  <del class="text-body-sm text-outline tabular-nums">۱,۹۵۰,۰۰۰</del>
+                </div>
+                <span class="text-label-sm font-label-sm text-text-muted">لنین خالص</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: شلوار واید لگ پشم و لنین زیتونی -->
+          <div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+              <a href="product-detail.html?id=AES-TR-5510" class="block w-full h-full">
+                <img alt="شلوار واید لگ پشم و لنین زیتونی" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1" />
+              </a>
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-warm-amber text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm">پرفروش</span>
+              </div>
+              <button onclick="window.AestraWishlist.toggle('AES-TR-5510', this)" aria-label="افزودن به علاقه‌مندی" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center hover:text-terracotta-accent transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-[20px] fill text-terracotta-accent">favorite</span>
+              </button>
+              <div class="absolute inset-x-3 bottom-3 z-10 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <button onclick="window.AestraCart.addItem({productId: 'AES-TR-5510', title: 'شلوار واید لگ پشم و لنین زیتونی', price: 1820000, color: 'سبز زیتونی ملایم', size: '۴۰ (L)', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1'})" class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-md flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span>افزودن سریع به سبد</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-space-md flex flex-col gap-space-xs text-right">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="w-3 h-3 rounded-full bg-[#555a43] shadow-inner"></span>
+                <span class="w-3 h-3 rounded-full bg-[#202020] shadow-inner"></span>
+              </div>
+              <span class="font-body-sm text-body-sm text-text-muted">شلوار و نیم‌بوت</span>
+              <h3 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1">
+                <a href="product-detail.html?id=AES-TR-5510" class="hover:text-secondary">شلوار واید لگ پشم و لنین زیتونی</a>
+              </h3>
+              <div class="flex items-center justify-between pt-space-xs">
+                <div class="font-label-lg text-label-lg text-primary font-bold">
+                  <span class="tabular-nums">۱,۸۲۰,۰۰۰</span>
+                  <span class="text-body-sm font-normal text-text-muted mr-1">تومان</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-text-muted">پیلی‌دار مزونی</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: کت تک آزاد لنین استخوانی -->
+          <div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+              <a href="product-detail.html?id=AES-JK-1102" class="block w-full h-full">
+                <img alt="کت تک آزاد لنین استخوانی" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvrRjcg7JnoV5VOwuwYYxf__-1oZc4vBzdpkZKBr7yqwkABxl6ZHhvdzhHrcbTqrFIIWBlb_ewJZEIo5C6-yVSc5elLi3fQgod8tBUbNCoQxqmRIy8R0eeMnw-FASbn0DFqqOFGvcUvTiajIYgGVJeXtDnw8RKANem7gC4PNgE61rvwaOJHLOnEMMnXpA4SlsGlqL2VJ5vLbzg5qYSZnRUxLVKd5il5FufW09MudAwRtmOWvVqhBIG" />
+              </a>
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-surface-cream text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm">تعداد محدود</span>
+              </div>
+              <button onclick="window.AestraWishlist.toggle('AES-JK-1102', this)" aria-label="افزودن به علاقه‌مندی" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center hover:text-terracotta-accent transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-[20px]">favorite</span>
+              </button>
+              <div class="absolute inset-x-3 bottom-3 z-10 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <button onclick="window.AestraCart.addItem({productId: 'AES-JK-1102', title: 'کت تک آزاد لنین استخوانی', price: 2450000, color: 'استخوانی بافت‌دار', size: '۳۸ (M)', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvrRjcg7JnoV5VOwuwYYxf__-1oZc4vBzdpkZKBr7yqwkABxl6ZHhvdzhHrcbTqrFIIWBlb_ewJZEIo5C6-yVSc5elLi3fQgod8tBUbNCoQxqmRIy8R0eeMnw-FASbn0DFqqOFGvcUvTiajIYgGVJeXtDnw8RKANem7gC4PNgE61rvwaOJHLOnEMMnXpA4SlsGlqL2VJ5vLbzg5qYSZnRUxLVKd5il5FufW09MudAwRtmOWvVqhBIG'})" class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-md flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span>افزودن سریع به سبد</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-space-md flex flex-col gap-space-xs text-right">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="w-3 h-3 rounded-full bg-[#E5DFD7] shadow-inner"></span>
+                <span class="w-3 h-3 rounded-full bg-[#2E3138] shadow-inner"></span>
+              </div>
+              <span class="font-body-sm text-body-sm text-text-muted">کت و پالتو پاییزه</span>
+              <h3 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1">
+                <a href="product-detail.html?id=AES-JK-1102" class="hover:text-secondary">کت تک آزاد لنین استخوانی</a>
+              </h3>
+              <div class="flex items-center justify-between pt-space-xs">
+                <div class="font-label-lg text-label-lg text-primary font-bold">
+                  <span class="tabular-nums">۲,۴۵۰,۰۰۰</span>
+                  <span class="text-body-sm font-normal text-text-muted mr-1">تومان</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-text-muted">دوخت دست‌دوز</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Promotional Campaign Split Banners (کمپین‌های فصلی) -->
+      <section class="w-full max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+          <!-- Right Promo Banner -->
+          <div class="relative overflow-hidden rounded-2xl bg-surface-cream p-space-xl flex flex-col justify-between min-h-[380px] shadow-sm group">
+            <div class="absolute inset-0 z-0">
+              <img alt="کالکشن مینیمال پاییزه" class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqH618Uf9F5cv389WGd6KHwQ9too96GMBaUzTjHh_gFlen39Qn8FPVCt6Fm3P5nkKhsw5b9zrmtFWQ2U0Pv0DYvZHmr-HqBmJ7XPVU5UuxkrJPXcBd6ud1Jj0hVB1dobJVm9LJgS2MlUUUUozZ1yhegoMB_yNgUhDGdaz49Ozw7rSyIMS9XShPM4nkLDIDz7KUde4qjqPZb50e_woW2ZT_G15-VKqwFwuRguJQymIk0mwkkuBOnQyF" />
+              <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-primary/90 via-primary/70 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col items-start gap-space-xs">
+              <span class="bg-terracotta-accent text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded-full uppercase tracking-wider font-semibold">
+                پیشنهاد خوش‌آمدگویی
+              </span>
+              <h3 class="font-headline-lg text-headline-lg text-on-primary font-bold pt-space-xs leading-snug">
+                کالکشن مینیمال پاییزه
+              </h3>
+              <p class="font-body-md text-body-md text-on-primary/85 max-w-sm mt-space-xs leading-relaxed">
+                ۲۰٪ تخفیف ویژه برای سفارش اول شما همراه با ارسال اختصاصی در سراسر تهران و ایران با کد:
+              </p>
+              <button onclick="navigator.clipboard?.writeText('AESTRA20'); window.showToast('کد تخفیف AESTRA20 کپی شد!')" class="inline-flex items-center gap-space-sm bg-surface-container-lowest/20 hover:bg-surface-container-lowest/30 backdrop-blur-md px-space-md py-1.5 rounded-lg text-on-primary mt-space-xs transition-colors">
+                <span class="font-mono text-label-lg tracking-widest font-bold">AESTRA20</span>
+                <span class="material-symbols-outlined text-[16px]">content_copy</span>
+              </button>
+            </div>
+            <div class="relative z-10 pt-space-lg">
+              <a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-primary px-space-lg py-3 rounded-lg font-label-md font-bold hover:bg-surface-subtle transition-all shadow-sm" href="products.html?cat=sale">
+                <span>خرید کالکشن</span>
+                <span class="material-symbols-outlined text-[16px] rotate-180">arrow_right_alt</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Left Promo Banner -->
+          <div class="relative overflow-hidden rounded-2xl bg-surface-subtle p-space-xl flex flex-col justify-between min-h-[380px] shadow-sm group">
+            <div class="absolute inset-0 z-0">
+              <img alt="اکسسوری و کمربندهای چرم طبیعی" class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-hTPKyl3xXXFQuYT6uq4sVTM2BcFsFmx4p4eWqx1ac5yeVg8-z5tlsLVt1D3z8FyUbsa7zO5vTWgjAjNnTyHQkAOR2U3tSv9LCg2q_1x2f-ED3RaDKNnz7MCITfWheHa_pUVrDgqSkIOktBIerdiCIGNq6wXOyDAZeFreF0uTjDN00yGzzU2MBfVNcNK9wrcGtyyDmUvpTlMIOnce_SwmWSK2G5Ah6Fb93tWcJmtZxN7vryRBMevb" />
+              <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-primary/85 via-primary/60 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex flex-col items-start gap-space-xs">
+              <span class="bg-warm-amber text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded-full uppercase tracking-wider font-semibold">
+                دست‌ساز و انحصاری
+              </span>
+              <h3 class="font-headline-lg text-headline-lg text-on-primary font-bold pt-space-xs leading-snug">
+                اکسسوری و چرم طبیعی
+              </h3>
+              <p class="font-body-md text-body-md text-on-primary/85 max-w-sm mt-space-xs leading-relaxed">
+                طراحی منحصر‌به‌فرد کمربندها و کیف‌های دست‌دوز، تکمیل‌کننده بی‌نقص استایل روزمره و اداری شما.
+              </p>
+            </div>
+            <div class="relative z-10 pt-space-lg">
+              <a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-primary px-space-lg py-3 rounded-lg font-label-md font-bold hover:bg-surface-subtle transition-all shadow-sm" href="products.html?cat=accessories">
+                <span>مشاهده اکسسوری‌ها</span>
+                <span class="material-symbols-outlined text-[16px] rotate-180">arrow_right_alt</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Special Offers / Flash Sale (تخفیف‌های ویژه و تایمر حراج) -->
+      <section class="w-full bg-surface-cream py-space-xl my-space-lg">
+        <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
+          <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-lg mb-space-lg">
+            <div class="flex flex-col gap-space-xs text-right">
+              <div class="inline-flex items-center gap-space-xs text-terracotta-accent">
+                <span class="material-symbols-outlined text-[20px]">bolt</span>
+                <span class="font-label-md text-label-md font-bold">فروش ویژه آخر هفته</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg text-primary font-bold">تخفیف‌های شگفت‌انگیز فصلی</h2>
+              <p class="font-body-md text-body-md text-text-muted">موجودی محدود برای منتخب برترین آیتم‌های کالکشن پاییز</p>
+            </div>
+
+            <!-- Live Countdown Timer Card -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-md min-w-[340px]">
+              <div class="flex items-center gap-space-xs text-text-muted font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[18px]">timer</span>
+                <span>زمان باقی‌مانده:</span>
+              </div>
+
+              <!-- Digits Grid -->
+              <div class="flex items-center gap-space-xs" dir="ltr">
+                <div class="flex flex-col items-center bg-surface-subtle px-2.5 py-1.5 rounded-lg min-w-[44px]">
+                  <span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums" id="countdown-hours">۲۴</span>
+                  <span class="text-label-sm font-label-sm text-text-muted">ساعت</span>
+                </div>
+                <span class="font-headline-sm text-primary font-bold">:</span>
+                <div class="flex flex-col items-center bg-surface-subtle px-2.5 py-1.5 rounded-lg min-w-[44px]">
+                  <span class="font-headline-sm text-headline-sm font-bold text-primary tabular-nums" id="countdown-minutes">۱۵</span>
+                  <span class="text-label-sm font-label-sm text-text-muted">دقیقه</span>
+                </div>
+                <span class="font-headline-sm text-primary font-bold">:</span>
+                <div class="flex flex-col items-center bg-surface-subtle px-2.5 py-1.5 rounded-lg min-w-[44px]">
+                  <span class="font-headline-sm text-headline-sm font-bold text-terracotta-accent tabular-nums" id="countdown-seconds">۰۸</span>
+                  <span class="text-label-sm font-label-sm text-text-muted">ثانیه</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-Column Special Deals Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+            <!-- Deal Item 1 -->
+            <div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-2/5 relative bg-surface-subtle">
+                <img alt="تیشرت کژوال ذغالی حراج" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c" />
+                <span class="absolute top-2 right-2 bg-terracotta-accent text-on-primary text-label-sm px-2 py-0.5 rounded-full font-bold">۲۵٪-</span>
+              </div>
+              <div class="w-3/5 p-space-md flex flex-col justify-between text-right">
+                <div>
+                  <span class="text-label-sm font-label-sm text-text-muted">تیشرت نخی</span>
+                  <h4 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1 mt-0.5">
+                    <a href="product-detail.html?id=AES-TS-9018" class="hover:text-secondary">تیشرت سنگ‌شور دودی</a>
+                  </h4>
+                  <div class="flex items-baseline gap-space-xs mt-2">
+                    <span class="font-label-lg text-label-lg font-bold text-terracotta-accent tabular-nums">۶۶۷,۰۰۰</span>
+                    <span class="text-body-sm font-normal text-text-muted">تومان</span>
+                    <del class="text-body-sm text-outline mr-1 tabular-nums">۸۹۰,۰۰۰</del>
+                  </div>
+                </div>
+                <div class="mt-space-sm">
+                  <div class="flex items-center justify-between text-label-sm text-text-muted mb-1">
+                    <span>فقط ۴ عدد در انبار</span>
+                    <span class="tabular-nums">۷۰٪ فروخته شده</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+                    <div class="h-full bg-terracotta-accent rounded-full w-[70%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deal Item 2 -->
+            <div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-2/5 relative bg-surface-subtle">
+                <img alt="شومیز لنین ابریشم حراج" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d" />
+                <span class="absolute top-2 right-2 bg-terracotta-accent text-on-primary text-label-sm px-2 py-0.5 rounded-full font-bold">۲۰٪-</span>
+              </div>
+              <div class="w-3/5 p-space-md flex flex-col justify-between text-right">
+                <div>
+                  <span class="text-label-sm font-label-sm text-text-muted">شومیز مجلسی</span>
+                  <h4 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1 mt-0.5">
+                    <a href="product-detail.html?id=AES-SH-2024-08" class="hover:text-secondary">بلوز پلیسه لنین ارگانیک</a>
+                  </h4>
+                  <div class="flex items-baseline gap-space-xs mt-2">
+                    <span class="font-label-lg text-label-lg font-bold text-terracotta-accent tabular-nums">۱,۳۲۰,۰۰۰</span>
+                    <span class="text-body-sm font-normal text-text-muted">تومان</span>
+                    <del class="text-body-sm text-outline mr-1 tabular-nums">۱,۶۵۰,۰۰۰</del>
+                  </div>
+                </div>
+                <div class="mt-space-sm">
+                  <div class="flex items-center justify-between text-label-sm text-text-muted mb-1">
+                    <span>فقط ۲ عدد در انبار</span>
+                    <span class="tabular-nums">۸۵٪ فروخته شده</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+                    <div class="h-full bg-terracotta-accent rounded-full w-[85%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deal Item 3 -->
+            <div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-2/5 relative bg-surface-subtle">
+                <img alt="شلوار راسته واید پشمی حراج" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1" />
+                <span class="absolute top-2 right-2 bg-terracotta-accent text-on-primary text-label-sm px-2 py-0.5 rounded-full font-bold">۱۸٪-</span>
+              </div>
+              <div class="w-3/5 p-space-md flex flex-col justify-between text-right">
+                <div>
+                  <span class="text-label-sm font-label-sm text-text-muted">شلوار پاییزه</span>
+                  <h4 class="font-headline-sm text-body-lg text-primary font-semibold line-clamp-1 mt-0.5">
+                    <a href="product-detail.html?id=AES-TR-5510" class="hover:text-secondary">شلوار واید زیتونی عمیق</a>
+                  </h4>
+                  <div class="flex items-baseline gap-space-xs mt-2">
+                    <span class="font-label-lg text-label-lg font-bold text-terracotta-accent tabular-nums">۱,۴۹۰,۰۰۰</span>
+                    <span class="text-body-sm font-normal text-text-muted">تومان</span>
+                    <del class="text-body-sm text-outline mr-1 tabular-nums">۱,۸۲۰,۰۰۰</del>
+                  </div>
+                </div>
+                <div class="mt-space-sm">
+                  <div class="flex items-center justify-between text-label-sm text-text-muted mb-1">
+                    <span>فقط ۵ عدد در انبار</span>
+                    <span class="tabular-nums">۵۵٪ فروخته شده</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+                    <div class="h-full bg-terracotta-accent rounded-full w-[55%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Trust & Value Badges (خدمات ویژه آسترا) -->
+      <section class="w-full max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+          <div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow text-right">
+            <div class="w-12 h-12 rounded-xl bg-surface-cream text-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[26px]">local_shipping</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-headline-sm text-headline-sm text-primary font-bold">ارسال سریع سراسر ایران</h4>
+              <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">تحویل تهران ۱ روزه، سایر استان‌ها ۲ الی ۳ روز کاری با پست پیشتاز اختصاصی.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow text-right">
+            <div class="w-12 h-12 rounded-xl bg-surface-cream text-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[26px]">published_with_changes</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-headline-sm text-headline-sm text-primary font-bold">ضمانت ۷ روز بازگشت کالا</h4>
+              <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">تعویض بی‌قید و شرط سایز یا عودت کامل وجه بدون دغدغه و اتلاف وقت.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow text-right">
+            <div class="w-12 h-12 rounded-xl bg-surface-cream text-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[26px]">verified</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-headline-sm text-headline-sm text-primary font-bold">اصالت پارچه و دوخت مزونی</h4>
+              <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">۱۰۰٪ الیاف طبیعی ارگانیک، دوخت استادانه با نظارت کیفی طراحان آسترا.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow text-right">
+            <div class="w-12 h-12 rounded-xl bg-surface-cream text-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[26px]">support_agent</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h4 class="font-headline-sm text-headline-sm text-primary font-bold">پشتیبانی ۲۴ ساعته</h4>
+              <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">مشاوره اختصاصی استایلینگ و راهنمایی لحظه‌ای از طریق چت و تماس تلفنی.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)] border-t border-border-hairline">
+    <!-- Newsletter Strip -->
+    <div class="bg-surface-cream py-space-lg px-4 md:px-margin-desktop">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg">
+        <div class="flex flex-col gap-space-xs text-right">
+          <h4 class="font-headline-sm text-headline-sm text-primary font-bold">عضویت در خبرنامه آسترا</h4>
+          <p class="font-body-sm text-body-sm text-text-muted">از جدیدترین کالکشن‌ها، تخفیف‌های اختصاصی و رویدادهای مد زودتر از دیگران باخبر شوید.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); window.showToast('ایمیل شما با موفقیت در خبرنامه ثبت گردید.'); this.reset();" class="flex items-center w-full md:w-auto min-w-[340px] max-w-md bg-surface-container-lowest rounded-lg p-space-xs shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+          <input required class="flex-1 bg-transparent px-space-sm py-space-xs border-0 outline-none font-body-md text-on-surface placeholder:text-outline" placeholder="شماره موبایل یا ایمیل شما..." type="email" />
+          <button class="bg-primary text-on-primary font-label-md px-space-lg py-space-sm rounded-lg hover:bg-primary-container transition-colors whitespace-nowrap" type="submit">عضویت</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 4-Column Footer Links -->
+    <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+        <!-- Col 1: About Brand -->
+        <div class="flex flex-col gap-space-md text-right">
+          <div class="flex items-center gap-space-xs">
+            <span class="font-headline-sm text-headline-sm text-primary font-bold">آسترا (AESTRA)</span>
+          </div>
+          <p class="font-body-md text-body-md text-text-muted leading-relaxed">
+            خلاقیت و مد معاصر با بالاترین استانداردهای دوخت و پارچه. تجربه مرور یک آتلیه فیزیکی معاصر در تهران، با رویکردی مینیمال و پارچه‌های باکیفیت برای سبک زندگی روزمره.
+          </p>
+          <div class="flex items-center gap-space-sm pt-space-xs">
+            <a class="w-9 h-9 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="https://instagram.com" target="_blank" rel="noreferrer" title="اینستاگرام">
+              <span class="material-symbols-outlined text-body-lg">photo_camera</span>
+            </a>
+            <button onclick="window.AestraTelegramOrder.openModal()" class="w-9 h-9 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" title="تلگرام">
+              <span class="material-symbols-outlined text-body-lg">send</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="flex flex-col gap-space-md text-right">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">دسترسی سریع</h5>
+          <ul class="flex flex-col gap-space-sm font-body-md">
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">صفحه اصلی</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html?cat=new">جدیدترین‌ها</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html?cat=sale">تخفیف‌های ویژه</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="product-detail.html?id=AES-SH-2024-08">راهنمای سایز و خرید</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Service -->
+        <div class="flex flex-col gap-space-md text-right">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">خدمات مشتریان</h5>
+          <ul class="flex flex-col gap-space-sm font-body-md">
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="cart.html">پیگیری سفارش و سبد خرید</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">رویه‌های بازگرداندن کالا</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">پرسش‌های متداول</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">شرایط و قوانین آتلیه</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Badges -->
+        <div class="flex flex-col gap-space-md text-right">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">تماس و پشتیبانی</h5>
+          <div class="flex flex-col gap-space-sm font-body-md text-text-muted">
+            <div class="flex items-start gap-space-xs">
+              <span class="material-symbols-outlined text-outline text-body-lg mt-1">location_on</span>
+              <span>تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-outline text-body-lg">call</span>
+              <span class="tabular-nums">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-outline text-body-lg">schedule</span>
+              <span>ساعات پاسخگویی: همه‌روزه از ۸ الی ۲۲</span>
+            </div>
+          </div>
+          <div class="pt-space-sm flex items-center gap-space-sm">
+            <div class="w-16 h-16 bg-surface-container-low rounded-lg flex items-center justify-center p-space-xs text-center font-label-sm text-text-muted shadow-[0_1px_4px_rgba(0,0,0,0.02)]">اینماد الکترونیکی</div>
+            <div class="w-16 h-16 bg-surface-container-low rounded-lg flex items-center justify-center p-space-xs text-center font-label-sm text-text-muted shadow-[0_1px_4px_rgba(0,0,0,0.02)]">نشان ملی ساماندهی</div>
+            <div class="w-16 h-16 bg-surface-container-low rounded-lg flex items-center justify-center p-space-xs text-center font-label-sm text-text-muted shadow-[0_1px_4px_rgba(0,0,0,0.02)]">ضمانت پرداخت</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-surface-cream py-space-md border-t border-border-hairline">
+      <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop text-center font-body-sm text-text-muted">
+        تمامی حقوق مادی و معنوی برای فروشگاه اینترنتی و آتلیه مد آسترا (AESTRA) محفوظ است © ۱۴۰۳.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live countdown timer execution
+    (function () {
+      let totalSeconds = 24 * 3600 + 15 * 60 + 8;
+      const hoursEl = document.getElementById('countdown-hours');
+      const minutesEl = document.getElementById('countdown-minutes');
+      const secondsEl = document.getElementById('countdown-seconds');
+
+      function updateCountdown() {
+        if (totalSeconds <= 0) return;
+        totalSeconds--;
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        if (hoursEl) hoursEl.textContent = Number(h).toLocaleString('fa-IR');
+        if (minutesEl) minutesEl.textContent = Number(m).toLocaleString('fa-IR');
+        if (secondsEl) secondsEl.textContent = Number(s).toLocaleString('fa-IR');
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AESTRA | سبد خرید شما</title>
+  <meta name="description" content="سبد خرید فروشگاه آنلاین آسترا - ثبت سریع سفارش در تلگرام و پرداخت امن بانکی با ارسال رایگان سراسر کشور." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary": "#ffffff",
+            "on-background": "#1c1b1c",
+            "surface-container-low": "#f6f3f3",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#d3c4ba",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dcd9d9",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#000000",
+            "inverse-on-surface": "#f3f0f0",
+            "on-surface": "#1c1b1c",
+            "surface-tint": "#5c5e64",
+            "surface-container": "#f1eded",
+            "primary": "#000102",
+            "surface-subtle": "#F4F4F4",
+            "secondary": "#4a5f85",
+            "on-tertiary-fixed-variant": "#4f453d",
+            "inverse-surface": "#313030",
+            "on-secondary-container": "#455a80",
+            "text-muted": "#6E7179",
+            "background": "#fcf8f8",
+            "secondary-fixed-dim": "#b1c7f3",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#44474c",
+            "terracotta-accent": "#C46243",
+            "on-surface-variant": "#45474b",
+            "surface-cream": "#FAF9F6",
+            "surface-bright": "#fcf8f8",
+            "primary-fixed-dim": "#c4c6cd",
+            "on-tertiary-fixed": "#221a14",
+            "surface": "#fcf8f8",
+            "outline-variant": "#c6c6cb",
+            "surface-container-high": "#ebe7e7",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#191c21",
+            "surface-container-highest": "#e5e2e2",
+            "on-secondary-fixed": "#011b3e",
+            "on-primary": "#ffffff",
+            "secondary-container": "#bcd2fe",
+            "border-hairline": "#E5E5E5",
+            "primary-container": "#191c21",
+            "warm-amber": "#DD9933",
+            "on-primary-container": "#82848a",
+            "primary-fixed": "#e1e2e9",
+            "inverse-primary": "#c4c6cd",
+            "secondary-fixed": "#d6e3ff",
+            "on-secondary-fixed-variant": "#32476c",
+            "surface-variant": "#e5e2e2",
+            "on-tertiary-container": "#8e8179",
+            "tertiary-container": "#221a14",
+            "tertiary-fixed": "#f0dfd5",
+            "outline": "#76777b",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "2rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "margin": "1rem",
+            "gutter": "1.25rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "display-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "display-lg-mobile": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Vazirmatn", "Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-lg": ["32px", { lineHeight: "44px", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-md": ["12px", { lineHeight: "18px", fontWeight: "500" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "34px", fontWeight: "600" }],
+            "display-lg": ["48px", { lineHeight: "60px", fontWeight: "700" }],
+            "label-sm": ["10px", { lineHeight: "14px", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "28px", fontWeight: "400" }],
+            "display-lg-mobile": ["32px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <!-- Top Navigation Bar -->
+  <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="bg-primary text-on-primary py-space-xs px-4 md:px-margin-desktop">
+      <div class="max-w-7xl mx-auto flex items-center justify-between text-label-md font-label-md">
+        <span class="truncate">ارسال رایگان برای خریدهای بالای ۲,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
+        <div class="flex items-center gap-space-sm shrink-0">
+          <span class="material-symbols-outlined text-body-sm">call</span>
+          <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-20 max-w-7xl mx-auto px-4 md:px-margin-desktop flex items-center justify-between gap-space-lg">
+      <div class="flex items-center gap-space-md">
+        <button class="mobile-menu-trigger lg:hidden p-2 text-primary hover:bg-surface-cream rounded-lg" aria-label="منوی موبایل">
+          <span class="material-symbols-outlined text-[26px]">menu</span>
+        </button>
+        <a class="flex items-center gap-space-sm group" href="index.html">
+          <img alt="AESTRA Brand Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WoaVL2NJmcM_y6fgHbLQjG9YnDsBfrLzNtLlXtoNUXYzsZpKQ8tzjO-YACh_PCX_S_nYnsgTHm7SeHSJTKT8vkgP5fzXJo6-sN3RS5Fyexps0Neq2_eEK-P96_S8LW5KcsjUnNNMqfvnDDMgS4jHRfRwCw9fQJJZ3-AepJa8KkEGEX4uEr00BzdezKhBMOUaPY1WULbWoMyvhPS6oV4yq9RYqiUOi3VLk7w78Nb8PDcpvZT3gp4A9re8k" />
+          <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary font-bold">AESTRA</span>
+        </a>
+      </div>
+
+      <div class="hidden sm:flex flex-1 max-w-xl mx-space-lg">
+        <div class="relative w-full flex items-center bg-surface-cream rounded-lg px-space-md py-space-xs">
+          <span class="material-symbols-outlined text-outline text-body-lg ml-space-sm">search</span>
+          <input class="w-full bg-transparent border-0 outline-none text-body-md text-on-surface placeholder:text-outline" placeholder="جستجوی محصولات، تیشرت، ست لباس..." type="text" />
+          <button class="text-label-sm font-label-sm bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded hover:bg-primary hover:text-on-primary transition-colors whitespace-nowrap" type="button">جستجو</button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-space-sm md:gap-space-md">
+        <a class="hidden md:flex items-center gap-space-xs text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg hover:bg-surface-container" href="contact.html">
+          <span class="material-symbols-outlined text-body-lg">person</span>
+          <span>ورود / ثبت‌نام</span>
+        </a>
+        <div class="hidden md:block h-6 w-[1px] bg-outline-variant"></div>
+        <button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" onclick="showToast('علاقه‌مندی‌های شما به‌روز شد')" title="علاقه‌مندی‌ها" type="button">
+          <span class="material-symbols-outlined text-headline-sm">favorite</span>
+          <span class="wishlist-count-badge absolute -top-1 -left-1 bg-terracotta-accent text-on-primary text-label-sm rounded-full w-5 h-5 flex items-center justify-center font-bold tabular-nums">۲</span>
+        </button>
+        <a aria-current="page" class="relative flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-xs rounded-lg transition-colors shadow-sm" href="cart.html">
+          <span class="material-symbols-outlined text-body-lg">shopping_bag</span>
+          <span class="text-label-md font-label-md hidden sm:inline">سبد خرید</span>
+          <span class="cart-count-badge bg-surface-container-lowest text-primary text-label-sm rounded-full px-space-xs font-bold tabular-nums">۳</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Category Subnavigation -->
+    <div class="bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] border-t border-border-hairline">
+      <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
+        <nav class="flex items-center gap-space-md py-space-xs overflow-x-auto text-label-md">
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="index.html">صفحه اصلی</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap flex items-center gap-space-xs" href="products.html?cat=new">
+            <span>جدیدترین‌ها</span>
+            <span class="bg-warm-amber text-on-primary text-label-sm px-space-xs py-[2px] rounded-full">جدید</span>
+          </a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=t-shirts">تیشرت</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=shirts-and-blouses">شومیز و پیراهن</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=trousers">شلوار</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=coordinated-sets">ست لباس</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="products.html?cat=accessories">اکسسوری</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap flex items-center gap-space-xs" href="products.html?cat=sale">
+            <span>تخفیف‌های ویژه</span>
+            <span class="bg-terracotta-accent text-on-primary text-label-sm px-space-xs py-[2px] rounded-full">فروش ویژه</span>
+          </a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="about.html">درباره ما</a>
+          <a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-all whitespace-nowrap" href="contact.html">تماس با ما</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Page Content -->
+  <main class="w-full pt-44 bg-surface">
+    <div class="flex flex-col w-full">
+      <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-md w-full">
+        <!-- Breadcrumb & Top Indicator -->
+        <div class="flex items-center justify-between text-body-sm text-text-muted mb-space-lg">
+          <div class="flex items-center gap-space-xs">
+            <a class="hover:text-primary transition-colors" href="index.html">خانه</a>
+            <span>/</span>
+            <span class="text-primary font-medium" id="cart-breadcrumb-count">سبد خرید شما (۳ کالا)</span>
+          </div>
+          <div class="flex items-center gap-space-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px]">verified_user</span>
+            <span>خرید امن و گارانتی اصالت کالا</span>
+          </div>
+        </div>
+
+        <!-- Stepper Navigation -->
+        <div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm mb-space-xl">
+          <div class="relative flex items-center justify-between max-w-3xl mx-auto">
+            <!-- Connecting Track -->
+            <div class="absolute top-1/2 right-8 left-8 -translate-y-1/2 h-[2px] bg-surface-container-high -z-0">
+              <div class="h-full bg-primary w-1/3 transition-all duration-500"></div>
+            </div>
+            <!-- Step 1: Active -->
+            <div class="relative z-10 flex flex-col items-center gap-space-xs bg-surface-container-lowest px-space-xs">
+              <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md shadow-md ring-4 ring-surface-cream">
+                <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+              </div>
+              <span class="font-label-md text-primary font-bold">۱. سبد خرید</span>
+              <span class="font-label-sm text-terracotta-accent">در حال بررسی</span>
+            </div>
+            <!-- Step 2: Next -->
+            <div class="relative z-10 flex flex-col items-center gap-space-xs bg-surface-container-lowest px-space-xs cursor-pointer" onclick="window.AestraTelegramOrder.openModal()">
+              <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md">
+                <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+              </div>
+              <span class="font-label-md text-text-muted">۲. آدرس و زمان ارسال</span>
+              <span class="font-label-sm text-secondary">سفارش تلگرام</span>
+            </div>
+            <!-- Step 3: Final -->
+            <div class="relative z-10 flex flex-col items-center gap-space-xs bg-surface-container-lowest px-space-xs">
+              <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md">
+                <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+              </div>
+              <span class="font-label-md text-text-muted">۳. پرداخت نهایی</span>
+              <span class="font-label-sm text-transparent">گام نهایی</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Delivery Threshold Notice -->
+        <div class="bg-surface-cream rounded-xl p-space-md mb-space-lg shadow-sm text-right">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-xs">
+            <div class="flex items-center gap-space-xs text-primary font-label-md">
+              <span class="material-symbols-outlined text-warm-amber">local_shipping</span>
+              <span id="free-shipping-text">تبریک! خرید شما مشمول <strong>ارسال رایگان اکسپرس</strong> به تمام نقاط ایران گردید.</span>
+            </div>
+            <span class="font-label-sm text-on-surface-variant">حداقل مبلغ ارسال رایگان: ۲,۰۰۰,۰۰۰ تومان</span>
+          </div>
+          <!-- Progress Bar -->
+          <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+            <div id="free-shipping-progress" class="h-full bg-primary rounded-full w-full transition-all duration-700"></div>
+          </div>
+        </div>
+
+        <!-- Two-Column Cart Architecture -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+          <!-- Right Main Column: Cart Items -->
+          <section class="lg:col-span-8 flex flex-col gap-space-md">
+            <!-- Table Header (Desktop) -->
+            <div class="hidden md:grid grid-cols-12 gap-space-md bg-surface-container-lowest px-space-lg py-space-sm rounded-lg text-label-md text-text-muted shadow-sm text-right">
+              <span class="col-span-6">مشخصات محصول</span>
+              <span class="col-span-2 text-center">قیمت واحد</span>
+              <span class="col-span-2 text-center">تعداد</span>
+              <span class="col-span-2 text-left">مجموع قیمت</span>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div class="flex flex-col gap-space-md" id="cart-item-list">
+              <!-- Dynamically populated from JS -->
+            </div>
+
+            <!-- Cart Actions & Continuation -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md">
+              <a class="inline-flex items-center gap-space-xs text-primary font-label-md hover:text-secondary transition-colors group font-semibold" href="products.html">
+                <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                <span>ادامه خرید و مشاهده محصولات بیشتر</span>
+              </a>
+              <button onclick="clearCartConfirm()" class="text-on-surface-variant hover:text-error font-label-md transition-colors flex items-center gap-space-xs py-space-xs px-space-sm rounded-lg hover:bg-error-container/10" type="button">
+                <span class="material-symbols-outlined text-[18px]">remove_shopping_cart</span>
+                <span>خالی کردن کامل سبد خرید</span>
+              </button>
+            </div>
+
+            <!-- Editorial Care & Styling Banner -->
+            <div class="bg-surface-cream rounded-xl p-space-lg flex flex-col md:flex-row items-center gap-space-lg mt-space-md text-right">
+              <div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm flex-shrink-0">
+                <span class="material-symbols-outlined text-primary text-[32px]">checkroom</span>
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <h3 class="font-headline-sm text-headline-sm text-primary font-bold">تضمین سایزبندی و آتلیه آنلاین آسترا</h3>
+                <p class="font-body-sm text-text-muted leading-relaxed">
+                  تمام سفارشات در بسته‌بندی امضای آسترا، ضدعفونی شده و به همراه کاور کتان اختصاصی ارسال می‌شوند. امکان تعویض رایگان سایز در تهران فراهم است.
+                </p>
+              </div>
+              <a class="px-space-md py-space-xs bg-surface-container-lowest text-primary rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all shadow-sm whitespace-nowrap font-medium" href="product-detail.html?id=AES-SH-2024-08">
+                مشاهده راهنمای سایز
+              </a>
+            </div>
+          </section>
+
+          <!-- Left Sidebar: Order Summary & Checkout -->
+          <aside class="lg:col-span-4 flex flex-col gap-space-md sticky top-48 text-right">
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+              <div class="flex items-center justify-between pb-space-sm border-b border-border-hairline">
+                <h3 class="font-headline-sm text-headline-sm text-primary font-bold">خلاصه فاکتور سفارش</h3>
+                <span id="summary-badge-count" class="font-label-sm bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant tabular-nums">۳ کالا</span>
+              </div>
+
+              <!-- Line items -->
+              <div class="flex flex-col gap-space-sm font-body-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-text-muted">مجموع قیمت کالاها:</span>
+                  <span class="text-primary font-semibold tabular-nums"><span id="sum-subtotal">۵,۲۵۰,۰۰۰</span> <span class="text-[12px] font-normal text-text-muted">تومان</span></span>
+                </div>
+                <div class="flex items-center justify-between text-terracotta-accent">
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">local_offer</span>
+                    <span>سود شما از تخفیف‌ها:</span>
+                  </span>
+                  <span class="font-semibold tabular-nums">- <span id="sum-discount">۵۵۰,۰۰۰</span> <span class="text-[12px] font-normal">تومان</span></span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-text-muted">هزینه بسته‌بندی و ارسال:</span>
+                  <span class="text-on-surface font-medium flex items-center gap-1">
+                    <span class="line-through text-outline text-[12px] tabular-nums">۸۵,۰۰۰</span>
+                    <span class="text-secondary font-bold">رایگان</span>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between text-label-sm text-text-muted pt-1">
+                  <span>مالیات بر ارزش افزوده (۹٪):</span>
+                  <span class="text-on-surface-variant">محاسبه شده در قیمت</span>
+                </div>
+              </div>
+
+              <div class="h-[1px] bg-border-hairline my-space-xs"></div>
+
+              <!-- Total Payable -->
+              <div class="flex items-baseline justify-between py-space-xs">
+                <div class="flex flex-col">
+                  <span class="font-label-lg text-primary font-bold">مبلغ نهایی قابل پرداخت:</span>
+                  <span class="font-label-sm text-text-muted">با احتساب کلیه کسورات</span>
+                </div>
+                <div class="flex items-baseline gap-1">
+                  <span id="sum-total-payable" class="font-display-lg-mobile text-display-lg-mobile text-primary font-extrabold tracking-tight tabular-nums">۴,۷۰۰,۰۰۰</span>
+                  <span class="font-label-md text-text-muted">تومان</span>
+                </div>
+              </div>
+
+              <!-- Coupon Input Form -->
+              <div class="pt-space-xs">
+                <label class="font-label-md text-on-surface-variant block mb-1.5 font-semibold" for="coupon-field">کد تخفیف یا کارت هدیه</label>
+                <div class="flex items-center gap-space-xs">
+                  <input class="flex-1 bg-surface-cream rounded-lg px-space-md py-space-xs font-body-md text-on-surface placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all uppercase" id="coupon-field" placeholder="مثلاً: AESTRA10" type="text" />
+                  <button onclick="applyCouponCode()" class="bg-surface-container-high text-on-surface font-label-md px-space-md py-space-xs rounded-lg hover:bg-primary hover:text-on-primary transition-colors whitespace-nowrap" type="button">
+                    ثبت کد
+                  </button>
+                </div>
+              </div>
+
+              <!-- Primary CTA Button (Telegram & Checkout) -->
+              <button onclick="window.AestraTelegramOrder.openModal()" class="w-full bg-primary text-on-primary py-3.5 px-space-lg rounded-lg font-label-lg font-bold flex items-center justify-center gap-space-sm hover:bg-primary-container transition-all shadow-md group mt-space-xs" type="button">
+                <span>ثبت و تکمیل سفارش در تلگرام</span>
+                <span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-x-1">arrow_back</span>
+              </button>
+
+              <!-- Safe Shopping / Guarantees -->
+              <div class="bg-surface-cream rounded-lg p-space-sm flex flex-col gap-space-xs mt-space-xs text-body-sm text-on-surface-variant">
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-warm-amber text-[18px]">verified</span>
+                  <span>ضمانت اصالت و بازگشت وجه تا ۷ روز</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+                  <span>پرداخت ۱۰۰٪ امن از درگاه‌های معتبر بانکی</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-outline text-[18px]">support_agent</span>
+                  <span>پشتیبانی اختصاصی آنلاین و تلفنی</span>
+                </div>
+              </div>
+
+              <!-- Payment Gateways Logos preview -->
+              <div class="flex flex-col items-center gap-space-xs pt-space-xs">
+                <span class="font-label-sm text-outline">درگاه‌های پرداخت متصل به شبکه رسمی شاپرک</span>
+                <div class="flex items-center justify-center gap-space-md grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all">
+                  <div class="w-10 h-7 rounded bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">ملت</div>
+                  <div class="w-10 h-7 rounded bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">سامان</div>
+                  <div class="w-10 h-7 rounded bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">پارسیان</div>
+                  <div class="w-10 h-7 rounded bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">اسنپ‌پی</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Atelier Note -->
+            <div class="bg-surface-container-low rounded-xl p-space-md text-right text-text-muted font-body-sm">
+              <p class="leading-relaxed">
+                کاربر گرامی، افزودن کالا به سبد خرید به معنی رزرو قطعی موجودی کالا نیست. لطفا برای جلوگیری از اتمام موجودی فرآیند خرید را تکمیل فرمایید.
+              </p>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Suggested Complementary Products (You may also like) -->
+        <section class="mt-space-xl pt-space-lg text-right">
+          <div class="flex items-center justify-between mb-space-lg">
+            <div class="flex flex-col gap-1">
+              <span class="font-label-sm text-terracotta-accent uppercase tracking-wider font-semibold">استایل پیشنهادی استایلیست آسترا</span>
+              <h2 class="font-headline-lg text-headline-lg text-primary font-bold">تکمیل‌کننده استایل شما</h2>
+            </div>
+            <a class="font-label-md text-primary hover:text-secondary flex items-center gap-1 group font-medium" href="products.html">
+              <span>مشاهده همه</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+            <!-- Rec Item 1: Belt -->
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col">
+              <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+                <img alt="کمربند چرم طبیعی با سگک برنجی" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA05lnMS-x4JaARSP-KK74b0q1nAVlGJfhaF6RwFuq1henpsi5F4munpfAzgAmdVxdZL0uh9VNvcY8CPt5w1opwNkpK-aK9M_W2RsOAYjoBE0-irmWLkS81FeICMGeVGwr52QYAWZ2x1wKi57Xo0v_CCPLG7AR8k7bDVvc2cmnZrP2GXOiSmB8rHLKi8CvwznRExBY0NvjRYx0IjsILVDWUfNdscdUw1rvjo07GPiKbq_mHkNMb2mrk" />
+                <button onclick="window.AestraCart.addItem({productId: 'AES-AC-1090', title: 'کمربند چرم طبیعی با سگک برنجی', price: 480000, color: 'قهوه‌ای', size: 'سایز آزاد', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA05lnMS-x4JaARSP-KK74b0q1nAVlGJfhaF6RwFuq1henpsi5F4munpfAzgAmdVxdZL0uh9VNvcY8CPt5w1opwNkpK-aK9M_W2RsOAYjoBE0-irmWLkS81FeICMGeVGwr52QYAWZ2x1wKi57Xo0v_CCPLG7AR8k7bDVvc2cmnZrP2GXOiSmB8rHLKi8CvwznRExBY0NvjRYx0IjsILVDWUfNdscdUw1rvjo07GPiKbq_mHkNMb2mrk'}); renderCart();" aria-label="افزودن به سبد" class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:bg-secondary transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                </button>
+              </div>
+              <div class="p-space-sm flex flex-col gap-1 flex-1 justify-between">
+                <div>
+                  <span class="font-label-sm text-text-muted">اکسسوری</span>
+                  <h3 class="font-label-lg text-primary truncate font-semibold">کمربند چرم طبیعی با سگک برنجی</h3>
+                </div>
+                <div class="flex items-baseline justify-between pt-2">
+                  <span class="font-label-md text-primary font-bold tabular-nums">۴۸۰,۰۰۰ تومان</span>
+                  <span class="font-label-sm text-text-muted">سایز آزاد</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec Item 2: Ribbed Vest -->
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col">
+              <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+                <img alt="تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNEtyjwCYcNS0Q1_f6TZ7E-UGXvqlXMyGA52ZmpgNAXNQHIIb7SlllXNwvnt815TEFss59foiiNhliJBn5XymMye71xqQuORTflTZlKSucpAhcJt5Omo7OE6C02Pjpc-mEZyic8OehDufYfAVx9PWFNck7C-iYncP0jEdnkh2-whTL6stfw6w_74NpvscsHY-nIQkcVLIj1Fic8oT-NsBqjthKITzmhNaSNPcmL5k2TdsvI21Wvxqk" />
+                <button onclick="window.AestraCart.addItem({productId: 'AES-TP-2201', title: 'تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه', price: 620000, color: 'کرم شیری', size: 'M', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNEtyjwCYcNS0Q1_f6TZ7E-UGXvqlXMyGA52ZmpgNAXNQHIIb7SlllXNwvnt815TEFss59foiiNhliJBn5XymMye71xqQuORTflTZlKSucpAhcJt5Omo7OE6C02Pjpc-mEZyic8OehDufYfAVx9PWFNck7C-iYncP0jEdnkh2-whTL6stfw6w_74NpvscsHY-nIQkcVLIj1Fic8oT-NsBqjthKITzmhNaSNPcmL5k2TdsvI21Wvxqk'}); renderCart();" aria-label="افزودن به سبد" class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:bg-secondary transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                </button>
+              </div>
+              <div class="p-space-sm flex flex-col gap-1 flex-1 justify-between">
+                <div>
+                  <span class="font-label-sm text-text-muted">تاپ و نیم‌تنه</span>
+                  <h3 class="font-label-lg text-primary truncate font-semibold">تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه</h3>
+                </div>
+                <div class="flex items-baseline justify-between pt-2">
+                  <span class="font-label-md text-primary font-bold tabular-nums">۶۲۰,۰۰۰ تومان</span>
+                  <span class="font-label-sm text-text-muted">S / M / L</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec Item 3: Earrings -->
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col">
+              <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+                <img alt="گوشواره حلقه برجسته طلایی مات" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6flNWxq3R6Ya0SYJwXeuyhRyRSZGvUscnFRms55Zp66Ctpk9fXdr11v-J6ds5HWQxGPDLYR6f1r5fFCupB7veckYWGqjbbDGBzbqTIJrhPW-8V7vr0e6XUnQB9Mwa9XXQTR2pIl_9y26eNwcwUmWQel8Y3vDpPHAKJGEMqI7kN_Lnqp_0OB_foj-BTmZk0b0-y4NwLojO9PLsW6UBZ6JVxChgAnZOKWgwUYJ6nCLIzx7rOqqiVSiW" />
+                <button onclick="window.AestraCart.addItem({productId: 'AES-JW-041', title: 'گوشواره حلقه برجسته طلایی مات', price: 390000, color: 'طلایی مات', size: 'استاندارد', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6flNWxq3R6Ya0SYJwXeuyhRyRSZGvUscnFRms55Zp66Ctpk9fXdr11v-J6ds5HWQxGPDLYR6f1r5fFCupB7veckYWGqjbbDGBzbqTIJrhPW-8V7vr0e6XUnQB9Mwa9XXQTR2pIl_9y26eNwcwUmWQel8Y3vDpPHAKJGEMqI7kN_Lnqp_0OB_foj-BTmZk0b0-y4NwLojO9PLsW6UBZ6JVxChgAnZOKWgwUYJ6nCLIzx7rOqqiVSiW'}); renderCart();" aria-label="افزودن به سبد" class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:bg-secondary transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                </button>
+              </div>
+              <div class="p-space-sm flex flex-col gap-1 flex-1 justify-between">
+                <div>
+                  <span class="font-label-sm text-text-muted">زیورآلات مینیمال</span>
+                  <h3 class="font-label-lg text-primary truncate font-semibold">گوشواره حلقه برجسته طلایی مات</h3>
+                </div>
+                <div class="flex items-baseline justify-between pt-2">
+                  <span class="font-label-md text-primary font-bold tabular-nums">۳۹۰,۰۰۰ تومان</span>
+                  <span class="font-label-sm text-text-muted">استیل ضدحساسیت</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec Item 4: Sneakers -->
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col">
+              <div class="relative w-full aspect-[3/4] bg-surface-subtle overflow-hidden">
+                <img alt="اسنیکر چرم کرم ارگانیک آسترا" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr653h7SGVbCEgMJ2Uz3WyAelgFluyhjCDqS_PFx1OvQJd2ZCa02Cn1vDIM-LtdIX6m-INvux7kvgIZIS5ciPvb1jQUuIQ0LKKUhorXRnaCtGid56LWepLDKHjwyprYEruigkZqefCBou4-2ugEzX-VEtZ1cZhmzEKDlQbD0CXiLphrgaHIu04qM-j0kHFZ12QrkpGr3pomWxHqg6ydN1MP5VF4lCOj1Hz1QjrZI3wdSt0f4IX8ii0" />
+                <button onclick="window.AestraCart.addItem({productId: 'AES-FW-990', title: 'اسنیکر چرم کرم ارگانیک آسترا', price: 2350000, color: 'کرم استخوانی', size: '38', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCr653h7SGVbCEgMJ2Uz3WyAelgFluyhjCDqS_PFx1OvQJd2ZCa02Cn1vDIM-LtdIX6m-INvux7kvgIZIS5ciPvb1jQUuIQ0LKKUhorXRnaCtGid56LWepLDKHjwyprYEruigkZqefCBou4-2ugEzX-VEtZ1cZhmzEKDlQbD0CXiLphrgaHIu04qM-j0kHFZ12QrkpGr3pomWxHqg6ydN1MP5VF4lCOj1Hz1QjrZI3wdSt0f4IX8ii0'}); renderCart();" aria-label="افزودن به سبد" class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:bg-secondary transition-colors" type="button">
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                </button>
+              </div>
+              <div class="p-space-sm flex flex-col gap-1 flex-1 justify-between">
+                <div>
+                  <span class="font-label-sm text-text-muted">کفش</span>
+                  <h3 class="font-label-lg text-primary truncate font-semibold">اسنیکر چرم کرم ارگانیک آسترا</h3>
+                </div>
+                <div class="flex items-baseline justify-between pt-2">
+                  <span class="font-label-md text-primary font-bold tabular-nums">۲,۳۵۰,۰۰۰ تومان</span>
+                  <span class="font-label-sm text-text-muted">۳۷ الی ۴۱</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)] border-t border-border-hairline">
+    <div class="bg-surface-cream py-space-lg px-4 md:px-margin-desktop">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg">
+        <div class="flex flex-col gap-space-xs text-right">
+          <h4 class="font-headline-sm text-headline-sm text-primary font-bold">عضویت در خبرنامه آسترا</h4>
+          <p class="font-body-sm text-body-sm text-text-muted">از جدیدترین کالکشن‌ها، تخفیف‌های اختصاصی و رویدادهای مد زودتر از دیگران باخبر شوید.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); window.showToast('ایمیل شما ثبت شد.'); this.reset();" class="flex items-center w-full md:w-auto min-w-[340px] max-w-md bg-surface-container-lowest rounded-lg p-space-xs shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+          <input required class="flex-1 bg-transparent px-space-sm py-space-xs border-0 outline-none font-body-md text-on-surface placeholder:text-outline" placeholder="شماره موبایل یا ایمیل شما..." type="email" />
+          <button class="bg-primary text-on-primary font-label-md px-space-lg py-space-sm rounded-lg hover:bg-primary-container transition-colors whitespace-nowrap" type="submit">عضویت</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-space-xl text-right">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+        <div class="flex flex-col gap-space-md">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">آسترا (AESTRA)</span>
+          <p class="font-body-md text-body-md text-text-muted leading-relaxed">
+            خلاقیت و مد معاصر با بالاترین استانداردهای دوخت و پارچه. تجربه مرور یک آتلیه فیزیکی معاصر در تهران، با رویکردی مینیمال و پارچه‌های باکیفیت برای سبک زندگی روزمره.
+          </p>
+        </div>
+        <div class="flex flex-col gap-space-md">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">دسترسی سریع</h5>
+          <ul class="flex flex-col gap-space-sm font-body-md">
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">صفحه اصلی</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html?cat=new">جدیدترین‌ها</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html?cat=sale">تخفیف‌های ویژه</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">راهنمای سایز</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-md">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">خدمات مشتریان</h5>
+          <ul class="flex flex-col gap-space-sm font-body-md">
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="cart.html">پیگیری سفارش</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">رویه‌های بازگرداندن کالا</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">پرسش‌های متداول</a></li>
+            <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">شرایط و قوانین</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-md">
+          <h5 class="font-headline-sm text-headline-sm text-primary font-bold">تماس و پشتیبانی</h5>
+          <div class="flex flex-col gap-space-sm font-body-md text-text-muted">
+            <div class="flex items-start gap-space-xs">
+              <span class="material-symbols-outlined text-outline text-body-lg mt-1">location_on</span>
+              <span>تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-outline text-body-lg">call</span>
+              <span class="tabular-nums">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-cream py-space-md border-t border-border-hairline text-center font-body-sm text-text-muted">
+      تمامی حقوق مادی و معنوی برای فروشگاه اینترنتی آسترا (AESTRA) محفوظ است © ۱۴۰۳.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    let discountAmount = 550000;
+    let couponPercent = 0;
+
+    function renderCart() {
+      const items = window.AestraCart.getItems();
+      const listEl = document.getElementById('cart-item-list');
+      const topCountEl = document.getElementById('cart-breadcrumb-count');
+      const summaryCountEl = document.getElementById('summary-badge-count');
+      const subtotalEl = document.getElementById('sum-subtotal');
+      const discountEl = document.getElementById('sum-discount');
+      const totalPayableEl = document.getElementById('sum-total-payable');
+      const progressEl = document.getElementById('free-shipping-progress');
+      const shippingNotice = document.getElementById('free-shipping-text');
+
+      const totalItemsCount = window.AestraCart.getTotalCount();
+      if (topCountEl) topCountEl.textContent = `سبد خرید شما (${totalItemsCount.toLocaleString('fa-IR')} کالا)`;
+      if (summaryCountEl) summaryCountEl.textContent = `${totalItemsCount.toLocaleString('fa-IR')} کالا`;
+
+      if (items.length === 0) {
+        listEl.innerHTML = `
+          <div class="bg-surface-container-lowest rounded-xl p-12 text-center flex flex-col items-center justify-center gap-4 shadow-sm">
+            <div class="w-20 h-20 rounded-full bg-surface-cream flex items-center justify-center text-outline">
+              <span class="material-symbols-outlined text-[36px]">shopping_bag</span>
+            </div>
+            <h3 class="font-headline-sm font-bold text-primary">سبد خرید شما در حال حاضر خالی است</h3>
+            <p class="text-text-muted text-body-sm max-w-sm">کالکشن‌های جدید و پیراهن‌های لینن آسترا را بررسی کنید و استایل خود را بسازید.</p>
+            <a href="products.html" class="mt-2 bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md font-bold hover:bg-primary-container transition-colors">مشاهده جدیدترین محصولات</a>
+          </div>
+        `;
+        if (subtotalEl) subtotalEl.textContent = '۰';
+        if (discountEl) discountEl.textContent = '۰';
+        if (totalPayableEl) totalPayableEl.textContent = '۰';
+        if (progressEl) progressEl.style.width = '0%';
+        if (shippingNotice) shippingNotice.innerHTML = 'حداقل مبلغ برای ارسال رایگان ۲,۰۰۰,۰۰۰ تومان می‌باشد.';
+        return;
+      }
+
+      let subtotal = 0;
+      listEl.innerHTML = items.map(item => {
+        const itemTotal = item.unitPrice * (item.quantity || 1);
+        subtotal += itemTotal;
+        return `
+          <article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+              <!-- Product Media & Details -->
+              <div class="col-span-1 md:col-span-6 flex gap-space-md items-center text-right">
+                <div class="relative w-24 h-32 md:w-28 md:h-36 rounded-lg overflow-hidden bg-surface-subtle flex-shrink-0">
+                  <a href="product-detail.html?id=${item.productId}">
+                    <img alt="${item.title}" class="w-full h-full object-cover" src="${item.image}" />
+                  </a>
+                  ${item.tag ? `<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-md px-1.5 py-0.5 rounded text-[10px] font-label-sm text-primary">${item.tag}</span>` : ''}
+                </div>
+                <div class="flex flex-col gap-1 min-w-0 flex-1">
+                  <span class="font-label-sm text-text-muted uppercase tracking-wider">${item.collection || 'AESTRA'}</span>
+                  <h2 class="font-headline-sm text-headline-sm text-primary truncate hover:text-secondary transition-colors font-semibold">
+                    <a href="product-detail.html?id=${item.productId}">${item.title}</a>
+                  </h2>
+                  <div class="flex flex-wrap items-center gap-space-xs font-body-sm text-on-surface-variant mt-1">
+                    <span class="inline-flex items-center gap-1 bg-surface-cream px-2 py-0.5 rounded">
+                      <span class="w-2.5 h-2.5 rounded-full" style="background-color: ${item.colorHex || '#ccc'};"></span>
+                      ${item.color}
+                    </span>
+                    <span class="bg-surface-cream px-2 py-0.5 rounded">سایز: ${item.size}</span>
+                  </div>
+                  <span class="font-label-sm text-outline mt-1 font-mono">کد: ${item.code || item.productId}</span>
+                </div>
+              </div>
+
+              <!-- Unit Price -->
+              <div class="col-span-1 md:col-span-2 flex md:flex-col justify-between items-center md:items-center text-center">
+                <span class="md:hidden font-body-sm text-text-muted">قیمت واحد:</span>
+                <span class="font-label-md text-on-surface font-semibold tabular-nums">${item.unitPrice.toLocaleString('fa-IR')} <span class="font-normal text-text-muted text-[11px]">تومان</span></span>
+              </div>
+
+              <!-- Quantity Controls -->
+              <div class="col-span-1 md:col-span-2 flex justify-between md:justify-center items-center">
+                <span class="md:hidden font-body-sm text-text-muted">تعداد:</span>
+                <div class="flex items-center bg-surface-cream rounded-lg p-1 shadow-inner">
+                  <button onclick="window.AestraCart.updateQuantity('${item.id}', 1); renderCart();" aria-label="افزایش تعداد" class="w-8 h-8 rounded bg-surface-container-lowest text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors text-label-md font-bold" type="button">+</button>
+                  <span class="w-8 text-center font-label-md text-primary font-bold tabular-nums">${item.quantity.toLocaleString('fa-IR')}</span>
+                  <button onclick="window.AestraCart.updateQuantity('${item.id}', -1); renderCart();" aria-label="کاهش تعداد" class="w-8 h-8 rounded bg-surface-container-lowest text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors text-label-md font-bold" type="button">-</button>
+                </div>
+              </div>
+
+              <!-- Total Item Price & Remove -->
+              <div class="col-span-1 md:col-span-2 flex justify-between md:justify-end items-center gap-space-md">
+                <span class="md:hidden font-body-sm text-text-muted">مجموع این قلم:</span>
+                <div class="flex flex-col items-end">
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold tabular-nums">${itemTotal.toLocaleString('fa-IR')}</span>
+                  <span class="font-label-sm text-text-muted">تومان</span>
+                </div>
+                <button onclick="window.AestraCart.removeItem('${item.id}'); renderCart();" class="p-2 text-outline hover:text-error hover:bg-error-container/20 rounded-lg transition-colors" title="حذف کالا" type="button">
+                  <span class="material-symbols-outlined text-[20px]">delete_outline</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // Recalculate summary totals
+      let effectiveDiscount = discountAmount;
+      if (couponPercent > 0) {
+        effectiveDiscount = Math.round(subtotal * (couponPercent / 100));
+      }
+      effectiveDiscount = Math.min(effectiveDiscount, subtotal);
+      const totalPayable = Math.max(0, subtotal - effectiveDiscount);
+
+      if (subtotalEl) subtotalEl.textContent = subtotal.toLocaleString('fa-IR');
+      if (discountEl) discountEl.textContent = effectiveDiscount.toLocaleString('fa-IR');
+      if (totalPayableEl) totalPayableEl.textContent = totalPayable.toLocaleString('fa-IR');
+
+      // Free shipping threshold logic (2,000,000 threshold)
+      const threshold = 2000000;
+      const progressPercent = Math.min(100, Math.round((totalPayable / threshold) * 100));
+      if (progressEl) progressEl.style.width = `${progressPercent}%`;
+
+      if (shippingNotice) {
+        if (totalPayable >= threshold) {
+          shippingNotice.innerHTML = 'تبریک! خرید شما مشمول <strong>ارسال رایگان اکسپرس</strong> به تمام نقاط ایران گردید.';
+        } else {
+          const diff = threshold - totalPayable;
+          shippingNotice.innerHTML = `تنها <strong>${diff.toLocaleString('fa-IR')} تومان</strong> دیگر تا دریافت <strong>ارسال رایگان اکسپرس</strong> فاصله دارید!`;
+        }
+      }
+    }
+
+    function applyCouponCode() {
+      const code = document.getElementById('coupon-field')?.value?.trim()?.toUpperCase();
+      if (!code) {
+        showToast('لطفاً کد تخفیف را وارد فرمایید.');
+        return;
+      }
+      if (code === 'AESTRA10') {
+        couponPercent = 10;
+        showToast('کد تخفیف ۱۰٪ آسترا با موفقیت اعمال گردید.');
+        renderCart();
+      } else if (code === 'AESTRA20') {
+        couponPercent = 20;
+        showToast('کد تخفیف ۲۰٪ ویژه کالکشن با موفقیت اعمال گردید.');
+        renderCart();
+      } else {
+        showToast('کد تخفیف وارد شده معتبر نمی‌باشد.');
+      }
+    }
+
+    function clearCartConfirm() {
+      if (confirm('آیا از خالی کردن کامل سبد خرید مطمئن هستید؟')) {
+        window.AestraCart.clearCart();
+        renderCart();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+    });
+
+    window.addEventListener('cartUpdated', () => {
+      renderCart();
+    });
+  </script>
+</body>
+</html>
