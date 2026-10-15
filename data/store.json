@@ -2,37 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-AC-1090",
-      "title": "کمربند چرم طبیعی با سگک برنجی دست‌ساز",
-      "shortTitle": "کمربند چرم طبیعی با سگک برنجی",
-      "collection": "AESTRA ACCESSORIES",
-      "category": "accessories",
-      "categoryFa": "اکسسوری",
-      "price": 480000,
-      "originalPrice": 480000,
-      "discountPercent": 0,
-      "tag": "دست‌ساز",
-      "badgeType": "dark",
-      "rating": 4.9,
-      "reviewsCount": 45,
-      "stock": 12,
-      "colors": [
-        {
-          "name": "قهوه‌ای سوخته ایتالیایی",
-          "hex": "#3B261A",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "سایز آزاد (Free)"
-      ],
-      "defaultSize": "سایز آزاد",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA05lnMS-x4JaARSP-KK74b0q1nAVlGJfhaF6RwFuq1henpsi5F4munpfAzgAmdVxdZL0uh9VNvcY8CPt5w1opwNkpK-aK9M_W2RsOAYjoBE0-irmWLkS81FeICMGeVGwr52QYAWZ2x1wKi57Xo0v_CCPLG7AR8k7bDVvc2cmnZrP2GXOiSmB8rHLKi8CvwznRExBY0NvjRYx0IjsILVDWUfNdscdUw1rvjo07GPiKbq_mHkNMb2mrk",
-      "fabric": "۱۰۰٪ چرم گاوی دباغی گیاهی و برنج دست‌ساز",
-      "fit": "عرض ۲.۵ سانتی‌متر با طول قابل تنظیم",
-      "origin": "کارگاه چرم آسترا (تبریز)"
-    },
-    {
       "id": "AES-TP-2201",
       "title": "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه کرم",
       "shortTitle": "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه",
