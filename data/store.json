@@ -1,42 +1,6 @@
 {
   "version": 1,
-  "products": [
-    {
-      "id": "AES-FW-990",
-      "title": "اسنیکر چرم کرم ارگانیک آسترا",
-      "shortTitle": "اسنیکر چرم کرم ارگانیک آسترا",
-      "collection": "AESTRA FOOTWEAR",
-      "category": "accessories",
-      "categoryFa": "کفش",
-      "price": 2350000,
-      "originalPrice": 2350000,
-      "discountPercent": 0,
-      "tag": "چرم طبیعی",
-      "badgeType": "dark",
-      "rating": 4.9,
-      "reviewsCount": 33,
-      "stock": 4,
-      "colors": [
-        {
-          "name": "کرم استخوانی",
-          "hex": "#EDE8DF",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "37",
-        "38",
-        "39",
-        "40",
-        "41"
-      ],
-      "defaultSize": "38",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCr653h7SGVbCEgMJ2Uz3WyAelgFluyhjCDqS_PFx1OvQJd2ZCa02Cn1vDIM-LtdIX6m-INvux7kvgIZIS5ciPvb1jQUuIQ0LKKUhorXRnaCtGid56LWepLDKHjwyprYEruigkZqefCBou4-2ugEzX-VEtZ1cZhmzEKDlQbD0CXiLphrgaHIu04qM-j0kHFZ12QrkpGr3pomWxHqg6ydN1MP5VF4lCOj1Hz1QjrZI3wdSt0f4IX8ii0",
-      "fabric": "چرم ناپا نرم طبیعی با زیره طبی پلی‌اورتان",
-      "fit": "استاندارد ارگونومیک برای پیاده‌روی شهری",
-      "origin": "کارگاه کفش تبریز به سفارش آسترا"
-    }
-  ],
+  "products": [],
   "settings": {
     "siteName": "AESTRA | آسترا",
     "siteTagline": "فروشگاه مد و آتلیه طراحی معاصر",
