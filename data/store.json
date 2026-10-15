@@ -2,40 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-SH-3309",
-      "title": "بلوز آستین پفی ارگانیک پنبه استودیو تهران",
-      "shortTitle": "بلوز آستین پفی ارگانیک پنبه",
-      "collection": "AESTRA STUDIO",
-      "category": "shirts-and-blouses",
-      "categoryFa": "شومیز و پیراهن",
-      "price": 1520000,
-      "originalPrice": 1520000,
-      "discountPercent": 0,
-      "tag": "جدید",
-      "badgeType": "primary",
-      "rating": 4.8,
-      "reviewsCount": 14,
-      "stock": 4,
-      "colors": [
-        {
-          "name": "کرم عاجی",
-          "hex": "#F3ECE1",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "36 (S)",
-        "38 (M)",
-        "40 (L)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDcOJWgkxIWpDfzkIoQGHicshWFzKaDWSJsb0eVrDRx_ljIyKQ6Ge3JWyVtlrsX2Yl63TdDoEw4OaOAWNg4NTUSXyPdN7tK-2RjVIzRrYzk3cmiiattx0xk_a4DY6QPKpngzFdneCbaC0wBvpeOy0CrxvExsROwvmgNbt1L1GzVOQBer3Qzi_nwQYsIuftuEmcy3LE6pFt5KdPc2Ywr_eXmzRsnZT0H-98BYhZq7qoAER7VzZ7ZkKoA",
-      "fabric": "۱۰۰٪ پنبه ارگانیک لطیف",
-      "fit": "راحت با سرشانه فانتزی",
-      "season": "بهار و تابستان",
-      "origin": "تهران"
-    },
-    {
       "id": "AES-SH-4420",
       "title": "شومیز دکمه مخفی استخوانی یقه مردانه مدرن",
       "shortTitle": "شومیز دکمه مخفی استخوانی",
