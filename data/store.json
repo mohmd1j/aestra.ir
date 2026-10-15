@@ -2,52 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-TR-5510",
-      "title": "شلوار واید لگ پشم و لنین زیتونی",
-      "shortTitle": "شلوار واید لگ پشم و لنین زیتونی",
-      "collection": "AESTRA TAILORING",
-      "category": "trousers",
-      "categoryFa": "شلوار و دامن",
-      "price": 1600000,
-      "originalPrice": 1600000,
-      "discountPercent": 0,
-      "tag": "پرفروش‌ترین",
-      "badgeType": "amber",
-      "rating": 4.9,
-      "reviewsCount": 38,
-      "stock": 5,
-      "colors": [
-        {
-          "name": "سبز زیتونی ملایم",
-          "hex": "#555C41",
-          "selected": true
-        },
-        {
-          "name": "مشکی ذغالی",
-          "hex": "#202020"
-        }
-      ],
-      "sizes": [
-        "38 (M)",
-        "40 (L)",
-        "42 (XL)"
-      ],
-      "defaultSize": "40 (L)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1",
-      "fabric": "۵۰٪ لنین بلژیکی، ۵۰٪ پشم بهاره ظریف",
-      "fit": "واید لگ و پیلی‌دار آزادی‌بخش",
-      "season": "چهارفصل",
-      "origin": "استودیو طراحی آسترا (تهران)",
-      "gallery": [
-        {
-          "label": "تصویر اصلی",
-          "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1"
-        }
-      ],
-      "closure": "",
-      "pleat": ""
-    },
-    {
       "id": "AES-TS-9018",
       "title": "تیشرت اورسایز واش ذغالی ۱۰۰٪ پنبه",
       "shortTitle": "تیشرت اورسایز واش ذغالی",
