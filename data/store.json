@@ -2,42 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-TS-9018",
-      "title": "تیشرت اورسایز واش ذغالی ۱۰۰٪ پنبه",
-      "shortTitle": "تیشرت اورسایز واش ذغالی",
-      "collection": "AESTRA ESSENTIALS",
-      "category": "t-shirts",
-      "categoryFa": "تیشرت و بیسیک",
-      "price": 890000,
-      "originalPrice": 1050000,
-      "discountPercent": 15,
-      "tag": "تخفیف ویژه",
-      "badgeType": "terracotta",
-      "rating": 4.7,
-      "reviewsCount": 56,
-      "stock": 8,
-      "colors": [
-        {
-          "name": "خاکستری ذغالی تیره",
-          "hex": "#414244",
-          "selected": true
-        },
-        {
-          "name": "استخوانی شسته شده",
-          "hex": "#E8E5DD"
-        }
-      ],
-      "sizes": [
-        "فری‌سایز (Over)"
-      ],
-      "defaultSize": "فری‌سایز (Over)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c",
-      "fabric": "۱۰۰٪ پنبه سنگ‌شور سوپرشانه",
-      "fit": "اورسایز مدرن کژوال",
-      "season": "بهار و تابستان",
-      "origin": "آسترا استودیو"
-    },
-    {
       "id": "AES-JK-1102",
       "title": "کت تک آزاد لنین استخوانی دست‌دوز",
       "shortTitle": "کت تک آزاد لنین استخوانی",
