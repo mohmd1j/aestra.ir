@@ -131,10 +131,10 @@
   <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="bg-primary text-on-primary py-space-xs px-4 md:px-margin-desktop">
       <div class="max-w-7xl mx-auto flex items-center justify-between text-label-md font-label-md">
-        <span class="truncate">ارسال رایگان برای خریدهای بالای ۲,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
+        <span class="truncate">ارسال رایگان برای خریدهای بالای ۱۰,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
         <div class="flex items-center gap-space-sm shrink-0">
           <span class="material-symbols-outlined text-body-sm">call</span>
-          <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰</span>
+          <span class="tabular-nums" data-live="phone" data-tpl="{v}">۰۲۱-۹۱۰۲۸۰۰۰</span>
         </div>
       </div>
     </div>
@@ -259,7 +259,7 @@
               <span class="material-symbols-outlined text-warm-amber">local_shipping</span>
               <span id="free-shipping-text">تبریک! خرید شما مشمول <strong>ارسال رایگان اکسپرس</strong> به تمام نقاط ایران گردید.</span>
             </div>
-            <span class="font-label-sm text-on-surface-variant">حداقل مبلغ ارسال رایگان: ۲,۰۰۰,۰۰۰ تومان</span>
+            <span id="cart-min-threshold-label" class="font-label-sm text-on-surface-variant">حداقل مبلغ ارسال رایگان: ۱۰,۰۰۰,۰۰۰ تومان</span>
           </div>
           <!-- Progress Bar -->
           <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
@@ -560,11 +560,11 @@
           <div class="flex flex-col gap-space-sm font-body-md text-text-muted">
             <div class="flex items-start gap-space-xs">
               <span class="material-symbols-outlined text-outline text-body-lg mt-1">location_on</span>
-              <span>تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
+              <span data-live="address">تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
             </div>
             <div class="flex items-center gap-space-xs">
               <span class="material-symbols-outlined text-outline text-body-lg">call</span>
-              <span class="tabular-nums">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
+              <span class="tabular-nums" data-live="phone" data-tpl="تلفن تماس: {v}">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
             </div>
           </div>
         </div>
@@ -580,7 +580,6 @@
   <script src="assets/js/products-data.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    let discountAmount = 550000;
     let couponPercent = 0;
 
     function renderCart() {
@@ -613,7 +612,7 @@
         if (discountEl) discountEl.textContent = '۰';
         if (totalPayableEl) totalPayableEl.textContent = '۰';
         if (progressEl) progressEl.style.width = '0%';
-        if (shippingNotice) shippingNotice.innerHTML = 'حداقل مبلغ برای ارسال رایگان ۲,۰۰۰,۰۰۰ تومان می‌باشد.';
+        if (shippingNotice) shippingNotice.innerHTML = 'حداقل مبلغ برای ارسال رایگان ۱۰,۰۰۰,۰۰۰ تومان می‌باشد.';
         return;
       }
 
@@ -681,10 +680,8 @@
       }).join('');
 
       // Recalculate summary totals
-      let effectiveDiscount = discountAmount;
-      if (couponPercent > 0) {
-        effectiveDiscount = Math.round(subtotal * (couponPercent / 100));
-      }
+      const appliedCoupon = window.AestraCoupon.getApplied(subtotal);
+      let effectiveDiscount = appliedCoupon ? appliedCoupon.amount : 0;
       effectiveDiscount = Math.min(effectiveDiscount, subtotal);
       const totalPayable = Math.max(0, subtotal - effectiveDiscount);
 
@@ -692,10 +689,16 @@
       if (discountEl) discountEl.textContent = effectiveDiscount.toLocaleString('fa-IR');
       if (totalPayableEl) totalPayableEl.textContent = totalPayable.toLocaleString('fa-IR');
 
-      // Free shipping threshold logic (2,000,000 threshold)
-      const threshold = 2000000;
+      // Free shipping threshold logic from centralized store
+      const threshold = (window.AestraConfig && window.AestraConfig.getSettings().freeShippingThreshold) || 10000000;
       const progressPercent = Math.min(100, Math.round((totalPayable / threshold) * 100));
       if (progressEl) progressEl.style.width = `${progressPercent}%`;
+
+      // Update minimum threshold badge
+      const thresholdLabelEl = document.getElementById('cart-min-threshold-label');
+      if (thresholdLabelEl) {
+        thresholdLabelEl.textContent = `حداقل مبلغ ارسال رایگان: ${threshold.toLocaleString('fa-IR')} تومان`;
+      }
 
       if (shippingNotice) {
         if (totalPayable >= threshold) {
@@ -708,22 +711,21 @@
     }
 
     function applyCouponCode() {
-      const code = document.getElementById('coupon-field')?.value?.trim()?.toUpperCase();
+      const code = (document.getElementById('coupon-field')?.value || '').trim().toUpperCase();
       if (!code) {
         showToast('لطفاً کد تخفیف را وارد فرمایید.');
         return;
       }
-      if (code === 'AESTRA10') {
-        couponPercent = 10;
-        showToast('کد تخفیف ۱۰٪ آسترا با موفقیت اعمال گردید.');
-        renderCart();
-      } else if (code === 'AESTRA20') {
-        couponPercent = 20;
-        showToast('کد تخفیف ۲۰٪ ویژه کالکشن با موفقیت اعمال گردید.');
-        renderCart();
-      } else {
-        showToast('کد تخفیف وارد شده معتبر نمی‌باشد.');
+      const subtotal = window.AestraCart.getItems().reduce((sum, i) => sum + i.unitPrice * i.quantity, 0);
+      const coupon = window.AestraCoupon.find(code);
+      const err = window.AestraCoupon.check(coupon, subtotal);
+      if (err) {
+        showToast(err);
+        return;
       }
+      window.AestraCoupon.save(coupon.code);
+      showToast('کد تخفیف ' + Number(coupon.percent).toLocaleString('fa-IR') + '٪ با موفقیت اعمال گردید.');
+      renderCart();
     }
 
     function clearCartConfirm() {

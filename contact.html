@@ -131,10 +131,10 @@
   <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="bg-primary text-on-primary py-space-xs px-4 md:px-margin-desktop">
       <div class="max-w-7xl mx-auto flex items-center justify-between text-label-md font-label-md">
-        <span class="truncate">ارسال رایگان برای خریدهای بالای ۲,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
+        <span class="truncate">ارسال رایگان برای خریدهای بالای ۱۰,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
         <div class="flex items-center gap-space-sm shrink-0">
           <span class="material-symbols-outlined text-body-sm">call</span>
-          <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰</span>
+          <span class="tabular-nums" data-live="phone" data-tpl="{v}">۰۲۱-۹۱۰۲۸۰۰۰</span>
         </div>
       </div>
     </div>
@@ -236,9 +236,9 @@
             <div class="flex flex-col gap-2 pt-1">
               <button onclick="window.AestraTelegramOrder.openModal()" class="w-full bg-surface-container-lowest text-primary py-3 rounded-lg font-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-subtle transition-colors shadow-sm">
                 <span class="material-symbols-outlined text-[20px]">send</span>
-                <span>ارتباط مستقیم در تلگرام (@aestra_atelier)</span>
+                <span data-live="telegramUsername" data-tpl="ارتباط مستقیم در تلگرام ({v})">ارتباط مستقیم در تلگرام (@aestra_atelier)</span>
               </button>
-              <a href="https://wa.me/9891028000" target="_blank" class="w-full bg-[#25D366] text-white py-3 rounded-lg font-label-md font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+              <a href="https://wa.me/9891028000" data-live-href="whatsapp" target="_blank" class="w-full bg-[#25D366] text-white py-3 rounded-lg font-label-md font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
                 <span class="material-symbols-outlined text-[20px]">chat</span>
                 <span>ارتباط و مشاوره در واتس‌اپ</span>
               </a>
@@ -256,7 +256,7 @@
                 </div>
                 <div>
                   <strong class="text-on-surface block mb-0.5">نشانی آتلیه:</strong>
-                  <span>تهران، خیابان ولیعصر، بالاتر از پارک ساعی، مجتمع طراحان معاصر، طبقه ۳، آتلیه آسترا</span>
+                  <span data-live="address">تهران، خیابان ولیعصر، بالاتر از پارک ساعی، مجتمع طراحان معاصر، طبقه ۳، آتلیه آسترا</span>
                 </div>
               </div>
 
@@ -266,8 +266,8 @@
                 </div>
                 <div>
                   <strong class="text-on-surface block mb-0.5">تلفن‌های تماس:</strong>
-                  <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰ (خط ویژه آتلیه)</span><br />
-                  <span class="tabular-nums">۰۹۱۰۲۸۰۰۰۲۱ (مشاوره استایل)</span>
+                  <span class="tabular-nums" data-live="phone" data-tpl="{v} (خط ویژه آتلیه)">۰۲۱-۹۱۰۲۸۰۰۰ (خط ویژه آتلیه)</span><br />
+                  <span class="tabular-nums" data-live="mobile" data-tpl="{v} (مشاوره استایل)">۰۹۱۰۲۸۰۰۰۲۱ (مشاوره استایل)</span>
                 </div>
               </div>
 
@@ -277,8 +277,7 @@
                 </div>
                 <div>
                   <strong class="text-on-surface block mb-0.5">ساعات پذیرش و پاسخگویی:</strong>
-                  <span>شنبه تا پنجشنبه: ۱۰:۳۰ الی ۲۱:۰۰</span><br />
-                  <span class="text-[12px]">جمعه‌ها: ۱۵:۰۰ الی ۲۰:۰۰ (با هماهنگی قبلی)</span>
+                  <span data-live="workingHours">شنبه تا پنجشنبه: ۱۰:۳۰ الی ۲۱:۰۰ | جمعه‌ها: ۱۵:۰۰ الی ۲۰:۰۰ (با هماهنگی قبلی)</span>
                 </div>
               </div>
             </div>
@@ -412,7 +411,7 @@
         <div class="flex flex-col gap-space-md">
           <h5 class="font-headline-sm text-headline-sm text-primary font-bold">تماس مستقیم</h5>
           <div class="flex flex-col gap-space-sm font-body-md text-text-muted">
-            <span class="tabular-nums">تلفن ویژه: ۰۲۱-۹۱۰۲۸۰۰۰</span>
+            <span class="tabular-nums" data-live="phone" data-tpl="تلفن ویژه: {v}">تلفن ویژه: ۰۲۱-۹۱۰۲۸۰۰۰</span>
             <span class="tabular-nums">موبایل مشاوره: ۰۹۱۰۲۸۰۰۰۲۱</span>
             <span>پاسخگویی: ۸ الی ۲۲</span>
           </div>

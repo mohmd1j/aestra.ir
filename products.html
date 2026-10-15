@@ -131,10 +131,10 @@
   <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="bg-primary text-on-primary py-space-xs px-4 md:px-margin-desktop">
       <div class="max-w-7xl mx-auto flex items-center justify-between text-label-md font-label-md">
-        <span class="truncate">ارسال رایگان برای خریدهای بالای ۲,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
+        <span class="truncate">ارسال رایگان برای خریدهای بالای ۱۰,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز</span>
         <div class="flex items-center gap-space-sm shrink-0">
           <span class="material-symbols-outlined text-body-sm">call</span>
-          <span class="tabular-nums">۰۲۱-۹۱۰۲۸۰۰۰</span>
+          <span class="tabular-nums" data-live="phone" data-tpl="{v}">۰۲۱-۹۱۰۲۸۰۰۰</span>
         </div>
       </div>
     </div>
@@ -486,15 +486,15 @@
           <div class="flex flex-col gap-space-sm font-body-md text-text-muted">
             <div class="flex items-start gap-space-xs">
               <span class="material-symbols-outlined text-outline text-body-lg mt-1">location_on</span>
-              <span>تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
+              <span data-live="address">تهران، خیابان ولیعصر، مرکز طراحی و فشن آسترا</span>
             </div>
             <div class="flex items-center gap-space-xs">
               <span class="material-symbols-outlined text-outline text-body-lg">call</span>
-              <span class="tabular-nums">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
+              <span class="tabular-nums" data-live="phone" data-tpl="تلفن تماس: {v}">تلفن تماس: ۰۲۱-۹۱۰۲۸۰۰۰</span>
             </div>
             <div class="flex items-center gap-space-xs">
               <span class="material-symbols-outlined text-outline text-body-lg">schedule</span>
-              <span>ساعات پاسخگویی: همه‌روزه از ۸ الی ۲۲</span>
+              <span data-live="workingHours" data-tpl="ساعات پاسخگویی: {v}">ساعات پاسخگویی: همه‌روزه از ۸ الی ۲۲</span>
             </div>
           </div>
         </div>
@@ -512,6 +512,7 @@
   <script>
     let currentCategory = 'all';
     let maxPrice = 3000000;
+    let DEFAULT_MAX = 3000000;
     let selectedColor = 'all';
     let selectedSize = 'all';
     let activeSort = 'newest';
@@ -588,15 +589,15 @@
 
     function resetFilters() {
       currentCategory = 'all';
-      maxPrice = 3000000;
+      maxPrice = DEFAULT_MAX;
       selectedColor = 'all';
       selectedSize = 'all';
       activeSort = 'newest';
       searchKeyword = '';
 
       document.querySelector('input[name="catFilter"][value="all"]').checked = true;
-      document.getElementById('price-range-input').value = 3000000;
-      document.getElementById('price-range-label').textContent = '۳,۰۰۰,۰۰۰';
+      document.getElementById('price-range-input').value = DEFAULT_MAX;
+      document.getElementById('price-range-label').textContent = Number(DEFAULT_MAX).toLocaleString('fa-IR');
       document.getElementById('in-stock-only').checked = true;
       document.getElementById('on-sale-only').checked = false;
       const sInput = document.getElementById('catalog-search');
@@ -728,7 +729,40 @@
       }).join('');
     }
 
+    // the price slider always reaches the most expensive product, so nothing is hidden by default
+    function syncPriceRange() {
+      const top = (window.AESTRA_PRODUCTS || []).reduce((m, p) => Math.max(m, Number(p.price) || 0), 0);
+      const max = Math.max(3000000, Math.ceil(top / 500000) * 500000);
+      const el = document.getElementById('price-range-input');
+      if (!el) return;
+      const follow = maxPrice >= Number(el.max);
+      DEFAULT_MAX = max;
+      el.max = max;
+      if (follow) {
+        el.value = max;
+        maxPrice = max;
+        document.getElementById('price-range-label').textContent = Number(max).toLocaleString('fa-IR');
+      }
+    }
+
+    // keep the category counters in the filter in sync with the real catalogue
+    function updateCategoryCounts() {
+      const all = window.AESTRA_PRODUCTS || [];
+      document.querySelectorAll('input[name="catFilter"]').forEach((radio) => {
+        const label = radio.closest('label');
+        const badge = label && label.querySelector('.tabular-nums');
+        if (!badge) return;
+        const n = radio.value === 'all' ? all.length : all.filter((p) => p.category === radio.value).length;
+        badge.textContent = n.toLocaleString('fa-IR');
+      });
+    }
     document.addEventListener('DOMContentLoaded', () => {
+      syncPriceRange();
+      updateCategoryCounts();
+      applyFilters();
+    });
+    window.addEventListener('productsUpdated', () => {
+      syncPriceRange();
       applyFilters();
     });
   </script>
