@@ -2,41 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-SH-4420",
-      "title": "شومیز دکمه مخفی استخوانی یقه مردانه مدرن",
-      "shortTitle": "شومیز دکمه مخفی استخوانی",
-      "collection": "AESTRA MINIMAL",
-      "category": "shirts-and-blouses",
-      "categoryFa": "شومیز و پیراهن",
-      "price": 1390000,
-      "originalPrice": 1390000,
-      "discountPercent": 0,
-      "tag": "یقه مردانه مدرن",
-      "badgeType": "dark",
-      "rating": 4.9,
-      "reviewsCount": 27,
-      "stock": 6,
-      "colors": [
-        {
-          "name": "استخوانی روشن",
-          "hex": "#FAF8F5",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "36 (S)",
-        "38 (M)",
-        "40 (L)",
-        "42 (XL)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuChC_I9hDUiRAdVeRpOIB8BCrrZBKP6Nb1KrUGU88y8hFSyLb6nun4M9bWXEQxdrjp3YxxCQ-Poxyn_LVsLOva33kxCzKeL2AADWmWIwsaqge_Bj9BSmuS-AEYhrwZYdVpAa_zf2uuik9olWjjKI8yKVyE2rV6o-GjH1CZ0pss80ZudbJnl82dw0WDFVrWL9wUUSZNq80EDuDUPPs1wojeoGg51kSDERr82_-ZumvFkAUfc_hQy2L-i",
-      "fabric": "الیاف کتان طبیعی کج‌راه",
-      "fit": "کلاسیک مدرن",
-      "season": "چهارفصل",
-      "origin": "آسترا"
-    },
-    {
       "id": "AES-DR-8812",
       "title": "پیراهن میدی کرپ کتان ریزش‌دار تابستانه",
       "shortTitle": "پیراهن میدی کرپ تابستانه",
