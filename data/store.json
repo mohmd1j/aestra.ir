@@ -2,37 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-JW-041",
-      "title": "گوشواره حلقه برجسته طلایی مات استیل ضدحساسیت",
-      "shortTitle": "گوشواره حلقه برجسته طلایی مات",
-      "collection": "AESTRA JEWELRY",
-      "category": "accessories",
-      "categoryFa": "زیورآلات مینیمال",
-      "price": 390000,
-      "originalPrice": 390000,
-      "discountPercent": 0,
-      "tag": "ضدحساسیت",
-      "badgeType": "primary",
-      "rating": 4.8,
-      "reviewsCount": 29,
-      "stock": 15,
-      "colors": [
-        {
-          "name": "طلایی مات",
-          "hex": "#D4AF37",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "سایز استاندارد"
-      ],
-      "defaultSize": "استاندارد",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC6flNWxq3R6Ya0SYJwXeuyhRyRSZGvUscnFRms55Zp66Ctpk9fXdr11v-J6ds5HWQxGPDLYR6f1r5fFCupB7veckYWGqjbbDGBzbqTIJrhPW-8V7vr0e6XUnQB9Mwa9XXQTR2pIl_9y26eNwcwUmWQel8Y3vDpPHAKJGEMqI7kN_Lnqp_0OB_foj-BTmZk0b0-y4NwLojO9PLsW6UBZ6JVxChgAnZOKWgwUYJ6nCLIzx7rOqqiVSiW",
-      "fabric": "استیل عیار ۳۱۶ با روکش طلای ۱۸ عیار مات",
-      "fit": "بسیار سبک و بدون فشار به لاله گوش",
-      "origin": "استودیو زیورآلات آسترا"
-    },
-    {
       "id": "AES-FW-990",
       "title": "اسنیکر چرم کرم ارگانیک آسترا",
       "shortTitle": "اسنیکر چرم کرم ارگانیک آسترا",
