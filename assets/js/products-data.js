@@ -1,6 +1,6 @@
 /**
  * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
- * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۵:۴۹
+ * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۶:۳۲
  * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
  */
 
@@ -53,9 +53,9 @@
     "collection": "AESTRA ATELIER",
     "category": "shirts-and-blouses",
     "categoryFa": "شومیز و پیراهن",
-    "price": 16500000,
+    "price": 1000000,
     "originalPrice": 1950000,
-    "discountPercent": 0,
+    "discountPercent": 49,
     "tag": "کالکشن جدید",
     "badgeType": "terracotta",
     "rating": 4.8,
