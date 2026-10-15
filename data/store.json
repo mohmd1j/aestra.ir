@@ -2,43 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-JK-1102",
-      "title": "کت تک آزاد لنین استخوانی دست‌دوز",
-      "shortTitle": "کت تک آزاد لنین استخوانی",
-      "collection": "AESTRA ATELIER",
-      "category": "coordinated-sets",
-      "categoryFa": "ست لباس و کت",
-      "price": 2450000,
-      "originalPrice": 2450000,
-      "discountPercent": 0,
-      "tag": "تعداد محدود",
-      "badgeType": "primary",
-      "rating": 5,
-      "reviewsCount": 19,
-      "stock": 2,
-      "colors": [
-        {
-          "name": "استخوانی بافت‌دار",
-          "hex": "#E5DFD7",
-          "selected": true
-        },
-        {
-          "name": "مشکی سرمه‌ای",
-          "hex": "#2E3138"
-        }
-      ],
-      "sizes": [
-        "38 (M)",
-        "40 (L)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvrRjcg7JnoV5VOwuwYYxf__-1oZc4vBzdpkZKBr7yqwkABxl6ZHhvdzhHrcbTqrFIIWBlb_ewJZEIo5C6-yVSc5elLi3fQgod8tBUbNCoQxqmRIy8R0eeMnw-FASbn0DFqqOFGvcUvTiajIYgGVJeXtDnw8RKANem7gC4PNgE61rvwaOJHLOnEMMnXpA4SlsGlqL2VJ5vLbzg5qYSZnRUxLVKd5il5FufW09MudAwRtmOWvVqhBIG",
-      "fabric": "۱۰۰٪ لنین خام طبیعی با آستر کتان تنفس‌پذیر",
-      "fit": "تک‌کت بوی‌فرند ریلکس",
-      "season": "پاییز و بهار",
-      "origin": "استودیو طراحی آسترا"
-    },
-    {
       "id": "AES-SH-3309",
       "title": "بلوز آستین پفی ارگانیک پنبه استودیو تهران",
       "shortTitle": "بلوز آستین پفی ارگانیک پنبه",
