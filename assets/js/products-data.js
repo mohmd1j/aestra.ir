@@ -1,6 +1,6 @@
 /**
  * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
- * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۱۳:۳۷
+ * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۱۴:۳۸
  * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
  */
 
