@@ -2,39 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-DR-8812",
-      "title": "پیراهن میدی کرپ کتان ریزش‌دار تابستانه",
-      "shortTitle": "پیراهن میدی کرپ تابستانه",
-      "collection": "AESTRA DRESS",
-      "category": "shirts-and-blouses",
-      "categoryFa": "شومیز و پیراهن",
-      "price": 2100000,
-      "originalPrice": 2100000,
-      "discountPercent": 0,
-      "tag": "موجودی محدود",
-      "badgeType": "terracotta",
-      "rating": 4.6,
-      "reviewsCount": 11,
-      "stock": 2,
-      "colors": [
-        {
-          "name": "سرمه‌ای دودی",
-          "hex": "#2C3440",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "38 (M)",
-        "40 (L)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzScS1CVK7uQsgoOHDgsTe2mTCq_1zTedcaYtzmxBKWLrVGK4WBhAL8n5M0qesd4nDBMyT5-fL4r-Arfp0cjFoAwZeg7m0sqY9ZRPG2hsIayLwNkXl5CFATSgY-TDD0WXOo0wUJIw5m43IC2Ue4ENIZi5syfU1YLJYTEtRVYdId4chgnyFm-zkpIrqJzJbsqKFN8vL6d96YVF_E8j7Zrp2lTBsJ8ZtDJ_daoisg9eOwZLQANWKG1rD",
-      "fabric": "کرپ کتان سبک و ریزش‌دار",
-      "fit": "میدی راسته با کمربند پارچه‌ای",
-      "season": "بهار و تابستان",
-      "origin": "تهران"
-    },
-    {
       "id": "AES-SH-5541",
       "title": "شومیز کتان پاییزه کرم کج‌راه",
       "shortTitle": "شومیز کتان پاییزه کرم",
