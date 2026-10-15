@@ -1,6 +1,6 @@
 /**
  * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
- * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۶:۳۲
+ * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۷:۲۱
  * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
  */
 
@@ -541,7 +541,7 @@
   "adminPin": "1234",
   "heroSlides": [
     {
-      "badge": "کالکشن جدید پاییز و زمستان",
+      "badge": "کالکشن جدید پاییز و زمستان1405",
       "title": "زیبایی در سادگی؛ اصالت در جزئیات",
       "subtitle": "مجموعه انحصاری پیراهن، شومیز و شلوارهای دوخت اختصاصی با پارچه‌های خالص طبیعی و لنین ارگانیک",
       "btnText": "مشاهده تمام کالکشن",
@@ -549,7 +549,7 @@
       "bgImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d"
     },
     {
-      "badge": "دست‌دوز استودیو تهران",
+      "badge": "دست‌دوز ",
       "title": "آتلیه طراحی معاصر آسترا",
       "subtitle": "رویکردی نو در طراحی پوشاک ایرانی؛ ظرافت پایدار بدون وابستگی به ترندهای گذرا",
       "btnText": "آشنایی با آتلیه",
