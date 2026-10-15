@@ -2,40 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-TP-2201",
-      "title": "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه کرم",
-      "shortTitle": "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه",
-      "collection": "AESTRA ESSENTIALS",
-      "category": "t-shirts",
-      "categoryFa": "تیشرت و تاپ",
-      "price": 620000,
-      "originalPrice": 620000,
-      "discountPercent": 0,
-      "tag": "بیسیک",
-      "badgeType": "primary",
-      "rating": 4.7,
-      "reviewsCount": 18,
-      "stock": 9,
-      "colors": [
-        {
-          "name": "کرم شیری",
-          "hex": "#F3EFE6",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "defaultSize": "M",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCNEtyjwCYcNS0Q1_f6TZ7E-UGXvqlXMyGA52ZmpgNAXNQHIIb7SlllXNwvnt815TEFss59foiiNhliJBn5XymMye71xqQuORTflTZlKSucpAhcJt5Omo7OE6C02Pjpc-mEZyic8OehDufYfAVx9PWFNck7C-iYncP0jEdnkh2-whTL6stfw6w_74NpvscsHY-nIQkcVLIj1Fic8oT-NsBqjthKITzmhNaSNPcmL5k2TdsvI21Wvxqk",
-      "fabric": "۹۵٪ نخ‌پنبه ارگانیک، ۵٪ الاستین",
-      "fit": "اسلیم فیت فرم‌دهنده",
-      "season": "بهار و تابستان",
-      "origin": "آسترا"
-    },
-    {
       "id": "AES-JW-041",
       "title": "گوشواره حلقه برجسته طلایی مات استیل ضدحساسیت",
       "shortTitle": "گوشواره حلقه برجسته طلایی مات",
