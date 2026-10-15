@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>پنل مدیریت آسترا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+:root{color-scheme:light}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: mobile-first app shell. Sticky top bar, scrolling content, fixed bottom tab bar; product editor opens as a full-screen sheet. */
+:root{
+  --bg:#EDEFEC; --surface:#FFFFFF; --ink:#17201B; --muted:#65706A; --line:#DADFDA;
+  --accent:#34503F; --accent-ink:#FFFFFF; --accent-soft:#E1EBE4;
+  --ok:#2C7A4B; --warn:#9A5418; --danger:#B03528; --danger-soft:#F7E4E1; --warn-soft:#F6E9D8; --ok-soft:#DDEFE3;
+  --font:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1311; --surface:#171C19; --ink:#E7ECE8; --muted:#929C96; --line:#2A312D;
+  --accent:#8DB59B; --accent-ink:#0E1912; --accent-soft:#213027;
+  --ok:#74C595; --warn:#E0A261; --danger:#EE8A7E; --danger-soft:#3A1F1C; --warn-soft:#38291A; --ok-soft:#1B3325; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1311; --surface:#171C19; --ink:#E7ECE8; --muted:#929C96; --line:#2A312D;
+  --accent:#8DB59B; --accent-ink:#0E1912; --accent-soft:#213027;
+  --ok:#74C595; --warn:#E0A261; --danger:#EE8A7E; --danger-soft:#3A1F1C; --warn-soft:#38291A; --ok-soft:#1B3325; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+#app{min-height:100vh;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+
+/* top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;flex-direction:column;line-height:1.2}
+.brand b{font-weight:800;font-size:19px;letter-spacing:.02em}
+.brand small{color:var(--muted);font-size:12px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.off{background:var(--danger-soft);color:var(--danger)}
+
+/* generic */
+.view{display:none;padding-block:16px;flex-direction:column;gap:14px}
+.view.on{display:flex}
+h2{font-size:17px;margin:0;font-weight:800}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.card.flat{padding:0;overflow:hidden}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field>label,.lbl{font-size:13px;color:var(--muted);font-weight:500}
+.input,select.input,textarea.input{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:15px}
+.input:focus{border-color:var(--accent);outline:none;background:var(--surface)}
+textarea.input{resize:vertical;min-height:84px}
+.ltr{direction:ltr;text-align:left}
+.hint{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stack{display:flex;flex-direction:column;gap:14px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 16px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.danger.armed{background:var(--danger);color:#fff}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:13px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn.block{width:100%}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.stat b{display:block;font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.stat.warn b{color:var(--warn)}.stat.bad b{color:var(--danger)}
+
+/* product list */
+.tools{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:13px}
+.chip.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.row{display:flex;align-items:center;gap:12px;padding:12px;width:100%;background:none;border:0;border-bottom:1px solid var(--line);text-align:start}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--bg)}
+.thumb{flex:none;width:64px;height:78px;border-radius:8px;background:var(--bg) center/cover no-repeat;border:1px solid var(--line)}
+.row .info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.row .t{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .m{font-size:12px;color:var(--muted)}
+.price{font-variant-numeric:tabular-nums;font-weight:500}
+.price s{color:var(--muted);font-size:12px;margin-inline-start:6px}
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;font-weight:500}
+.badge.ok{background:var(--ok-soft);color:var(--ok)}
+.badge.warn{background:var(--warn-soft);color:var(--warn)}
+.badge.bad{background:var(--danger-soft);color:var(--danger)}
+.empty{padding:36px 16px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+
+.fab{position:fixed;inset-inline-start:max(16px,env(safe-area-inset-left,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:12;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:0 20px;min-height:52px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.22);display:flex;align-items:center;gap:8px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:11;background:var(--surface);border-top:1px solid var(--line);display:flex;padding:6px max(8px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px))}
+.nav button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;color:var(--muted);font-size:12px;border-radius:10px}
+.nav button svg{width:22px;height:22px}
+.nav button.on{color:var(--accent);font-weight:700}
+
+/* editor sheet */
+.sheet{position:fixed;inset:0;z-index:40;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;display:none}
+.sheet.on{display:block}
+.sheet-bar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.sheet-bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:10px}
+.sheet-bar h2{flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet-body{padding-block:16px calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+
+/* images */
+.imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.img{position:relative;aspect-ratio:3/4;border-radius:10px;background:var(--bg) center/cover no-repeat;border:1px solid var(--line);overflow:hidden}
+.img.main{outline:2px solid var(--accent);outline-offset:1px}
+.img .tag{position:absolute;inset-inline-start:6px;top:6px;font-size:10px;background:var(--accent);color:var(--accent-ink);padding:1px 7px;border-radius:999px}
+.img .ops{position:absolute;inset-inline:0;bottom:0;display:flex;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:14px 4px 4px}
+.img .ops button{flex:1;border:0;background:none;color:#fff;font-size:11px;padding:6px 0}
+.add-tile{aspect-ratio:3/4;border:1.5px dashed var(--accent);color:var(--accent);background:var(--accent-soft);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:700}
+.add-tile svg{width:26px;height:26px}
+.busy{aspect-ratio:3/4;border-radius:10px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);text-align:center;padding:6px}
+.spin{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:sp .8s linear infinite;margin-inline-end:6px}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation-duration:3s}}
+
+.colorrow{display:flex;gap:8px;align-items:center}
+.colorrow input[type=color]{flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;padding:2px;background:var(--bg)}
+.x{flex:none;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--danger);font-size:18px;line-height:1}
+.slide{border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.slide .bg{aspect-ratio:16/8;border-radius:8px;background:var(--bg) center/cover no-repeat;border:1px solid var(--line)}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:13px}
+.switch input{width:20px;height:20px;accent-color:var(--accent)}
+
+.savebar{position:sticky;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:5}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start}
+.steps li::before{content:counter(s,persian);flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.code{direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:2px 8px;display:inline-block}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;max-width:calc(100% - 32px);opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+.banner{background:var(--danger-soft);color:var(--danger);border-radius:var(--radius);padding:12px 16px;font-size:14px}
+@media (max-width:420px){.imgs{grid-template-columns:repeat(2,1fr)}}
+
+/* setup + connection */
+.setup{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;display:none}
+.setup.on{display:block}
+.setup .wrap{max-width:520px;padding-block:calc(28px + env(safe-area-inset-top,0px)) 40px;display:flex;flex-direction:column;gap:14px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv:last-child{border-bottom:0}
+.kv span:first-child{color:var(--muted)}
+.ok-t{color:var(--ok)}.bad-t{color:var(--danger)}
+a.btn{text-decoration:none;color:inherit}
+.check{display:flex;align-items:center;gap:10px;font-size:14px}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+
+</style>
+</head>
+<body>
+<div id="app" dir="rtl" lang="fa">
+  <header class="topbar gutter"><div class="wrap">
+    <div class="brand"><b>AESTRA</b><small>پنل مدیریت فروشگاه</small></div>
+    <span class="pill off" id="conn">متصل نیست</span>
+  </div></header>
+
+  <main class="gutter"><div class="wrap">
+    <div id="banner"></div>
+
+    <section class="view on" id="v-products">
+      <div class="stats" id="stats"></div>
+      <div class="tools">
+        <input class="input" id="q" type="search" placeholder="جستجوی نام یا کد کالا" autocomplete="off">
+        <div class="chips" id="cats"></div>
+      </div>
+      <div class="card flat" id="plist"></div>
+    </section>
+
+    <section class="view" id="v-settings"></section>
+    <section class="view" id="v-conn"></section>
+  </div></main>
+
+  <button class="fab" id="fab" type="button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    محصول جدید
+  </button>
+
+  <nav class="nav" id="nav">
+    <button type="button" data-tab="products" class="on">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7l-3 3 3 3V20h12v-7l3-3-3-3-3 2a3 3 0 0 1-6 0z"/></svg>محصولات</button>
+    <button type="button" data-tab="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 0 0-2-1.2L14.2 3h-4.4l-.4 2.6a7 7 0 0 0-2 1.2l-2.3-.9-2 3.4 2 1.5a7 7 0 0 0 0 2.4l-2 1.5 2 3.4 2.3-.9a7 7 0 0 0 2 1.2l.4 2.6h4.4l.4-2.6a7 7 0 0 0 2-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg>تنظیمات</button>
+    <button type="button" data-tab="conn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg>اتصال</button>
+  </nav>
+
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="ویرایش محصول">
+    <div class="sheet-bar gutter"><div class="wrap">
+      <button class="btn sm" id="ed-close" type="button">بستن</button>
+      <h2 id="ed-title">محصول</h2>
+      <button class="btn sm primary" id="ed-save" type="button">ذخیره</button>
+    </div></div>
+    <div class="gutter"><div class="wrap sheet-body" id="ed-body"></div></div>
+  </div>
+
+  <!-- ورود / اتصال به گیت‌هاب -->
+  <div class="setup" id="setup"><div class="wrap gutter">
+    <div class="brand"><b>AESTRA</b><small>پنل مدیریت فروشگاه</small></div>
+    <div class="card stack">
+      <h2>اتصال به گیت‌هاب</h2>
+      <p style="margin:0;color:var(--muted)">اطلاعات سایت در یک مخزن گیت‌هاب نگه داشته می‌شود. هر تغییری که اینجا ذخیره کنید همان لحظه در همان مخزن ثبت می‌شود و سایت از آنجا می‌خواندش. توکن فقط در همین مرورگر ذخیره می‌شود.</p>
+      <div class="grid2">
+        <div class="field"><label for="c-owner">نام کاربری گیت‌هاب</label><input class="input ltr" id="c-owner" autocomplete="off" autocapitalize="off"></div>
+        <div class="field"><label for="c-repo">نام مخزن</label><input class="input ltr" id="c-repo" autocomplete="off" autocapitalize="off"></div>
+      </div>
+      <div class="field"><label for="c-token">توکن دسترسی (Personal Access Token)</label><input class="input ltr" id="c-token" type="password" autocomplete="off" placeholder="github_pat_… یا ghp_…"></div>
+      <div id="c-err"></div>
+      <button class="btn primary block" id="c-go" type="button">اتصال و ورود</button>
+    </div>
+    <div class="card stack">
+      <h2>ساخت توکن</h2>
+      <ol class="steps">
+        <li><div>در گیت‌هاب: Settings، بعد Developer settings، بعد Personal access tokens، بعد Fine-grained tokens.</div></li>
+        <li><div>روی Generate new token بزنید. در Repository access فقط همین مخزن را انتخاب کنید.</div></li>
+        <li><div>در Permissions، بخش Repository، گزینه <span class="code">Contents</span> را روی <span class="code">Read and write</span> بگذارید.</div></li>
+        <li><div>توکن را کپی کنید و همین‌جا بچسبانید. مخزن باید عمومی (Public) باشد تا سایت بتواند آن را بخواند.</div></li>
+      </ol>
+    </div>
+  </div></div>
+
+  <input type="file" id="file-pick" accept="image/*" hidden>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script>window.AESTRA_NO_SYNC = true;</script>
+<script src="assets/js/products-data.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var faN=function(n){return Number(n||0).toLocaleString('fa-IR')};
+var FA='۰۱۲۳۴۵۶۷۸۹',AR='٠١٢٣٤٥٦٧٨٩';
+var toNum=function(v){var s=String(v==null?'':v).replace(/[۰-۹]/g,function(d){return FA.indexOf(d)}).replace(/[٠-٩]/g,function(d){return AR.indexOf(d)}).replace(/[^\d.]/g,'');return s?Number(s):0};
+var clone=function(o){return JSON.parse(JSON.stringify(o))};
+
+var CATS=[['shirts-and-blouses','شومیز و پیراهن'],['trousers','شلوار و دامن'],['t-shirts','تیشرت و تاپ'],['coordinated-sets','ست لباس'],['accessories','کفش']];
+var BADGES=[['terracotta','نارنجی خاکی'],['amber','کهربایی'],['primary','اصلی'],['dark','تیره']];
+var SETTING_FIELDS={
+  'مشخصات فروشگاه':[['siteName','نام فروشگاه'],['siteTagline','شعار'],['announcementText','متن نوار اعلان','area']],
+  'ارسال':[['freeShippingThreshold','حداقل خرید برای ارسال رایگان (تومان)','num'],['shippingCost','هزینه ارسال (تومان)','num']],
+  'تماس':[['phone','تلفن'],['mobile','موبایل'],['email','ایمیل','ltr'],['address','آدرس','area'],['workingHours','ساعت کاری','area']],
+  'شبکه‌های اجتماعی':[['telegramUsername','آیدی تلگرام (سفارش‌ها به اینجا می‌رود)','ltr'],['whatsappNumber','شماره واتساپ با کد کشور','ltr'],['instagramHandle','آیدی اینستاگرام','ltr']],
+  'درباره آتلیه':[['aboutText','متن درباره ما','area']]
+};
+var CFG_KEY='aestra_admin_gh_v1', PATH='data/store.json';
+var CFG=null, store=null, ready=false;
+var draft=null, draftIsNew=false, sDraft=null, sDirty=false;
+var tab='products', filterCat='all', query='', uploading=0, previews={};
+
+function loadCfg(){try{var c=JSON.parse(localStorage.getItem(CFG_KEY));return c&&c.token&&c.owner&&c.repo?c:null}catch(e){return null}}
+function saveCfg(c){try{localStorage.setItem(CFG_KEY,JSON.stringify(c))}catch(e){}}
+function clearCfg(){try{localStorage.removeItem(CFG_KEY)}catch(e){}}
+
+/* ---------- helpers ---------- */
+var toastT;
+function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},3000)}
+function setConn(ok,txt){var c=$('#conn');c.textContent=txt;c.classList.toggle('off',!ok)}
+function stockBadge(n){n=Number(n)||0;return n<=0?'<span class="badge bad">ناموجود</span>':n<=3?'<span class="badge warn">فقط '+faN(n)+' عدد</span>':'<span class="badge ok">'+faN(n)+' عدد</span>'}
+function catName(slug){var c=CATS.filter(function(x){return x[0]===slug})[0];return c?c[1]:''}
+function imgSrc(u){return previews[u]||u||''}
+function products(){return store?store.products:[]}
+function b64enc(str){return btoa(unescape(encodeURIComponent(str)))}
+function b64dec(b){return decodeURIComponent(escape(atob(String(b).replace(/\s/g,''))))}
+function blobB64(blob){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(String(r.result).split(',')[1])};r.onerror=rej;r.readAsDataURL(blob)})}
+function errText(e){
+  var st=e&&e.status;
+  if(st===401)return 'توکن معتبر نیست یا منقضی شده است.';
+  if(st===403)return 'این توکن اجازه نوشتن در مخزن را ندارد (یا سقف درخواست پر شده است).';
+  if(st===404)return 'مخزن پیدا نشد یا توکن به آن دسترسی ندارد.';
+  if(e&&e.message==='Failed to fetch')return 'اتصال اینترنت یا دسترسی به گیت‌هاب برقرار نیست.';
+  return (e&&e.message)||'خطای ناشناخته'
+}
+
+/* ---------- GitHub ---------- */
+function R(){return '/repos/'+encodeURIComponent(CFG.owner)+'/'+encodeURIComponent(CFG.repo)}
+async function gh(path,init){
+  init=init||{};
+  var headers={Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+  if(CFG&&CFG.token)headers.Authorization='Bearer '+CFG.token;
+  if(init.body)headers['Content-Type']='application/json';
+  var res=await fetch('https://api.github.com'+path,{method:init.method||'GET',cache:'no-store',headers:headers,body:init.body?JSON.stringify(init.body):undefined});
+  var data=null;try{data=await res.json()}catch(e){}
+  if(!res.ok){var err=new Error((data&&data.message)||('HTTP '+res.status));err.status=res.status;throw err}
+  return data
+}
+function normalize(s){s=s&&typeof s==='object'?s:{};if(!Array.isArray(s.products))s.products=[];if(!s.settings||typeof s.settings!=='object')s.settings={};if(!s.version)s.version=1;return s}
+function seedStore(){
+  var C=window.AestraConfig||{};var st=clone(C.DEFAULT_SETTINGS||{});delete st.adminPin;
+  return {version:1,products:clone(C.DEFAULT_PRODUCTS||[]),settings:st}
+}
+async function fetchStore(){
+  try{var d=await gh(R()+'/contents/'+PATH+'?ref='+encodeURIComponent(CFG.branch)+'&t='+Date.now());
+    return {sha:d.sha,store:normalize(JSON.parse(b64dec(d.content)))}}
+  catch(e){if(e.status===404)return {sha:null,store:null};throw e}
+}
+var chain=Promise.resolve();
+function mutate(fn,msg){var p=chain.then(function(){return doMutate(fn,msg)});chain=p.catch(function(){});return p}
+async function doMutate(fn,msg){
+  var last;
+  for(var i=0;i<3;i++){
+    var cur=await fetchStore();
+    var s=cur.store||seedStore();
+    fn(s);
+    var body={message:msg,content:b64enc(JSON.stringify(s,null,2)),branch:CFG.branch};
+    if(cur.sha)body.sha=cur.sha;
+    try{await gh(R()+'/contents/'+PATH,{method:'PUT',body:body});store=s;return s}
+    catch(e){last=e;if(e.status===409||e.status===422){await new Promise(function(r){setTimeout(r,500*(i+1))});continue}throw e}
+  }
+  throw last
+}
+
+/* ---------- connect ---------- */
+function showSetup(msg){
+  var C=(window.AestraConfig&&window.AestraConfig.REMOTE)||{};
+  $('#c-owner').value=(CFG&&CFG.owner)||C.owner||'';
+  $('#c-repo').value=(CFG&&CFG.repo)||C.repo||'';
+  $('#c-token').value='';
+  $('#c-err').innerHTML=msg?'<div class="banner">'+esc(msg)+'</div>':'';
+  $('#setup').classList.add('on')
+}
+$('#c-go').addEventListener('click',async function(){
+  var owner=$('#c-owner').value.trim().replace(/^@/,''),repo=$('#c-repo').value.trim().replace(/\.git$/,''),token=$('#c-token').value.trim();
+  var m=repo.match(/github\.com\/([^\/]+)\/([^\/?#]+)/);if(m){owner=m[1];repo=m[2].replace(/\.git$/,'')}
+  if(!owner||!repo||!token){$('#c-err').innerHTML='<div class="banner">نام کاربری، نام مخزن و توکن را کامل وارد کنید.</div>';return}
+  var b=$('#c-go');b.disabled=true;b.textContent='در حال اتصال…';
+  var trial={owner:owner,repo:repo,token:token,branch:''};
+  var prev=CFG;CFG=trial;
+  try{
+    var info=await gh(R());
+    if(!info.permissions||!info.permissions.push)throw Object.assign(new Error('این توکن اجازه نوشتن در مخزن را ندارد. گزینه Contents را روی Read and write بگذارید.'),{status:0});
+    trial.branch=info.default_branch||'main';trial.private=!!info.private;
+    CFG=trial;saveCfg(trial);
+    $('#setup').classList.remove('on');
+    await start()
+  }catch(e){CFG=prev;$('#c-err').innerHTML='<div class="banner">'+esc(errText(e))+'</div>'}
+  b.disabled=false;b.textContent='اتصال و ورود'
+});
+
+/* ---------- products list ---------- */
+function renderProducts(){
+  var list=products();
+  var low=list.filter(function(p){return p.stock>0&&p.stock<=3}).length;
+  var out=list.filter(function(p){return !(p.stock>0)}).length;
+  $('#stats').innerHTML='<div class="stat"><b>'+faN(list.length)+'</b><span>محصول</span></div>'+
+    '<div class="stat warn"><b>'+faN(low)+'</b><span>کم‌موجود</span></div>'+
+    '<div class="stat bad"><b>'+faN(out)+'</b><span>ناموجود</span></div>';
+  $('#cats').innerHTML=[['all','همه']].concat(CATS).map(function(c){return '<button type="button" class="chip'+(filterCat===c[0]?' on':'')+'" data-cat="'+c[0]+'">'+c[1]+'</button>'}).join('');
+  var q=query.trim().toLowerCase();
+  var shown=list.filter(function(p){return (filterCat==='all'||p.category===filterCat)&&(!q||(p.title+' '+(p.shortTitle||'')+' '+p.id).toLowerCase().indexOf(q)>-1)});
+  if(!ready){$('#plist').innerHTML='<div class="empty">در حال بارگذاری محصولات…</div>';return}
+  if(!shown.length){$('#plist').innerHTML=list.length?'<div class="empty"><b>موردی پیدا نشد</b>عبارت جستجو یا دسته را تغییر دهید.</div>':'<div class="empty"><b>هنوز محصولی ثبت نشده</b>با دکمه «محصول جدید» اولین کالا را اضافه کنید.</div>';return}
+  $('#plist').innerHTML=shown.map(function(p){
+    var img=p.image||(p.gallery&&p.gallery[0]&&p.gallery[0].url)||'';
+    var disc=p.originalPrice>p.price?'<s>'+faN(p.originalPrice)+'</s>':'';
+    return '<button type="button" class="row" data-edit="'+esc(p.id)+'"><div class="thumb" style="background-image:url(\''+esc(imgSrc(img))+'\')"></div>'+
+      '<div class="info"><span class="t">'+esc(p.shortTitle||p.title)+'</span><span class="m">'+esc(p.categoryFa||catName(p.category))+' · <span class="ltr" style="display:inline-block">'+esc(p.id)+'</span></span>'+
+      '<span class="price">'+faN(p.price)+' تومان'+disc+'</span></div>'+stockBadge(p.stock)+'</button>'}).join('');
+}
+
+/* ---------- image upload ---------- */
+function compress(file){
+  return new Promise(function(res,rej){
+    var url=URL.createObjectURL(file),im=new Image();
+    im.onload=function(){
+      var M=1600,w=im.naturalWidth,h=im.naturalHeight,s=Math.min(1,M/Math.max(w,h));
+      var c=document.createElement('canvas');c.width=Math.round(w*s);c.height=Math.round(h*s);
+      var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);
+      URL.revokeObjectURL(url);
+      c.toBlob(function(b){b?res(b):rej(new Error('encode'))},'image/jpeg',0.86)};
+    im.onerror=function(){URL.revokeObjectURL(url);rej(new Error('decode'))};
+    im.src=url})
+}
+var pickCb=null;
+function pickImages(multiple,cb){var f=$('#file-pick');f.multiple=!!multiple;f.value='';pickCb=cb;f.click()}
+async function uploadFile(file){
+  var blob=await compress(file),b64=await blobB64(blob);
+  var d=new Date(),p=function(n){return String(n).padStart(2,'0')};
+  var name='uploads/'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'-'+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds())+'-'+Math.random().toString(36).slice(2,7)+'.jpg';
+  var last;
+  for(var i=0;i<3;i++){
+    try{await gh(R()+'/contents/'+name,{method:'PUT',body:{message:'admin: upload image',content:b64,branch:CFG.branch}});last=null;break}
+    catch(e){last=e;if(e.status===409||e.status===422){await new Promise(function(r){setTimeout(r,600*(i+1))});continue}throw e}
+  }
+  if(last)throw last;
+  var url='https://raw.githubusercontent.com/'+CFG.owner+'/'+CFG.repo+'/'+CFG.branch+'/'+name;
+  previews[url]=URL.createObjectURL(blob);
+  return url
+}
+$('#file-pick').addEventListener('change',async function(e){
+  var files=Array.prototype.slice.call(e.target.files||[]);var cb=pickCb;pickCb=null;
+  if(!files.length||!cb)return;
+  uploading+=files.length;cb.start&&cb.start();
+  var urls=[];
+  for(var i=0;i<files.length;i++){
+    try{urls.push(await uploadFile(files[i]))}
+    catch(err){toast('آپلود عکس ناموفق بود: '+errText(err))}
+    uploading--;cb.progress&&cb.progress()
+  }
+  cb.done(urls)
+});
+
+/* ---------- product editor ---------- */
+function newProduct(){
+  return {id:'AES-'+Date.now().toString(36).toUpperCase().slice(-6),title:'',shortTitle:'',collection:'AESTRA ATELIER',category:CATS[0][0],categoryFa:CATS[0][1],
+    price:0,originalPrice:0,discountPercent:0,tag:'',badgeType:'primary',rating:5,reviewsCount:0,stock:1,
+    colors:[],sizes:['36 (S)','38 (M)','40 (L)','42 (XL)'],defaultSize:'38 (M)',image:'',gallery:[],
+    fabric:'',fit:'',season:'',closure:'',pleat:'',origin:'استودیو طراحی آسترا (تهران)'}
+}
+function openEditor(id){
+  var p=id?products().filter(function(x){return x.id===id})[0]:null;
+  if(id&&!p)return;
+  draftIsNew=!p;draft=p?clone(p):newProduct();
+  if(!draft.gallery||!draft.gallery.length){draft.gallery=draft.image?[{label:'تصویر اصلی',url:draft.image}]:[]}
+  $('#ed-title').textContent=draftIsNew?'محصول جدید':(draft.shortTitle||draft.title);
+  renderEditor();$('#sheet').classList.add('on');$('#sheet').scrollTop=0;document.body.style.overflow='hidden'
+}
+function closeEditor(){$('#sheet').classList.remove('on');document.body.style.overflow='';draft=null}
+function f(id,label,val,opts){opts=opts||{};
+  var cls='input'+(opts.ltr?' ltr':'');
+  var inp=opts.area?'<textarea class="'+cls+'" id="'+id+'" rows="2">'+esc(val)+'</textarea>':'<input class="'+cls+'" id="'+id+'" type="text"'+(opts.num?' inputmode="numeric"':'')+' value="'+esc(val)+'" autocomplete="off">';
+  return '<div class="field"><label for="'+id+'">'+label+'</label>'+inp+(opts.hint?'<span class="hint" id="'+id+'-h">'+opts.hint+'</span>':'')+'</div>'
+}
+function renderEditor(){
+  var d=draft;
+  $('#ed-body').innerHTML=
+  '<div class="card stack"><h2>عکس‌ها</h2><div id="ed-images"></div><span class="hint">عکس اول، تصویر اصلی محصول در سایت است. عکس‌ها قبل از آپلود خودکار کم‌حجم می‌شوند.</span>'+
+  '<div class="field"><label for="img-url">یا آدرس عکس را بچسبانید</label><div style="display:flex;gap:8px"><input class="input ltr" id="img-url" type="url" placeholder="https://…"><button class="btn" type="button" id="img-url-add">افزودن</button></div></div></div>'+
+  '<div class="card stack"><h2>اطلاعات</h2>'+f('e-title','نام کامل محصول',d.title)+f('e-short','نام کوتاه (در لیست‌ها)',d.shortTitle)+
+  '<div class="grid2"><div class="field"><label for="e-cat">دسته</label><select class="input" id="e-cat">'+CATS.map(function(c){return '<option value="'+c[0]+'"'+(c[0]===d.category?' selected':'')+'>'+c[1]+'</option>'}).join('')+'</select></div>'+
+  f('e-coll','کالکشن',d.collection,{ltr:true})+'</div>'+
+  '<div class="grid2">'+f('e-tag','برچسب (مثلاً کالکشن جدید)',d.tag)+
+  '<div class="field"><label for="e-badge">رنگ برچسب</label><select class="input" id="e-badge">'+BADGES.map(function(b){return '<option value="'+b[0]+'"'+(b[0]===d.badgeType?' selected':'')+'>'+b[1]+'</option>'}).join('')+'</select></div></div>'+
+  f('e-id','کد محصول',d.id,{ltr:true,hint:draftIsNew?'می‌توانید تغییرش دهید.':'کد محصول ثابت است.'})+
+  '<label class="check"><input type="checkbox" id="e-top"'+(draftIsNew?' checked':'')+'>نمایش در بخش «جدیدترین محصولات» صفحه اول</label></div>'+
+  '<div class="card stack"><h2>قیمت و موجودی</h2><div class="grid2">'+f('e-price','قیمت فروش (تومان)',d.price||'',{num:true,hint:' '})+f('e-orig','قیمت قبل از تخفیف',d.originalPrice>d.price?d.originalPrice:'',{num:true,hint:' '})+'</div>'+
+  f('e-stock','موجودی (تعداد)',d.stock,{num:true})+'</div>'+
+  '<div class="card stack"><h2>رنگ‌ها</h2><div id="ed-colors" class="stack"></div><button class="btn sm" type="button" id="color-add" style="align-self:flex-start">+ رنگ جدید</button></div>'+
+  '<div class="card stack"><h2>سایزها</h2>'+f('e-sizes','سایزها را با ویرگول جدا کنید',(d.sizes||[]).join('، '))+'</div>'+
+  '<div class="card stack"><h2>مشخصات پارچه و دوخت</h2>'+f('e-fabric','جنس پارچه',d.fabric,{area:true})+f('e-fit','فرم و قواره',d.fit)+f('e-season','فصل',d.season)+f('e-closure','بسته‌شدن',d.closure)+f('e-pleat','جزئیات دوخت',d.pleat)+f('e-origin','محل تولید',d.origin)+'</div>'+
+  (draftIsNew?'':'<button class="btn danger block" type="button" id="ed-del">حذف این محصول</button>');
+  renderImages();renderColors();updPrice()
+}
+function renderImages(busy){
+  var g=draft.gallery,h='<div class="imgs">';
+  g.forEach(function(im,i){
+    h+='<div class="img'+(i===0?' main':'')+'" style="background-image:url(\''+esc(imgSrc(im.url))+'\')">'+(i===0?'<span class="tag">اصلی</span>':'')+
+    '<div class="ops">'+(i>0?'<button type="button" data-img="main" data-i="'+i+'">اصلی کن</button>':'')+'<button type="button" data-img="del" data-i="'+i+'">حذف</button></div></div>'});
+  for(var k=0;k<(busy||0);k++)h+='<div class="busy"><span class="spin"></span>در حال آپلود</div>';
+  h+='<button type="button" class="add-tile" id="img-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>افزودن عکس</button></div>';
+  $('#ed-images').innerHTML=h
+}
+function renderColors(){
+  var c=draft.colors||[];
+  $('#ed-colors').innerHTML=c.length?c.map(function(x,i){return '<div class="colorrow"><input type="color" data-ci="'+i+'" data-cf="hex" value="'+esc(/^#[0-9a-f]{6}$/i.test(x.hex)?x.hex:'#cccccc')+'" aria-label="رنگ"><input class="input" data-ci="'+i+'" data-cf="name" value="'+esc(x.name)+'" placeholder="نام رنگ"><button class="x" type="button" data-cdel="'+i+'" aria-label="حذف رنگ">×</button></div>'}).join(''):'<span class="hint">رنگی ثبت نشده.</span>'
+}
+function updPrice(){
+  var p=toNum($('#e-price')&&$('#e-price').value),o=toNum($('#e-orig')&&$('#e-orig').value);
+  var h1=$('#e-price-h'),h2=$('#e-orig-h');if(!h1)return;
+  h1.textContent=p?faN(p)+' تومان':' ';
+  h2.textContent=o>p&&p?'تخفیف '+faN(Math.round((1-p/o)*100))+'٪':(o?'باید بیشتر از قیمت فروش باشد':' ')
+}
+function readDraft(){
+  var d=draft,v=function(id){return ($('#'+id).value||'').trim()};
+  d.title=v('e-title');d.shortTitle=v('e-short')||d.title;
+  d.category=$('#e-cat').value;d.categoryFa=catName(d.category);
+  d.collection=v('e-coll');d.tag=v('e-tag');d.badgeType=$('#e-badge').value;
+  d.price=toNum(v('e-price'));var o=toNum(v('e-orig'));d.originalPrice=o>d.price?o:d.price;
+  d.discountPercent=d.originalPrice>d.price?Math.round((1-d.price/d.originalPrice)*100):0;
+  d.stock=Math.max(0,Math.round(toNum(v('e-stock'))));
+  d.sizes=v('e-sizes').split(/[,،]/).map(function(s){return s.trim()}).filter(Boolean);
+  if(d.sizes.indexOf(d.defaultSize)<0)d.defaultSize=d.sizes[Math.min(1,d.sizes.length-1)]||'';
+  d.colors=(d.colors||[]).filter(function(c){return c.name||c.hex}).map(function(c,i){var r={name:c.name||'رنگ '+faN(i+1),hex:c.hex||'#cccccc'};if(i===0)r.selected=true;return r});
+  d.fabric=v('e-fabric');d.fit=v('e-fit');d.season=v('e-season');d.closure=v('e-closure');d.pleat=v('e-pleat');d.origin=v('e-origin');
+  d.gallery=d.gallery.map(function(g,i){return {label:g.label||(i===0?'تصویر اصلی':'تصویر '+faN(i+1)),url:g.url}});
+  d.image=d.gallery[0]?d.gallery[0].url:'';
+  var nid=v('e-id').replace(/\s+/g,'-').replace(/[^A-Za-z0-9_\-.]/g,'');
+  if(draftIsNew&&nid)d.id=nid;
+  return d
+}
+var saving=false;
+async function saveProduct(){
+  if(saving)return;
+  if(uploading>0){toast('صبر کنید تا آپلود عکس‌ها تمام شود');return}
+  var d=readDraft(),top=$('#e-top').checked;
+  if(!d.title){toast('نام محصول را بنویسید');$('#e-title').focus();return}
+  if(!d.price){toast('قیمت فروش را وارد کنید');$('#e-price').focus();return}
+  if(draftIsNew&&products().some(function(p){return p.id===d.id})){toast('این کد قبلاً استفاده شده است');$('#e-id').focus();return}
+  saving=true;var b=$('#ed-save');b.disabled=true;b.textContent='در حال ذخیره…';
+  try{
+    await mutate(function(s){
+      var i=s.products.findIndex(function(p){return p.id===d.id});
+      if(i>-1)s.products[i]=d;else s.products.unshift(d);
+      if(top){var k=s.products.findIndex(function(p){return p.id===d.id});s.products.unshift(s.products.splice(k,1)[0])}
+    },'admin: save product '+d.id);
+    toast('ذخیره شد و روی سایت اعمال شد');closeEditor();renderProducts()
+  }catch(e){toast('ذخیره نشد: '+errText(e))}
+  saving=false;b.disabled=false;b.textContent='ذخیره'
+}
+var delArmed=false;
+async function deleteProduct(btn){
+  if(!delArmed){delArmed=true;btn.classList.add('armed');btn.textContent='برای حذف نهایی دوباره بزنید';setTimeout(function(){delArmed=false;if(btn.isConnected){btn.classList.remove('armed');btn.textContent='حذف این محصول'}},4000);return}
+  delArmed=false;var id=draft.id;btn.disabled=true;
+  try{await mutate(function(s){s.products=s.products.filter(function(p){return p.id!==id})},'admin: delete product '+id);toast('محصول حذف شد');closeEditor();renderProducts()}
+  catch(e){toast('حذف نشد: '+errText(e));btn.disabled=false}
+}
+$('#ed-body').addEventListener('input',function(e){
+  var t=e.target;
+  if(t.id==='e-price'||t.id==='e-orig')updPrice();
+  if(t.dataset&&t.dataset.ci!=null){draft.colors[+t.dataset.ci][t.dataset.cf]=t.value}
+});
+$('#ed-body').addEventListener('click',function(e){
+  var t=e.target.closest('button');if(!t)return;
+  if(t.id==='img-add'){
+    pickImages(true,{done:function(urls){urls.forEach(function(u){draft&&draft.gallery.push({label:'',url:u})});if(draft)renderImages();if(urls.length)toast(urls.length>1?faN(urls.length)+' عکس آپلود شد':'عکس آپلود شد')}});
+    var tm=setInterval(function(){if(!draft||uploading<=0){clearInterval(tm);return}renderImages(uploading)},400);
+    return}
+  if(t.id==='img-url-add'){var u=($('#img-url').value||'').trim();if(!/^https?:\/\//i.test(u)){toast('آدرس باید با https شروع شود');return}draft.gallery.push({label:'',url:u});$('#img-url').value='';renderImages();return}
+  if(t.dataset.img==='del'){draft.gallery.splice(+t.dataset.i,1);renderImages();return}
+  if(t.dataset.img==='main'){var i=+t.dataset.i,g=draft.gallery.splice(i,1)[0];draft.gallery.unshift(g);renderImages();return}
+  if(t.id==='color-add'){draft.colors=draft.colors||[];draft.colors.push({name:'',hex:'#cccccc'});renderColors();return}
+  if(t.dataset.cdel!=null){draft.colors.splice(+t.dataset.cdel,1);renderColors();return}
+  if(t.id==='ed-del'){deleteProduct(t)}
+});
+$('#ed-close').addEventListener('click',closeEditor);
+$('#ed-save').addEventListener('click',saveProduct);
+
+/* ---------- settings ---------- */
+function renderSettings(){
+  var el=$('#v-settings');
+  if(!ready||!sDraft){el.innerHTML='<div class="empty">در حال بارگذاری…</div>';return}
+  var s=sDraft,h='';
+  Object.keys(SETTING_FIELDS).forEach(function(g){
+    h+='<div class="card stack"><h2>'+g+'</h2>'+SETTING_FIELDS[g].map(function(x){
+      var v=s[x[0]];if(v==null)v='';
+      var inp=x[2]==='area'?'<textarea class="input" data-s="'+x[0]+'" rows="2" id="s-'+x[0]+'">'+esc(v)+'</textarea>':'<input class="input'+(x[2]==='ltr'?' ltr':'')+'" data-s="'+x[0]+'"'+(x[2]==='num'?' data-num="1" inputmode="numeric"':'')+' id="s-'+x[0]+'" value="'+esc(v)+'" autocomplete="off">';
+      return '<div class="field"><label for="s-'+x[0]+'">'+x[1]+'</label>'+inp+'</div>'}).join('')+'</div>'});
+  h+='<div class="card stack"><h2>کدهای تخفیف</h2>'+(s.coupons||[]).map(function(c,i){
+    return '<div class="slide"><div class="grid2"><div class="field"><label for="cp-c'+i+'">کد</label><input class="input ltr" id="cp-c'+i+'" data-cp="'+i+'" data-f="code" value="'+esc(c.code)+'"></div><div class="field"><label for="cp-p'+i+'">درصد تخفیف</label><input class="input" id="cp-p'+i+'" inputmode="numeric" data-cp="'+i+'" data-f="percent" data-num="1" value="'+esc(c.percent)+'"></div></div>'+
+    '<div class="field"><label for="cp-t'+i+'">عنوان</label><input class="input" id="cp-t'+i+'" data-cp="'+i+'" data-f="title" value="'+esc(c.title)+'"></div>'+
+    '<div style="display:flex;justify-content:space-between;align-items:center"><label class="switch"><input type="checkbox" data-cp="'+i+'" data-f="active"'+(c.active?' checked':'')+'>فعال</label><button class="btn sm danger" type="button" data-cpdel="'+i+'">حذف</button></div></div>'}).join('')+
+    '<button class="btn sm" type="button" id="cp-add" style="align-self:flex-start">+ کد جدید</button></div>';
+  h+='<div class="card stack"><h2>اسلایدر صفحه اول</h2><span class="hint">اسلاید اول در صفحه اول سایت نمایش داده می‌شود.</span>'+(s.heroSlides||[]).map(function(sl,i){
+    return '<div class="slide"><div class="bg" style="background-image:url(\''+esc(imgSrc(sl.bgImage))+'\')"></div>'+
+    '<button class="btn sm" type="button" data-slideimg="'+i+'">تغییر عکس پس‌زمینه</button>'+
+    '<div class="field"><label for="sl-b'+i+'">برچسب کوچک</label><input class="input" id="sl-b'+i+'" data-sl="'+i+'" data-f="badge" value="'+esc(sl.badge)+'"></div>'+
+    '<div class="field"><label for="sl-t'+i+'">عنوان</label><input class="input" id="sl-t'+i+'" data-sl="'+i+'" data-f="title" value="'+esc(sl.title)+'"></div>'+
+    '<div class="field"><label for="sl-s'+i+'">توضیح</label><textarea class="input" id="sl-s'+i+'" rows="2" data-sl="'+i+'" data-f="subtitle">'+esc(sl.subtitle)+'</textarea></div>'+
+    '<div class="grid2"><div class="field"><label for="sl-x'+i+'">متن دکمه</label><input class="input" id="sl-x'+i+'" data-sl="'+i+'" data-f="btnText" value="'+esc(sl.btnText)+'"></div><div class="field"><label for="sl-l'+i+'">لینک دکمه</label><input class="input ltr" id="sl-l'+i+'" data-sl="'+i+'" data-f="btnLink" value="'+esc(sl.btnLink)+'"></div></div>'+
+    '<button class="btn sm danger" type="button" data-sldel="'+i+'" style="align-self:flex-start">حذف اسلاید</button></div>'}).join('')+
+    '<button class="btn sm" type="button" id="sl-add" style="align-self:flex-start">+ اسلاید جدید</button></div>';
+  h+='<div class="savebar"><button class="btn primary block" type="button" id="s-save"'+(sDirty?'':' disabled')+'>ذخیره تنظیمات</button></div>';
+  el.innerHTML=h
+}
+function dirty(){sDirty=true;var b=$('#s-save');if(b)b.disabled=false}
+$('#v-settings').addEventListener('input',function(e){
+  var t=e.target,s=sDraft;if(!s)return;
+  if(t.dataset.s){s[t.dataset.s]=t.dataset.num?toNum(t.value):t.value;dirty()}
+  else if(t.dataset.cp!=null){var c=s.coupons[+t.dataset.cp];c[t.dataset.f]=t.type==='checkbox'?t.checked:t.dataset.num?toNum(t.value):t.value;dirty()}
+  else if(t.dataset.sl!=null){s.heroSlides[+t.dataset.sl][t.dataset.f]=t.value;dirty()}
+});
+$('#v-settings').addEventListener('click',async function(e){
+  var t=e.target.closest('button');if(!t||!sDraft)return;var s=sDraft;
+  if(t.id==='cp-add'){s.coupons=s.coupons||[];s.coupons.push({code:'',percent:10,title:'',active:true});dirty();renderSettings();return}
+  if(t.dataset.cpdel!=null){s.coupons.splice(+t.dataset.cpdel,1);dirty();renderSettings();return}
+  if(t.id==='sl-add'){s.heroSlides=s.heroSlides||[];s.heroSlides.push({badge:'',title:'',subtitle:'',btnText:'مشاهده',btnLink:'products.html',bgImage:''});dirty();renderSettings();return}
+  if(t.dataset.sldel!=null){s.heroSlides.splice(+t.dataset.sldel,1);dirty();renderSettings();return}
+  if(t.dataset.slideimg!=null){var i=+t.dataset.slideimg;t.disabled=true;t.textContent='در حال آپلود…';
+    pickImages(false,{done:function(urls){if(urls[0]){s.heroSlides[i].bgImage=urls[0];dirty();toast('عکس اسلاید عوض شد. حالا تنظیمات را ذخیره کنید')}renderSettings()}});
+    setTimeout(function(){if(uploading<=0&&t.isConnected){t.disabled=false;t.textContent='تغییر عکس پس‌زمینه'}},900);return}
+  if(t.id==='s-save'){
+    t.disabled=true;t.textContent='در حال ذخیره…';var snap=clone(sDraft);
+    try{await mutate(function(st){st.settings=snap},'admin: save settings');sDirty=false;toast('تنظیمات ذخیره شد و روی سایت اعمال شد');renderSettings()}
+    catch(err){toast('ذخیره نشد: '+errText(err));t.disabled=false;t.textContent='ذخیره تنظیمات'}
+  }
+});
+
+/* ---------- connection tab ---------- */
+function renderConn(){
+  var el=$('#v-conn');if(!CFG){el.innerHTML='';return}
+  var site=(window.AestraConfig&&window.AestraConfig.REMOTE)||{};
+  var same=site.owner===CFG.owner&&site.repo===CFG.repo&&site.branch===CFG.branch;
+  var file='https://github.com/'+CFG.owner+'/'+CFG.repo+'/blob/'+CFG.branch+'/'+PATH;
+  el.innerHTML='<div class="card"><h2 style="margin-bottom:8px">مخزن متصل</h2>'+
+  '<div class="kv"><span>مخزن</span><span class="ltr">'+esc(CFG.owner+'/'+CFG.repo)+'</span></div>'+
+  '<div class="kv"><span>شاخه</span><span class="ltr">'+esc(CFG.branch)+'</span></div>'+
+  '<div class="kv"><span>فایل داده</span><a class="ltr" href="'+esc(file)+'" target="_blank" rel="noopener">'+PATH+'</a></div>'+
+  '<div class="kv"><span>مخزن عمومی</span><span class="'+(CFG.private?'bad-t':'ok-t')+'">'+(CFG.private?'خیر، سایت نمی‌تواند بخواند':'بله')+'</span></div></div>'+
+  (same?'':'<div class="banner">سایت از مخزن <span class="ltr" style="display:inline-block">'+esc(site.owner+'/'+site.repo+'@'+site.branch)+'</span> می‌خواند، اما پنل به مخزن دیگری وصل است. مقدار <span class="code">REMOTE</span> را در ابتدای فایل <span class="code">assets/js/products-data.js</span> با مخزن بالا یکی کنید.</div>')+
+  '<div class="card stack"><h2>بررسی ارتباط سایت</h2><p style="margin:0;color:var(--muted)">می‌بینیم بازدیدکننده بدون توکن می‌تواند فایل داده را بخواند یا نه.</p><button class="btn block" type="button" id="conn-test">بررسی کن</button><div id="conn-res"></div></div>'+
+  '<a class="btn block" href="index.html" target="_blank" rel="noopener">مشاهده سایت</a>'+
+  '<button class="btn danger block" type="button" id="conn-out">خروج و حذف توکن از این مرورگر</button>'
+}
+$('#v-conn').addEventListener('click',async function(e){
+  var t=e.target.closest('button');if(!t)return;
+  if(t.id==='conn-out'){clearCfg();CFG=null;store=null;ready=false;sDraft=null;setConn(false,'متصل نیست');showSetup();return}
+  if(t.id==='conn-test'){
+    var out=$('#conn-res');out.innerHTML='<span class="hint">در حال بررسی…</span>';
+    try{
+      var r=await fetch('https://api.github.com/repos/'+CFG.owner+'/'+CFG.repo+'/contents/'+PATH+'?ref='+encodeURIComponent(CFG.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github.raw'},cache:'no-store'});
+      if(r.ok){var j=JSON.parse(await r.text());out.innerHTML='<span class="ok-t">سایت می‌تواند داده را بخواند ('+faN((j.products||[]).length)+' محصول).</span>'}
+      else if(r.status===404)out.innerHTML='<span class="bad-t">فایل داده برای بازدیدکننده‌ها پیدا نشد. مخزن باید عمومی باشد و فایل ذخیره شده باشد.</span>';
+      else out.innerHTML='<span class="bad-t">گیت‌هاب پاسخ '+faN(r.status)+' داد.</span>'
+    }catch(err){out.innerHTML='<span class="bad-t">'+esc(errText(err))+'</span>'}
+  }
+});
+
+/* ---------- tabs ---------- */
+function setTab(t){
+  tab=t;
+  $$('.view').forEach(function(v){v.classList.toggle('on',v.id==='v-'+t)});
+  $$('#nav button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===t)});
+  $('#fab').style.display=t==='products'?'flex':'none';
+  if(t==='settings')renderSettings();
+  if(t==='conn')renderConn();
+  window.scrollTo(0,0)
+}
+$('#nav').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTab(b.dataset.tab)});
+$('#fab').addEventListener('click',function(){openEditor(null)});
+$('#q').addEventListener('input',function(e){query=e.target.value;renderProducts()});
+$('#cats').addEventListener('click',function(e){var b=e.target.closest('[data-cat]');if(b){filterCat=b.dataset.cat;renderProducts()}});
+$('#plist').addEventListener('click',function(e){var b=e.target.closest('[data-edit]');if(b)openEditor(b.dataset.edit)});
+
+/* ---------- boot ---------- */
+async function start(){
+  ready=false;renderProducts();setConn(true,'در حال بارگذاری');$('#banner').innerHTML='';
+  try{
+    var cur=await fetchStore();
+    if(cur.store){store=cur.store}
+    else{store=seedStore();$('#banner').innerHTML='<div class="banner" style="background:var(--warn-soft);color:var(--warn)">فایل داده هنوز در مخزن ساخته نشده است. محصولات فعلی سایت نمایش داده می‌شوند و با اولین ذخیره، فایل ساخته می‌شود.</div>'}
+    sDraft=clone(store.settings&&Object.keys(store.settings).length?store.settings:seedStore().settings);sDirty=false;
+    ready=true;setConn(true,CFG.owner+'/'+CFG.repo);
+    renderProducts();if(tab==='settings')renderSettings();if(tab==='conn')renderConn()
+  }catch(e){
+    if(e.status===401){clearCfg();CFG=null;showSetup('توکن معتبر نیست یا منقضی شده است. دوباره وارد شوید.');return}
+    setConn(false,'خطا');$('#banner').innerHTML='<div class="banner">'+esc(errText(e))+' <button class="btn sm" type="button" id="retry">تلاش دوباره</button></div>';
+    var rb=$('#retry');if(rb)rb.addEventListener('click',start)
+  }
+}
+CFG=loadCfg();
+setTab('products');
+if(CFG)start();else{renderProducts();showSetup()}
+})();
+</script>
+
+</body>
+</html>
