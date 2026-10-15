@@ -2,69 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-SH-2024-08",
-      "title": "شومیز پلیسه ابریشم لنین کژوال آسترا",
-      "shortTitle": "شومیز پلیسه ابریشم لنین کرم",
-      "collection": "AESTRA ATELIER",
-      "category": "shirts-and-blouses",
-      "categoryFa": "شومیز و پیراهن",
-      "price": 1650001,
-      "originalPrice": 1950000,
-      "discountPercent": 15,
-      "tag": "کالکشن جدید",
-      "badgeType": "terracotta",
-      "rating": 4.8,
-      "reviewsCount": 42,
-      "stock": 3,
-      "colors": [
-        {
-          "name": "کرم شنی (Sand Beige)",
-          "hex": "#EADCC8",
-          "selected": true
-        },
-        {
-          "name": "زیتونی مات (Muted Olive)",
-          "hex": "#5E644E"
-        },
-        {
-          "name": "ذغالی تیره (Washed Charcoal)",
-          "hex": "#3B3C40"
-        },
-        {
-          "name": "استخوانی روشن (Raw Off-White)",
-          "hex": "#F5F2EB"
-        }
-      ],
-      "sizes": [
-        "36 (S)",
-        "38 (M)",
-        "40 (L)",
-        "42 (XL)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d",
-      "gallery": [
-        {
-          "label": "نمای جلو کامل",
-          "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d"
-        },
-        {
-          "label": "بافت پارچه",
-          "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuADCCQuqeTNXS8B6o7JliyVaZW2bZqTa3p4a9a-xCc6y286KgkZiTICqQ3bKtNKaowGZ8pHoKnK2aqwL2RJLbhH_AwpkDNWLW6jNKWuJPOkL2T9bar6RbNh3jOKnIpFStxATCNXVfqbDmuL-8ODdvlg1Jage-bjiOJz-G_vK1pIdiU26l0HdGlzqLjGu5cMk0XcKOxkZyIWBCdD7w_ko2OvX1-ZJNgLerHMyexbmqROqSuebtJmP2qT"
-        },
-        {
-          "label": "نمای پشت",
-          "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBXWD-gvUSl3f-kBVHHGL6YfGA483FcZ7LVPsEMOeuJTEhfjePSUUe88mNzd3Z3F5Yw4yvrKYn-l7oG0VAuNjBOKINMTwrBifO36lL4r-LSGmuGwpvyBCD-bSesclteVmQ4yJ7XhHOVET-C7ZQr09JAvUMfiBCP_zHkwyHmDPGXiDIBr74AB4Q6Z9vLaBSZ0vp78YCw8cN4CzpcC5YtwFhVeP8rAjHQFF0qx527e-2ys_t0oJWhVVXv"
-        }
-      ],
-      "fabric": "۷۰٪ لنین خالص طبیعی، ۳۰٪ الیاف ابریشم لطیف",
-      "fit": "نرمال و آزاد (Relaxed Contemporary Fit)",
-      "season": "بهار، تابستان و پاییز معتدل",
-      "closure": "دکمه‌های مخفی عاج طبیعی دست‌ساز",
-      "pleat": "پلیسه‌های دقیق آکاردئونی با دوخت صنعتی پایدار",
-      "origin": "استودیو طراحی آسترا (تهران)"
-    },
-    {
       "id": "AES-TR-5510",
       "title": "شلوار واید لگ پشم و لنین زیتونی",
       "shortTitle": "شلوار واید لگ پشم و لنین زیتونی",
