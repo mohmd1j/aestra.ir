@@ -1,0 +1,511 @@
+/**
+ * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
+ * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
+ * Live data comes from data/store.json in the GitHub repo (edited by admin.html); the defaults below are only a fallback.
+ */
+
+(function () {
+  'use strict';
+
+  // --- 1. Default Catalog (13 High-Fidelity Products from Stitch Designs) ---
+  const DEFAULT_PRODUCTS = [
+    {
+      id: "AES-SH-2024-08",
+      title: "شومیز پلیسه ابریشم لنین کژوال آسترا",
+      shortTitle: "شومیز پلیسه ابریشم لنین کرم",
+      collection: "AESTRA ATELIER",
+      category: "shirts-and-blouses",
+      categoryFa: "شومیز و پیراهن",
+      price: 1650000,
+      originalPrice: 1950000,
+      discountPercent: 15,
+      tag: "کالکشن جدید",
+      badgeType: "terracotta", // terracotta | amber | primary | dark
+      rating: 4.8,
+      reviewsCount: 42,
+      stock: 3,
+      colors: [
+        { name: "کرم شنی (Sand Beige)", hex: "#EADCC8", selected: true },
+        { name: "زیتونی مات (Muted Olive)", hex: "#5E644E" },
+        { name: "ذغالی تیره (Washed Charcoal)", hex: "#3B3C40" },
+        { name: "استخوانی روشن (Raw Off-White)", hex: "#F5F2EB" }
+      ],
+      sizes: ["36 (S)", "38 (M)", "40 (L)", "42 (XL)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d",
+      gallery: [
+        { label: "نمای جلو کامل", url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d" },
+        { label: "بافت پارچه", url: "https://lh3.googleusercontent.com/aida-public/AB6AXuADCCQuqeTNXS8B6o7JliyVaZW2bZqTa3p4a9a-xCc6y286KgkZiTICqQ3bKtNKaowGZ8pHoKnK2aqwL2RJLbhH_AwpkDNWLW6jNKWuJPOkL2T9bar6RbNh3jOKnIpFStxATCNXVfqbDmuL-8ODdvlg1Jage-bjiOJz-G_vK1pIdiU26l0HdGlzqLjGu5cMk0XcKOxkZyIWBCdD7w_ko2OvX1-ZJNgLerHMyexbmqROqSuebtJmP2qT" },
+        { label: "نمای پشت", url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXWD-gvUSl3f-kBVHHGL6YfGA483FcZ7LVPsEMOeuJTEhfjePSUUe88mNzd3Z3F5Yw4yvrKYn-l7oG0VAuNjBOKINMTwrBifO36lL4r-LSGmuGwpvyBCD-bSesclteVmQ4yJ7XhHOVET-C7ZQr09JAvUMfiBCP_zHkwyHmDPGXiDIBr74AB4Q6Z9vLaBSZ0vp78YCw8cN4CzpcC5YtwFhVeP8rAjHQFF0qx527e-2ys_t0oJWhVVXv" },
+        { label: "استایلینگ", url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBNzQKytTLeD4a_opOHFWakrPA0uVbDjAyEfzxG30apNVQsVxnSAOWCMSTXy3yN4zg5wDrA5RjgttmU_FJPHBBx07ZLc8vjZNqgaYYg1olhW9F_hOmvHaSfUt1yWv_Ixcm_CRBJPp3HXIikPoueP2hYvuB1PN71s3ZIoW9XU3tHDpCb89ARPEaCEkNjnJyhylDQoKYqxU891o4OEsx8M_gnIqVK9NEU_sjU4lq17C4bokPoyyya-5eO" }
+      ],
+      fabric: "۷۰٪ لنین خالص طبیعی، ۳۰٪ الیاف ابریشم لطیف",
+      fit: "نرمال و آزاد (Relaxed Contemporary Fit)",
+      season: "بهار، تابستان و پاییز معتدل",
+      closure: "دکمه‌های مخفی عاج طبیعی دست‌ساز",
+      pleat: "پلیسه‌های دقیق آکاردئونی با دوخت صنعتی پایدار",
+      origin: "استودیو طراحی آسترا (تهران)"
+    },
+    {
+      id: "AES-TR-5510",
+      title: "شلوار واید لگ پشم و لنین زیتونی",
+      shortTitle: "شلوار واید لگ پشم و لنین زیتونی",
+      collection: "AESTRA TAILORING",
+      category: "trousers",
+      categoryFa: "شلوار و دامن",
+      price: 1820000,
+      originalPrice: 1820000,
+      discountPercent: 0,
+      tag: "پرفروش‌ترین",
+      badgeType: "amber",
+      rating: 4.9,
+      reviewsCount: 38,
+      stock: 5,
+      colors: [
+        { name: "سبز زیتونی ملایم", hex: "#555C41", selected: true },
+        { name: "مشکی ذغالی", hex: "#202020" }
+      ],
+      sizes: ["38 (M)", "40 (L)", "42 (XL)"],
+      defaultSize: "40 (L)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDLca4L2IBWZXFbE-BaNiqc6zVGa7k0rNNVX6Xs4F_s8gUFzIKneSCVfNwgcxEz_o2o9ifxHPn-R6uut4zxQuAmGq-A-D5R8vHc6sv4FTfeB71uMegPWJqrngFeEgQBPP3ZPzmu9InH4TNufsKUCIbe-kNnBCBHA7uOqgnbbrbiL2v39eQATQaFF7LepRmWeL_3VWuOx9nUy2mHZ_jTRx9t21UU40OTfexPwecOIj_8TvXNX4iFePw1",
+      fabric: "۵۰٪ لنین بلژیکی، ۵۰٪ پشم بهاره ظریف",
+      fit: "واید لگ و پیلی‌دار آزادی‌بخش",
+      season: "چهارفصل",
+      origin: "استودیو طراحی آسترا (تهران)"
+    },
+    {
+      id: "AES-TS-9018",
+      title: "تیشرت اورسایز واش ذغالی ۱۰۰٪ پنبه",
+      shortTitle: "تیشرت اورسایز واش ذغالی",
+      collection: "AESTRA ESSENTIALS",
+      category: "t-shirts",
+      categoryFa: "تیشرت و بیسیک",
+      price: 890000,
+      originalPrice: 1050000,
+      discountPercent: 15,
+      tag: "تخفیف ویژه",
+      badgeType: "terracotta",
+      rating: 4.7,
+      reviewsCount: 56,
+      stock: 8,
+      colors: [
+        { name: "خاکستری ذغالی تیره", hex: "#414244", selected: true },
+        { name: "استخوانی شسته شده", hex: "#E8E5DD" }
+      ],
+      sizes: ["فری‌سایز (Over)"],
+      defaultSize: "فری‌سایز (Over)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCh3lB7bkJyAoH8UjMB1Sc430KiG-gMWVzajeUpv3IeAIwsubl-qYZ1480p_bJv_b1qGggzO1mf-4cGpnnFCvl9NsHgyg3iWqM-84dSNVo3uiQDkCB-TUoHNaDkiZ5rvtT6-4EFuhbYzWtMzkn-Z61H5YYblykJz0Z9lYusKgOWCB_dJ4SH6zefhLEaA5DeYhF70on9dyiMsNKXBuBMsXQ-HrJEn-HwIIujgNpmh87gkMC87cVo-z9c",
+      fabric: "۱۰۰٪ پنبه سنگ‌شور سوپرشانه",
+      fit: "اورسایز مدرن کژوال",
+      season: "بهار و تابستان",
+      origin: "آسترا استودیو"
+    },
+    {
+      id: "AES-JK-1102",
+      title: "کت تک آزاد لنین استخوانی دست‌دوز",
+      shortTitle: "کت تک آزاد لنین استخوانی",
+      collection: "AESTRA ATELIER",
+      category: "coordinated-sets",
+      categoryFa: "ست لباس و کت",
+      price: 2450000,
+      originalPrice: 2450000,
+      discountPercent: 0,
+      tag: "تعداد محدود",
+      badgeType: "primary",
+      rating: 5.0,
+      reviewsCount: 19,
+      stock: 2,
+      colors: [
+        { name: "استخوانی بافت‌دار", hex: "#E5DFD7", selected: true },
+        { name: "مشکی سرمه‌ای", hex: "#2E3138" }
+      ],
+      sizes: ["38 (M)", "40 (L)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDvrRjcg7JnoV5VOwuwYYxf__-1oZc4vBzdpkZKBr7yqwkABxl6ZHhvdzhHrcbTqrFIIWBlb_ewJZEIo5C6-yVSc5elLi3fQgod8tBUbNCoQxqmRIy8R0eeMnw-FASbn0DFqqOFGvcUvTiajIYgGVJeXtDnw8RKANem7gC4PNgE61rvwaOJHLOnEMMnXpA4SlsGlqL2VJ5vLbzg5qYSZnRUxLVKd5il5FufW09MudAwRtmOWvVqhBIG",
+      fabric: "۱۰۰٪ لنین خام طبیعی با آستر کتان تنفس‌پذیر",
+      fit: "تک‌کت بوی‌فرند ریلکس",
+      season: "پاییز و بهار",
+      origin: "استودیو طراحی آسترا"
+    },
+    {
+      id: "AES-SH-3309",
+      title: "بلوز آستین پفی ارگانیک پنبه استودیو تهران",
+      shortTitle: "بلوز آستین پفی ارگانیک پنبه",
+      collection: "AESTRA STUDIO",
+      category: "shirts-and-blouses",
+      categoryFa: "شومیز و پیراهن",
+      price: 1520000,
+      originalPrice: 1520000,
+      discountPercent: 0,
+      tag: "جدید",
+      badgeType: "primary",
+      rating: 4.8,
+      reviewsCount: 14,
+      stock: 4,
+      colors: [
+        { name: "کرم عاجی", hex: "#F3ECE1", selected: true }
+      ],
+      sizes: ["36 (S)", "38 (M)", "40 (L)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDcOJWgkxIWpDfzkIoQGHicshWFzKaDWSJsb0eVrDRx_ljIyKQ6Ge3JWyVtlrsX2Yl63TdDoEw4OaOAWNg4NTUSXyPdN7tK-2RjVIzRrYzk3cmiiattx0xk_a4DY6QPKpngzFdneCbaC0wBvpeOy0CrxvExsROwvmgNbt1L1GzVOQBer3Qzi_nwQYsIuftuEmcy3LE6pFt5KdPc2Ywr_eXmzRsnZT0H-98BYhZq7qoAER7VzZ7ZkKoA",
+      fabric: "۱۰۰٪ پنبه ارگانیک لطیف",
+      fit: "راحت با سرشانه فانتزی",
+      season: "بهار و تابستان",
+      origin: "تهران"
+    },
+    {
+      id: "AES-SH-4420",
+      title: "شومیز دکمه مخفی استخوانی یقه مردانه مدرن",
+      shortTitle: "شومیز دکمه مخفی استخوانی",
+      collection: "AESTRA MINIMAL",
+      category: "shirts-and-blouses",
+      categoryFa: "شومیز و پیراهن",
+      price: 1390000,
+      originalPrice: 1390000,
+      discountPercent: 0,
+      tag: "یقه مردانه مدرن",
+      badgeType: "dark",
+      rating: 4.9,
+      reviewsCount: 27,
+      stock: 6,
+      colors: [
+        { name: "استخوانی روشن", hex: "#FAF8F5", selected: true }
+      ],
+      sizes: ["36 (S)", "38 (M)", "40 (L)", "42 (XL)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuChC_I9hDUiRAdVeRpOIB8BCrrZBKP6Nb1KrUGU88y8hFSyLb6nun4M9bWXEQxdrjp3YxxCQ-Poxyn_LVsLOva33kxCzKeL2AADWmWIwsaqge_Bj9BSmuS-AEYhrwZYdVpAa_zf2uuik9olWjjKI8yKVyE2rV6o-GjH1CZ0pss80ZudbJnl82dw0WDFVrWL9wUUSZNq80EDuDUPPs1wojeoGg51kSDERr82_-ZumvFkAUfc_hQy2L-i",
+      fabric: "الیاف کتان طبیعی کج‌راه",
+      fit: "کلاسیک مدرن",
+      season: "چهارفصل",
+      origin: "آسترا"
+    },
+    {
+      id: "AES-DR-8812",
+      title: "پیراهن میدی کرپ کتان ریزش‌دار تابستانه",
+      shortTitle: "پیراهن میدی کرپ تابستانه",
+      collection: "AESTRA DRESS",
+      category: "shirts-and-blouses",
+      categoryFa: "شومیز و پیراهن",
+      price: 2100000,
+      originalPrice: 2100000,
+      discountPercent: 0,
+      tag: "موجودی محدود",
+      badgeType: "terracotta",
+      rating: 4.6,
+      reviewsCount: 11,
+      stock: 2,
+      colors: [
+        { name: "سرمه‌ای دودی", hex: "#2C3440", selected: true }
+      ],
+      sizes: ["38 (M)", "40 (L)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzScS1CVK7uQsgoOHDgsTe2mTCq_1zTedcaYtzmxBKWLrVGK4WBhAL8n5M0qesd4nDBMyT5-fL4r-Arfp0cjFoAwZeg7m0sqY9ZRPG2hsIayLwNkXl5CFATSgY-TDD0WXOo0wUJIw5m43IC2Ue4ENIZi5syfU1YLJYTEtRVYdId4chgnyFm-zkpIrqJzJbsqKFN8vL6d96YVF_E8j7Zrp2lTBsJ8ZtDJ_daoisg9eOwZLQANWKG1rD",
+      fabric: "کرپ کتان سبک و ریزش‌دار",
+      fit: "میدی راسته با کمربند پارچه‌ای",
+      season: "بهار و تابستان",
+      origin: "تهران"
+    },
+    {
+      id: "AES-SH-5541",
+      title: "شومیز کتان پاییزه کرم کج‌راه",
+      shortTitle: "شومیز کتان پاییزه کرم",
+      collection: "AESTRA AUTUMN",
+      category: "shirts-and-blouses",
+      categoryFa: "شومیز و پیراهن",
+      price: 1290000,
+      originalPrice: 1290000,
+      discountPercent: 0,
+      tag: "کتان کج‌راه پاییزه",
+      badgeType: "dark",
+      rating: 4.8,
+      reviewsCount: 22,
+      stock: 7,
+      colors: [
+        { name: "کرم کاراملی", hex: "#D4B996", selected: true }
+      ],
+      sizes: ["36 (S)", "38 (M)", "40 (L)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBIxYKZn5BKq5Iby-myUhVVgFk08ZqxfPVSaMvkI6LilIwQbcwFijba8FVGjPWsh24moTsG1Ath4wqmxFNw7nZW6K5UtBFfiI7ss-yGlIhq6RYq8YI3X0tsN9BTZgR9i-wmJGycUucUrnszByzzjgZ6wWDu96DVhMC6ftmZ-f58iAYh4t-WjTm8s9pC4tmgKiGHvoEW2eBog8HZz-2mq5f6oc3E3dtsaBv9gWJAcRT2dcRQMbKlL1N",
+      fabric: "کتان نرم بافت ژاپن",
+      fit: "آزاد و تن‌خور استاندارد",
+      season: "پاییز و زمستان",
+      origin: "آسترا"
+    },
+    {
+      id: "AES-ST-6601",
+      title: "ست شومیز و شلوار بگ شنی لنین دو تکه",
+      shortTitle: "ست شومیز و شلوار بگ شنی",
+      collection: "AESTRA CO-ORD",
+      category: "coordinated-sets",
+      categoryFa: "ست لباس",
+      price: 2850000,
+      originalPrice: 2850000,
+      discountPercent: 0,
+      tag: "ست کامل",
+      badgeType: "amber",
+      rating: 4.9,
+      reviewsCount: 31,
+      stock: 4,
+      colors: [
+        { name: "شنی طبیعی", hex: "#DACBB5", selected: true }
+      ],
+      sizes: ["38 (M)", "40 (L)"],
+      defaultSize: "38 (M)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBdVYFIcV2aWyP5MdDnsm78cqQZQvpWn5lpbH4QRcZR_2ln5hOcZZUuHq7Tcdv8jvw_9Iej25TMnKY9qT8hZaQQUNDOdy72lgdrWgpblP-rcwSt7POvOvWefNtXQBNE2XYviimiHL2OpDgfXiojQdiIKrWWY3f2STXsUBZ77WhthpnpjBYlKbYhAfVGyBkOjS6dlMIctuYxzQqz__OWBg2VN30lSo-2-M0aRM1W2ChzT69cBMRtmekd",
+      fabric: "۱۰۰٪ لنین تنفس‌پذیر شسته شده",
+      fit: "ست هماهنگ شومیز آزاد و شلوار بگ",
+      season: "بهار و تابستان",
+      origin: "استودیو آسترا"
+    },
+    {
+      id: "AES-AC-1090",
+      title: "کمربند چرم طبیعی با سگک برنجی دست‌ساز",
+      shortTitle: "کمربند چرم طبیعی با سگک برنجی",
+      collection: "AESTRA ACCESSORIES",
+      category: "accessories",
+      categoryFa: "اکسسوری",
+      price: 480000,
+      originalPrice: 480000,
+      discountPercent: 0,
+      tag: "دست‌ساز",
+      badgeType: "dark",
+      rating: 4.9,
+      reviewsCount: 45,
+      stock: 12,
+      colors: [
+        { name: "قهوه‌ای سوخته ایتالیایی", hex: "#3B261A", selected: true }
+      ],
+      sizes: ["سایز آزاد (Free)"],
+      defaultSize: "سایز آزاد",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA05lnMS-x4JaARSP-KK74b0q1nAVlGJfhaF6RwFuq1henpsi5F4munpfAzgAmdVxdZL0uh9VNvcY8CPt5w1opwNkpK-aK9M_W2RsOAYjoBE0-irmWLkS81FeICMGeVGwr52QYAWZ2x1wKi57Xo0v_CCPLG7AR8k7bDVvc2cmnZrP2GXOiSmB8rHLKi8CvwznRExBY0NvjRYx0IjsILVDWUfNdscdUw1rvjo07GPiKbq_mHkNMb2mrk",
+      fabric: "۱۰۰٪ چرم گاوی دباغی گیاهی و برنج دست‌ساز",
+      fit: "عرض ۲.۵ سانتی‌متر با طول قابل تنظیم",
+      origin: "کارگاه چرم آسترا (تبریز)"
+    },
+    {
+      id: "AES-TP-2201",
+      title: "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه کرم",
+      shortTitle: "تاپ بافت ریب آستین‌حلقه‌ای نخ‌پنبه",
+      collection: "AESTRA ESSENTIALS",
+      category: "t-shirts",
+      categoryFa: "تیشرت و تاپ",
+      price: 620000,
+      originalPrice: 620000,
+      discountPercent: 0,
+      tag: "بیسیک",
+      badgeType: "primary",
+      rating: 4.7,
+      reviewsCount: 18,
+      stock: 9,
+      colors: [
+        { name: "کرم شیری", hex: "#F3EFE6", selected: true }
+      ],
+      sizes: ["S", "M", "L"],
+      defaultSize: "M",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNEtyjwCYcNS0Q1_f6TZ7E-UGXvqlXMyGA52ZmpgNAXNQHIIb7SlllXNwvnt815TEFss59foiiNhliJBn5XymMye71xqQuORTflTZlKSucpAhcJt5Omo7OE6C02Pjpc-mEZyic8OehDufYfAVx9PWFNck7C-iYncP0jEdnkh2-whTL6stfw6w_74NpvscsHY-nIQkcVLIj1Fic8oT-NsBqjthKITzmhNaSNPcmL5k2TdsvI21Wvxqk",
+      fabric: "۹۵٪ نخ‌پنبه ارگانیک، ۵٪ الاستین",
+      fit: "اسلیم فیت فرم‌دهنده",
+      season: "بهار و تابستان",
+      origin: "آسترا"
+    },
+    {
+      id: "AES-JW-041",
+      title: "گوشواره حلقه برجسته طلایی مات استیل ضدحساسیت",
+      shortTitle: "گوشواره حلقه برجسته طلایی مات",
+      collection: "AESTRA JEWELRY",
+      category: "accessories",
+      categoryFa: "زیورآلات مینیمال",
+      price: 390000,
+      originalPrice: 390000,
+      discountPercent: 0,
+      tag: "ضدحساسیت",
+      badgeType: "primary",
+      rating: 4.8,
+      reviewsCount: 29,
+      stock: 15,
+      colors: [
+        { name: "طلایی مات", hex: "#D4AF37", selected: true }
+      ],
+      sizes: ["سایز استاندارد"],
+      defaultSize: "استاندارد",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC6flNWxq3R6Ya0SYJwXeuyhRyRSZGvUscnFRms55Zp66Ctpk9fXdr11v-J6ds5HWQxGPDLYR6f1r5fFCupB7veckYWGqjbbDGBzbqTIJrhPW-8V7vr0e6XUnQB9Mwa9XXQTR2pIl_9y26eNwcwUmWQel8Y3vDpPHAKJGEMqI7kN_Lnqp_0OB_foj-BTmZk0b0-y4NwLojO9PLsW6UBZ6JVxChgAnZOKWgwUYJ6nCLIzx7rOqqiVSiW",
+      fabric: "استیل عیار ۳۱۶ با روکش طلای ۱۸ عیار مات",
+      fit: "بسیار سبک و بدون فشار به لاله گوش",
+      origin: "استودیو زیورآلات آسترا"
+    },
+    {
+      id: "AES-FW-990",
+      title: "اسنیکر چرم کرم ارگانیک آسترا",
+      shortTitle: "اسنیکر چرم کرم ارگانیک آسترا",
+      collection: "AESTRA FOOTWEAR",
+      category: "accessories",
+      categoryFa: "کفش",
+      price: 2350000,
+      originalPrice: 2350000,
+      discountPercent: 0,
+      tag: "چرم طبیعی",
+      badgeType: "dark",
+      rating: 4.9,
+      reviewsCount: 33,
+      stock: 4,
+      colors: [
+        { name: "کرم استخوانی", hex: "#EDE8DF", selected: true }
+      ],
+      sizes: ["37", "38", "39", "40", "41"],
+      defaultSize: "38",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCr653h7SGVbCEgMJ2Uz3WyAelgFluyhjCDqS_PFx1OvQJd2ZCa02Cn1vDIM-LtdIX6m-INvux7kvgIZIS5ciPvb1jQUuIQ0LKKUhorXRnaCtGid56LWepLDKHjwyprYEruigkZqefCBou4-2ugEzX-VEtZ1cZhmzEKDlQbD0CXiLphrgaHIu04qM-j0kHFZ12QrkpGr3pomWxHqg6ydN1MP5VF4lCOj1Hz1QjrZI3wdSt0f4IX8ii0",
+      fabric: "چرم ناپا نرم طبیعی با زیره طبی پلی‌اورتان",
+      fit: "استاندارد ارگونومیک برای پیاده‌روی شهری",
+      origin: "کارگاه کفش تبریز به سفارش آسترا"
+    }
+  ];
+
+  // --- 2. Default Store Settings ---
+  const DEFAULT_SETTINGS = {
+    siteName: "AESTRA | آسترا",
+    siteTagline: "فروشگاه مد و آتلیه طراحی معاصر",
+    announcementText: "ارسال رایگان برای خریدهای بالای ۱۰,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز",
+    freeShippingThreshold: 10000000,
+    shippingCost: 75000,
+    phone: "۰۲۱-۹۱۰۲۸۰۰۰",
+    mobile: "۰۹۱۲۳۴۵۶۷۸۹",
+    email: "contact@aestra-atelier.ir",
+    address: "تهران، زعفرانیه، خیابان آصف، نبش کوچه ششم، پلاک ۴۲، آتلیه مد معاصر آسترا",
+    workingHours: "شنبه تا چهارشنبه ۱۰:۰۰ الی ۲۰:۰۰ | پنجشنبه و جمعه ۱۰:۰۰ الی ۲۲:۰۰",
+    telegramUsername: "aestra_atelier",
+    whatsappNumber: "989123456789",
+    instagramHandle: "aestra.atelier",
+    adminPin: "1234",
+    heroSlides: [
+      {
+        badge: "کالکشن جدید پاییز و زمستان",
+        title: "زیبایی در سادگی؛ اصالت در جزئیات",
+        subtitle: "مجموعه انحصاری پیراهن، شومیز و شلوارهای دوخت اختصاصی با پارچه‌های خالص طبیعی و لنین ارگانیک",
+        btnText: "مشاهده تمام کالکشن",
+        btnLink: "products.html",
+        bgImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCU2q89hQ0xAqOcy-_2Gbd40pBi0IvXTNctqkUdisSquqq1QK9I9JHqlKDqB12q1B4UX3q38FU8_ZJtE0hTSLmCL54nKmNrPJsJH2QXTKdznJz6OWhQbQXzJCqAWZOjihQKc-SdLV6RwD50k_A6F8gat1eZvd9P0suCAczCGYBRYz3j6yvC5jEstLtRa_4EiEigLBdKfkI2g4O7NhFtc5fAzWba6AtdPjKanoQgWOCul5zZIOqTHQ-d"
+      },
+      {
+        badge: "دست‌دوز استودیو تهران",
+        title: "آتلیه طراحی معاصر آسترا",
+        subtitle: "رویکردی نو در طراحی پوشاک ایرانی؛ ظرافت پایدار بدون وابستگی به ترندهای گذرا",
+        btnText: "آشنایی با آتلیه",
+        btnLink: "about.html",
+        bgImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDvrRjcg7JnoV5VOwuwYYxf__-1oZc4vBzdpkZKBr7yqwkABxl6ZHhvdzhHrcbTqrFIIWBlb_ewJZEIo5C6-yVSc5elLi3fQgod8tBUbNCoQxqmRIy8R0eeMnw-FASbn0DFqqOFGvcUvTiajIYgGVJeXtDnw8RKANem7gC4PNgE61rvwaOJHLOnEMMnXpA4SlsGlqL2VJ5vLbzg5qYSZnRUxLVKd5il5FufW09MudAwRtmOWvVqhBIG"
+      }
+    ],
+    coupons: [
+      { code: "AESTRA10", percent: 10, title: "۱۰ درصد تخفیف خرید اول", active: true },
+      { code: "NOROOZ", percent: 15, title: "۱۵ درصد جشنواره", active: true },
+      { code: "VIP", percent: 20, title: "۲۰ درصد اعضای ویژه", active: true }
+    ],
+    aboutText: "آتلیه مد معاصر آسترا با الهام از معماری کهن ایرانی و تلفیق آن با خطوط مدرن مینیمال، پوشاکی خلق می‌کند که فراتر از زمان می‌زییند. ما از الیاف ۱۰۰٪ طبیعی همچون لنین، ابریشم خام، پشم لطیف و پنبه سنگ‌شور استفاده می‌کنیم."
+  };
+
+  // ---------------------------------------------------------------------------
+  // Live store: admin.html commits data/store.json to this GitHub repo.
+  // The site reads it from the public GitHub API on every page load, keeps a
+  // copy in localStorage so pages render instantly, and reloads once when the
+  // remote copy has changed. EDIT THIS BLOCK if your repo has another name.
+  // ---------------------------------------------------------------------------
+  const REMOTE = { owner: 'mohmd1j', repo: 'aestra.ir', branch: 'main', path: 'data/store.json' };
+
+  const STORAGE_KEYS = {
+    PRODUCTS: 'aestra_products_v2',
+    SETTINGS: 'aestra_settings_v2',
+    REMOTE: 'aestra_remote_store_v1'
+  };
+
+  const clone = (o) => JSON.parse(JSON.stringify(o));
+
+  function readCache() {
+    try {
+      const c = JSON.parse(localStorage.getItem(STORAGE_KEYS.REMOTE));
+      if (c && c.store && typeof c.text === 'string') return c;
+    } catch (e) {}
+    return null;
+  }
+
+  function pick(store) {
+    const all = store && Array.isArray(store.products) && store.products.length ? store.products : DEFAULT_PRODUCTS;
+    // products hidden from the admin panel never reach the public site
+    const products = all.filter(function (p) { return !p.hidden; });
+    const settings = Object.assign({}, DEFAULT_SETTINGS, (store && store.settings) || {});
+    return { products: products, settings: settings };
+  }
+
+  const cached = readCache();
+  const live = pick(cached && cached.store);
+  let PRODUCTS = live.products;
+  let SETTINGS = live.settings;
+
+  window.AestraConfig = {
+    STORAGE_KEYS: STORAGE_KEYS,
+    REMOTE: REMOTE,
+    DEFAULT_PRODUCTS: DEFAULT_PRODUCTS,
+    DEFAULT_SETTINGS: DEFAULT_SETTINGS,
+    getSettings: function () { return clone(SETTINGS); },
+    getProducts: function () { return clone(PRODUCTS); },
+    // kept so older code does not break; data is edited from admin.html only
+    saveSettings: function () { return true; },
+    saveProducts: function () { return true; },
+    resetToDefaults: function () {}
+  };
+
+  window.AESTRA_SETTINGS = window.AestraConfig.getSettings();
+  window.AESTRA_PRODUCTS = window.AestraConfig.getProducts();
+
+  window.formatPriceFa = function (num) {
+    if (num === undefined || num === null) return "۰";
+    return Number(num).toLocaleString('fa-IR') + ' تومان';
+  };
+
+  window.formatNumberFa = function (num) {
+    if (num === undefined || num === null) return "۰";
+    return Number(num).toLocaleString('fa-IR');
+  };
+
+  // Maintenance mode: the whole public site shows a notice (the admin page is never blocked).
+  function showMaintenance() {
+    if (!SETTINGS.maintenance || window.AESTRA_NO_SYNC) return;
+    const run = function () {
+      if (document.getElementById('aestra-maintenance')) return;
+      const tg = String(SETTINGS.telegramUsername || '').replace('@', '').trim();
+      const box = document.createElement('div');
+      box.id = 'aestra-maintenance';
+      box.setAttribute('dir', 'rtl');
+      box.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:#fff;color:#1c1b1c;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:Vazirmatn,system-ui,sans-serif';
+      const msg = SETTINGS.maintenanceText || 'فروشگاه در حال بروزرسانی است. به‌زودی بازمی‌گردیم.';
+      box.innerHTML = '<div style="max-width:420px"><div style="font-size:28px;font-weight:800;letter-spacing:.08em;margin-bottom:12px">AESTRA</div>' +
+        '<p style="line-height:2;margin:0 0 16px"></p>' +
+        (tg ? '<a href="https://t.me/' + tg + '" style="color:#C46243;font-weight:700">ارتباط در تلگرام</a>' : '') + '</div>';
+      box.querySelector('p').textContent = msg;
+      document.body.appendChild(box);
+      document.documentElement.style.overflow = 'hidden';
+    };
+    if (document.body) run(); else document.addEventListener('DOMContentLoaded', run);
+  }
+  showMaintenance();
+
+  // Fetch the latest store.json; if it differs from what this page rendered, save it and reload once.
+  function syncRemote() {
+    if (window.AESTRA_NO_SYNC) return; // the admin page manages its own copy
+    const url = 'https://api.github.com/repos/' + REMOTE.owner + '/' + REMOTE.repo + '/contents/' + REMOTE.path + '?ref=' + encodeURIComponent(REMOTE.branch) + '&t=' + Date.now();
+    fetch(url, { headers: { Accept: 'application/vnd.github.raw' }, cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.text() : null; })
+      .then(function (text) {
+        if (!text) return;
+        const store = JSON.parse(text);
+        if (!store || !Array.isArray(store.products)) return;
+        const c = readCache();
+        if (c && c.text === text) return;
+        localStorage.setItem(STORAGE_KEYS.REMOTE, JSON.stringify({ text: text, store: store }));
+        location.reload();
+      })
+      .catch(function () {});
+  }
+  syncRemote();
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') syncRemote();
+  });
+})();
