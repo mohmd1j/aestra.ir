@@ -1,6 +1,6 @@
 /**
  * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
- * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۹:۲۲
+ * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۱۳:۱۴
  * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
  */
 
@@ -530,14 +530,14 @@
   "announcementText": "ارسال رایگان برای خریدهای بالای ۱۰,۰۰۰,۰۰۰ تومان | ضمانت اصالت و بازگشت کالا تا ۷ روز",
   "freeShippingThreshold": 10000000,
   "shippingCost": 75000,
-  "phone": "۰۲۱-۹۱۰۲۸۰۰۰",
-  "mobile": "۰۹۱۲۳۴۵۶۷۸۹",
+  "phone": "0930-016-7423",
+  "mobile": "0992-940-8694",
   "email": "contact@aestra-atelier.ir",
-  "address": "تهران، زعفرانیه، خیابان آصف، نبش کوچه ششم، پلاک ۴۲، آتلیه مد معاصر آسترا",
+  "address": "استان گیلان شهرستان ماسال",
   "workingHours": "شنبه تا چهارشنبه ۱۰:۰۰ الی ۲۰:۰۰ | پنجشنبه و جمعه ۱۰:۰۰ الی ۲۲:۰۰",
   "telegramUsername": "aestra_atelier",
   "whatsappNumber": "989123456789",
-  "instagramHandle": "aestra.atelier",
+  "instagramHandle": "aestra.ir",
   "adminPin": "1234",
   "heroSlides": [
     {
