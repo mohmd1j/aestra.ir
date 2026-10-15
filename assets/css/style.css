@@ -27,6 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Glassmorphism & backdrop effects */
 .glass-nav {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
@@ -47,30 +48,56 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #f1eded; }
-::-webkit-scrollbar-thumb { background: #c6c6cb; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #76777b; }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1eded;
+}
+::-webkit-scrollbar-thumb {
+  background: #c6c6cb;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #76777b;
+}
 
-.tabular-nums { font-variant-numeric: tabular-nums; }
+/* Tabular figures for Persian numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
 
+/* Micro animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-.animate-fade-in { animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.animate-slide-down { animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.animate-slide-right { animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
+.animate-slide-down {
+  animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Toast container */
 #toast-container {
   position: fixed;
   bottom: 24px;
@@ -97,6 +124,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Material Symbols alignment helper */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
@@ -107,7 +135,10 @@ body {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.pulse-dot { position: relative; }
+/* Badge pulse */
+.pulse-dot {
+  position: relative;
+}
 .pulse-dot::before {
   content: '';
   position: absolute;
