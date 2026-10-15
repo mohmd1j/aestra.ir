@@ -2,39 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-ST-6601",
-      "title": "ست شومیز و شلوار بگ شنی لنین دو تکه",
-      "shortTitle": "ست شومیز و شلوار بگ شنی",
-      "collection": "AESTRA CO-ORD",
-      "category": "coordinated-sets",
-      "categoryFa": "ست لباس",
-      "price": 2850000,
-      "originalPrice": 2850000,
-      "discountPercent": 0,
-      "tag": "ست کامل",
-      "badgeType": "amber",
-      "rating": 4.9,
-      "reviewsCount": 31,
-      "stock": 4,
-      "colors": [
-        {
-          "name": "شنی طبیعی",
-          "hex": "#DACBB5",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "38 (M)",
-        "40 (L)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBdVYFIcV2aWyP5MdDnsm78cqQZQvpWn5lpbH4QRcZR_2ln5hOcZZUuHq7Tcdv8jvw_9Iej25TMnKY9qT8hZaQQUNDOdy72lgdrWgpblP-rcwSt7POvOvWefNtXQBNE2XYviimiHL2OpDgfXiojQdiIKrWWY3f2STXsUBZ77WhthpnpjBYlKbYhAfVGyBkOjS6dlMIctuYxzQqz__OWBg2VN30lSo-2-M0aRM1W2ChzT69cBMRtmekd",
-      "fabric": "۱۰۰٪ لنین تنفس‌پذیر شسته شده",
-      "fit": "ست هماهنگ شومیز آزاد و شلوار بگ",
-      "season": "بهار و تابستان",
-      "origin": "استودیو آسترا"
-    },
-    {
       "id": "AES-AC-1090",
       "title": "کمربند چرم طبیعی با سگک برنجی دست‌ساز",
       "shortTitle": "کمربند چرم طبیعی با سگک برنجی",
