@@ -2,40 +2,6 @@
   "version": 1,
   "products": [
     {
-      "id": "AES-SH-5541",
-      "title": "شومیز کتان پاییزه کرم کج‌راه",
-      "shortTitle": "شومیز کتان پاییزه کرم",
-      "collection": "AESTRA AUTUMN",
-      "category": "shirts-and-blouses",
-      "categoryFa": "شومیز و پیراهن",
-      "price": 1290000,
-      "originalPrice": 1290000,
-      "discountPercent": 0,
-      "tag": "کتان کج‌راه پاییزه",
-      "badgeType": "dark",
-      "rating": 4.8,
-      "reviewsCount": 22,
-      "stock": 7,
-      "colors": [
-        {
-          "name": "کرم کاراملی",
-          "hex": "#D4B996",
-          "selected": true
-        }
-      ],
-      "sizes": [
-        "36 (S)",
-        "38 (M)",
-        "40 (L)"
-      ],
-      "defaultSize": "38 (M)",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBBIxYKZn5BKq5Iby-myUhVVgFk08ZqxfPVSaMvkI6LilIwQbcwFijba8FVGjPWsh24moTsG1Ath4wqmxFNw7nZW6K5UtBFfiI7ss-yGlIhq6RYq8YI3X0tsN9BTZgR9i-wmJGycUucUrnszByzzjgZ6wWDu96DVhMC6ftmZ-f58iAYh4t-WjTm8s9pC4tmgKiGHvoEW2eBog8HZz-2mq5f6oc3E3dtsaBv9gWJAcRT2dcRQMbKlL1N",
-      "fabric": "کتان نرم بافت ژاپن",
-      "fit": "آزاد و تن‌خور استاندارد",
-      "season": "پاییز و زمستان",
-      "origin": "آسترا"
-    },
-    {
       "id": "AES-ST-6601",
       "title": "ست شومیز و شلوار بگ شنی لنین دو تکه",
       "shortTitle": "ست شومیز و شلوار بگ شنی",
