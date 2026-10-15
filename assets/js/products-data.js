@@ -1,6 +1,6 @@
 /**
  * AESTRA Atelier - Comprehensive Catalog Data & Centralized Store
- * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۸:۵۱
+ * Exported from AESTRA Admin Panel on: ۱۴۰۵/۷/۲۳, ۴:۰۹:۲۲
  * Pure vanilla JavaScript dataset & dynamic config for GitHub Pages deployment.
  */
 
@@ -541,7 +541,7 @@
   "adminPin": "1234",
   "heroSlides": [
     {
-      "badge": "کالکشن جدید پاییز و زمستان1405",
+      "badge": "کالکشن جدید پاییز و زمستان 1405",
       "title": "زیبایی در سادگی؛ اصالت در جزئیات",
       "subtitle": "مجموعه انحصاری پیراهن، شومیز و شلوارهای دوخت اختصاصی با پارچه‌های خالص طبیعی و لنین ارگانیک",
       "btnText": "مشاهده تمام کالکشن",
